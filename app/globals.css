@@ -55,6 +55,16 @@ a { color: inherit; text-decoration: none; } /* default no underline */
 [data-id="about"] {
   margin: 0;
   padding: 0;
+  border: 0;
+}
+
+/* forbid extra spacing leaking from the top label into the gap */
+[data-id="works"] > * { 
+  margin: 0; 
+  padding: 0; 
+}
+[data-id="works"] { 
+  line-height: 1; 
 }
 
 /* Debug font loading */

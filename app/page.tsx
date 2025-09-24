@@ -1,4 +1,5 @@
 import EqualMarginEngine from "@/components/EqualMarginEngine";
+import EMDebugOverlay from "@/components/EMDebugOverlay";
 
 export default function Page() {
   return (
@@ -65,6 +66,7 @@ export default function Page() {
       </div>
 
       <EqualMarginEngine />
+      {process.env.NODE_ENV !== "production" && <EMDebugOverlay />}
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
+import EMDebugOverlay from "@/components/EMDebugOverlay";
 
 export default function AboutPage() {
   const portraitSrc = "/images/portrait.jpg";
@@ -72,6 +73,7 @@ export default function AboutPage() {
       </div>
 
       <EqualMarginEngine />
+      {process.env.NODE_ENV !== "production" && <EMDebugOverlay />}
     </main>
   );
 }

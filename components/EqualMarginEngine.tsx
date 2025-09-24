@@ -32,6 +32,19 @@ export default function EqualMarginEngine() {
 
       const Mv = (vh - (hTop + hMid + hBot)) / 4;
       const M = Math.max(0, Math.min(Mv, Mh));
+      
+      // Debug logging
+      console.log("EM", {M, Htop: hTop, contentHeight: hMid, Hbottom: hBot, Mv, Mh});
+      
+      // Fail the build if TOP has margins
+      const topEl = document.querySelector('[data-id="works"]') as HTMLElement;
+      if (topEl) {
+        const mb = parseFloat(getComputedStyle(topEl).marginBottom || "0");
+        if (mb !== 0) {
+          console.warn("[EqualMargin] TOP has margin-bottom", mb);
+        }
+      }
+      
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
       return M;
     };
