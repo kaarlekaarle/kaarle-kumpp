@@ -8,28 +8,20 @@ export default function EqualMarginEngine() {
 
 
     const computeM = () => {
-      // detect About by presence of top+right-block
-      const isAbout = !!document.querySelector('[data-id="top"]') && !!document.querySelector('[data-id="right-block"]');
-
+      // Now both pages use the same data-ids: works, logo-col, right-block, about
       const styles = getComputedStyle(document.documentElement);
       const L = parseFloat(styles.getPropertyValue("--kk-left-col"));
       const R = parseFloat(styles.getPropertyValue("--kk-right-col"));
       const vw = window.innerWidth;
 
-      // horizontal M
-      const Mh = (vw - (L + R)) / (isAbout ? 2 : 3);
+      // horizontal M - both pages use same formula now
+      const Mh = (vw - (L + R)) / 3;
 
-      // vertical M uses whichever elements exist
+      // vertical M - use unified data-ids
       const vh = window.innerHeight;
-      const hTop = (document.querySelector('[data-id="top"]') as HTMLElement)?.offsetHeight
-                ?? (document.querySelector('[data-id="works"]') as HTMLElement)?.offsetHeight
-                ?? 0;
-      const hMid = (document.querySelector('[data-id="right-block"]') as HTMLElement)?.offsetHeight
-                ?? (document.querySelector('[data-id="heading"]') as HTMLElement)?.offsetHeight
-                ?? 0;
-      const hBot = (document.querySelector('[data-id="bottom"]') as HTMLElement)?.offsetHeight
-                ?? (document.querySelector('[data-id="about"]') as HTMLElement)?.offsetHeight
-                ?? 0;
+      const hTop = (document.querySelector('[data-id="works"]') as HTMLElement)?.offsetHeight ?? 0;
+      const hMid = (document.querySelector('[data-id="right-block"]') as HTMLElement)?.offsetHeight ?? 0;
+      const hBot = (document.querySelector('[data-id="about"]') as HTMLElement)?.offsetHeight ?? 0;
 
       const Mv = (vh - (hTop + hMid + hBot)) / 4;
       const M = Math.max(0, Math.min(Mv, Mh));
