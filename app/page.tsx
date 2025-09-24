@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="container min-h-screen relative">
+    <div className="min-h-screen flex flex-col">
       {/* Top Navigation - WORKS */}
-      <div className="absolute top-8 right-8">
+      <div className="flex justify-end p-6">
         <Link href="/works" className="text-lg font-semibold uppercase" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           WORKS
         </Link>
       </div>
 
       {/* Main Content - Two Column Layout */}
-      <div className="grid md:grid-cols-2 gap-10 md:gap-24 min-h-screen items-center pt-20 pb-20">
+      <main className="container flex-1 grid md:grid-cols-2 gap-10 md:gap-24 items-center py-20">
         {/* Left Column - Logo */}
         <div className="flex items-center justify-center">
           <div className="text-4xl md:text-5xl font-bold text-center uppercase" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
@@ -34,19 +34,18 @@ export default function Page() {
             ))}
           </div>
         </section>
-      </div>
+      </main>
 
-      {/* Bottom Contact Info */}
-      <div className="absolute bottom-8 left-8">
+      {/* Bottom Section */}
+      <div className="flex justify-between items-center p-6">
+        {/* Contact Info */}
         <div className="text-sm font-medium uppercase" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           KAARLE HURTIG | +358 440 522 753 | kaarle.hurtig@gmail.com
         </div>
-      </div>
 
-      {/* Bottom Navigation - ABOUT */}
-      <div className="absolute bottom-8 right-8">
+        {/* Bottom Navigation - ABOUT */}
         <BottomNav right={{ href: "/about", label: "ABOUT" }} />
       </div>
-    </main>
+    </div>
   );
 }
