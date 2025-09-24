@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Page() {
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* fixed container width for consistent alignment */}
+      {/* fixed container width for consistent alignment - force redeploy */}
       <div className="mx-auto max-w-6xl px-6 md:px-8 pt-16 md:pt-20 pb-16 md:pb-24">
         {/* 12-col grid with 3 logical rows */}
         <div className="grid grid-cols-12 gap-x-8 md:gap-x-10 grid-rows-[auto_minmax(0,1fr)_auto]">
