@@ -2,9 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Kaarle & Kumppanit';
+  src: url('/fonts/kaarle-kumppanit/K&K.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond Premier';
+  src: url('/fonts/garamond-premier/AGaramondPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond Premier';
+  src: url('/fonts/garamond-premier/AGaramondPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond Premier';
+  src: url('/fonts/garamond-premier/AGaramondPro-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond Premier';
+  src: url('/fonts/garamond-premier/AGaramondPro-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root { color-scheme: light; }
 html, body { height: 100%; }
-body { @apply bg-gray-100 text-gray-900 antialiased font-serif; }
+body { @apply bg-paper text-ink antialiased font-serif; }
 a { @apply text-blue-600 hover:underline; }
 h1,h2,h3 { @apply uppercase tracking-wide font-semibold font-heading; }
 :focus-visible { outline: 2px solid #1F37FF; outline-offset: 2px; }

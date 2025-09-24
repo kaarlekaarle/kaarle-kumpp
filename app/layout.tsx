@@ -26,49 +26,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <style jsx global>{`
-          @font-face {
-            font-family: 'Kaarle & Kumppanit';
-            src: url('/fonts/kaarle-kumppanit/K&K.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-          }
-          
-          @font-face {
-            font-family: 'Garamond Premier';
-            src: url('/fonts/garamond-premier/AGaramondPro-Regular.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-          }
-          
-          @font-face {
-            font-family: 'Garamond Premier';
-            src: url('/fonts/garamond-premier/AGaramondPro-Bold.otf') format('opentype');
-            font-weight: bold;
-            font-style: normal;
-            font-display: swap;
-          }
-          
-          @font-face {
-            font-family: 'Garamond Premier';
-            src: url('/fonts/garamond-premier/AGaramondPro-Italic.otf') format('opentype');
-            font-weight: normal;
-            font-style: italic;
-            font-display: swap;
-          }
-          
-          @font-face {
-            font-family: 'Garamond Premier';
-            src: url('/fonts/garamond-premier/AGaramondPro-BoldItalic.otf') format('opentype');
-            font-weight: bold;
-            font-style: italic;
-            font-display: swap;
-          }
-        `}</style>
-      </head>
       <body>
         <Header />
         {children}
