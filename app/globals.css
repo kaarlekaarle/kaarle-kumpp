@@ -40,9 +40,9 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Vertical+horizontal margin variable G */
+/* Global margin system - all vertical gaps equal --kk-g */
 :root{
-  --kk-g: clamp(64px, 10vh, 160px);   /* global margin */
+  --kk-g: clamp(64px, 10vh, 160px);   /* global spacing unit */
   --kk-left: 420px;                    /* left logo column */
   --kk-gap:  80px;                     /* middle gap */
   --kk-right:520px;                    /* right text column */
