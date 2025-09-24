@@ -62,11 +62,12 @@ export default function AboutPage() {
           </div>
         </article>
 
-        {/* BOTTOM NAV — 20px black, aligned with right col, centered vertically with left row */}
+        {/* BOTTOM ROW: empty left, WORKS on right - same structure as main page */}
+        <div className="row-start-6 col-start-1 flex items-center justify-center">
+          {/* Empty space to match main page structure */}
+        </div>
         <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">
-            Works
-          </Link>
+          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
         </div>
       </div>
 
