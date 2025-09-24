@@ -1,12 +1,15 @@
 import BottomNav from "@/components/BottomNav";
-export default function Works() {
+import { loadSiteData } from "@/lib/data";
+
+export default async function Works() {
+  const { fields, clients } = await loadSiteData();
   return (
     <main className="container min-h-[70vh] grid md:grid-cols-2 gap-24 mt-16">
       <ul className="space-y-3 uppercase opacity-70">
-        <li>Field A</li><li>Field B</li><li>Field C</li>
+        {fields.map(f => (<li key={f.id}>{f.name}</li>))}
       </ul>
       <ul className="space-y-2 font-semibold uppercase">
-        <li>Client 1</li><li>Client 2</li><li>Client 3</li>
+        {clients.map(c => (<li key={c.slug}>{c.name}</li>))}
       </ul>
       <div className="col-span-full"><BottomNav right={{ href: "/about", label: "About" }} /></div>
     </main>

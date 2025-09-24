@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "ed-hartwall",
+    "name": "ED / Hartwall",
+    "fields": ["advertising", "identity-building"],
+    "summary": "Placeholder summary for ED / Hartwall.",
+    "slides": [
+      { "src": "/images/ed/01.jpg", "alt": "ED case slide 1" },
+      { "src": "/images/ed/02.jpg", "alt": "ED case slide 2" }
+    ],
+    "links": [{ "label": "Homepage", "href": "https://example.com" }],
+    "team": [{ "name": "Kaarle Hurtig", "role": "Lead" }]
+  },
+  {
+    "slug": "r-collection",
+    "name": "R-Collection",
+    "fields": ["identity-building", "legacy-transition"],
+    "summary": "Placeholder summary for R-Collection.",
+    "slides": [
+      { "src": "/images/rcollection/01.jpg" }
+    ]
+  },
+  {
+    "slug": "radio-helsinki",
+    "name": "Radio Helsinki",
+    "fields": ["message-media", "advertising"],
+    "summary": "Placeholder summary for Radio Helsinki.",
+    "slides": [
+      { "src": "/images/radiohelsinki/01.jpg" }
+    ]
+  }
+]
