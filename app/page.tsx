@@ -62,8 +62,8 @@ export default function Page() {
       <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center">
         {/* Contact Info - Centered with logo */}
         <div className="w-1/2 flex justify-center">
-          <div className="text-sm font-medium text-gray-900">
-            <span style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>KAARLE HURTIG</span> | <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> | <em style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</em>
+          <div className="text-xl font-medium text-gray-900">
+            <span className="font-sans">KAARLE HURTIG</span> | <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> | <em style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</em>
           </div>
         </div>
 
