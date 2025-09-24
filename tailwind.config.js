@@ -9,7 +9,11 @@ module.exports = {
     extend: {
       colors: { paper: "#F4F4F4", ink: "#111111", accent: "#1F37FF" },
       container: { center: true, padding: "1rem" },
-      fontFamily: { sans: ["ui-sans-serif","system-ui","Arial"] },
+      fontFamily: { 
+        sans: ["ui-sans-serif","system-ui","Arial"],
+        heading: ["Kaarle & Kumppanit", "ui-sans-serif", "system-ui", "Arial"],
+        serif: ["Garamond Premier", "ui-serif", "Georgia", "serif"]
+      },
     },
   },
   plugins: [],
