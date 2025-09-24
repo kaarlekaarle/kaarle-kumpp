@@ -10,10 +10,10 @@ export default function Page() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-lg sm:text-xl font-bold uppercase tracking-wider text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <Link href="/" className="text-xl sm:text-2xl font-bold uppercase tracking-widest text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KAARLE ✳ KUMPP.
             </Link>
-            <Link href="/works" className="text-xs sm:text-sm font-medium uppercase tracking-wide text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <Link href="/works" className="text-sm sm:text-base font-semibold uppercase tracking-wider text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               WORKS
             </Link>
           </div>
@@ -28,15 +28,15 @@ export default function Page() {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 {/* Large Typography Statement */}
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold uppercase leading-tight mb-8 text-ink" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-[0.9] mb-12 text-ink" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   PROBLEM SOLVING AND STORYTELLING.
                 </h1>
                 
                 {/* Decorative Element */}
-                <div className="w-16 h-1 bg-accent mb-8"></div>
+                <div className="w-20 h-1.5 bg-accent mb-12"></div>
                 
                 {/* Key Question */}
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase text-accent mb-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-accent mb-12 leading-tight" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   WHAT IS YOUR PROBLEM?
                 </div>
               </div>
@@ -44,10 +44,10 @@ export default function Page() {
 
             {/* Right Column - Content */}
             <div className="order-1 lg:order-2">
-              <div className="prose prose-lg max-w-none" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                <div className="space-y-6 text-gray-700 leading-relaxed">
+              <div className="prose prose-xl max-w-none" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                <div className="space-y-8 text-gray-800 leading-relaxed">
                   {landing.intro.split('\n').filter(p => p.trim()).map((paragraph, index) => (
-                    <p key={index} className="text-base sm:text-lg">
+                    <p key={index} className="text-lg sm:text-xl leading-8">
                       {paragraph}
                     </p>
                   ))}
@@ -78,7 +78,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 sm:gap-6">
             {/* Contact Info */}
-            <div className="text-xs sm:text-sm font-medium uppercase tracking-wide text-gray-600" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-sm sm:text-base font-semibold uppercase tracking-wider text-gray-700" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KAARLE HURTIG | +358 440 522 753 | kaarle.hurtig@gmail.com
             </div>
 
