@@ -27,7 +27,7 @@ export const SiteDataSchema = z.object({
   clients: z.array(ClientSchema),
 });
 
-let cache: any | null = null;
+let cache: { fields: any[]; clients: any[] } | null = null;
 
 export async function loadSiteData() {
   if (cache) return cache;

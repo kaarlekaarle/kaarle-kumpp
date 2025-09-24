@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import BottomNav from "@/components/BottomNav";
 import { cn } from "@/lib/cn";
 import ConnectionsOverlay from "@/components/ConnectionsOverlay";
