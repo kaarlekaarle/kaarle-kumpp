@@ -3,22 +3,18 @@ import EqualMarginEngine from "@/components/EqualMarginEngine";
 export default function Page() {
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* Rows:   M | WORKS | M | RIGHT | M | ABOUT/CONTACT | M */}
-      {/* Columns: M | LEFT  | M | RIGHT | M */}
-      <div
-        className="
-          min-h-screen
-          grid
-          grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-          grid-cols-[var(--kk-M)_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]
-        "
-      >
+      {/* rows: M | works | M | right | M | about/contact | M */}
+      {/* cols: M | left | M | right | M */}
+      <div className="min-h-screen grid
+        grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
+        grid-cols-[var(--kk-M)_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
+
         {/* WORKS (black, 24) */}
         <div className="row-start-2 col-start-4 self-start">
           <p data-id="works" className="uppercase tracking-wide font-normal text-[24px] font-sans">Works</p>
         </div>
 
-        {/* LEFT column: logo centered */}
+        {/* LEFT: logo centered */}
         <div data-id="logo-col" className="row-start-4 col-start-2 self-center">
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KAARLE</div>
@@ -32,8 +28,8 @@ export default function Page() {
           </div>
         </div>
 
-        {/* RIGHT text block: heading/body/cta; key labels 24; body blue only */}
-        <article className="row-start-4 col-start-4 self-start" style={{maxWidth: 'var(--kk-right-col)'}}>
+        {/* RIGHT BLOCK (heading+body+cta) */}
+        <article data-id="right-block" className="row-start-4 col-start-4 self-start max-w-[var(--kk-right-col)]">
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[24px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
@@ -47,20 +43,18 @@ export default function Page() {
           </p>
         </article>
 
-        {/* CONTACT and ABOUT share the same row; center-aligned vertically */}
+        {/* BOTTOM ROW: contact and ABOUT centered vertically, same row */}
         <div data-id="contact" className="row-start-6 col-start-2 flex items-center justify-center">
           <p className="text-[13px] tracking-wide text-center font-normal">
             <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
             <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
           </p>
         </div>
-
         <div className="row-start-6 col-start-4 flex items-center">
           <a data-id="about" href="/about" className="uppercase tracking-wide font-normal text-[24px] font-sans">About</a>
         </div>
       </div>
 
-      {/* Compute and enforce M */}
       <EqualMarginEngine />
     </main>
   );

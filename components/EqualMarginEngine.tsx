@@ -5,52 +5,53 @@ export default function EqualMarginEngine() {
   useEffect(() => {
     const root = document.documentElement;
 
-    const compute = () => {
-      const works   = document.querySelector('[data-id="works"]')   as HTMLElement | null;
-      const heading = document.querySelector('[data-id="heading"]') as HTMLElement | null;
-      const cta     = document.querySelector('[data-id="cta"]')     as HTMLElement | null;
-      const about   = document.querySelector('[data-id="about"]')   as HTMLElement | null;
-      const logoCol = document.querySelector('[data-id="logo-col"]')as HTMLElement | null;
+    const getPxVar = (name: string) =>
+      parseFloat(getComputedStyle(root).getPropertyValue(name));
 
-      if (!works || !heading || !cta || !about || !logoCol) return;
+    const computeM = () => {
+      const works   = document.querySelector('[data-id="works"]') as HTMLElement | null;
+      const right   = document.querySelector('[data-id="right-block"]') as HTMLElement | null;
+      const about   = document.querySelector('[data-id="about"]') as HTMLElement | null;
+
+      if (!works || !right || !about) return null;
+
+      // Intrinsic content heights (no gaps included because rows use auto for content)
+      const H_works = works.offsetHeight;
+      const H_right = right.offsetHeight;
+      const H_about = Math.max(
+        about.offsetHeight,
+        (document.querySelector('[data-id="contact"]') as HTMLElement | null)?.offsetHeight || 0
+      );
 
       const vh = window.innerHeight;
+      // vertical M from remaining space: (vh - sum(content heights)) / 4
+      const Mv = (vh - (H_works + H_right + H_about)) / 4;
+
+      // horizontal M from remaining width: (vw - (left + right)) / 3
       const vw = window.innerWidth;
+      const L  = getPxVar("--kk-left-col");
+      const R  = getPxVar("--kk-right-col");
+      const Mh = (vw - (L + R)) / 3;
 
-      // Vertical content block from top of WORKS to bottom of ABOUT
-      const topY = works.getBoundingClientRect().top;
-      const bottomY = about.getBoundingClientRect().bottom;
-      const contentH = bottomY - topY;
+      // Choose non-negative minimum so both axes fit
+      return Math.max(0, Math.min(Mv, Mh));
+    };
 
-      // Vertical M: (viewport - content)/4
-      const Mv = (vh - contentH) / 4;
-
-      // Horizontal content width = leftCol + rightCol, gaps = 3M
-      const styles = getComputedStyle(root);
-      const leftCol  = parseFloat(styles.getPropertyValue("--kk-left-col"));
-      
-      // Get actual right column width from the rendered element
-      const rightColElement = document.querySelector('article[data-id="heading"]') as HTMLElement;
-      const rightCol = rightColElement ? rightColElement.getBoundingClientRect().width : 520; // fallback
-      
-      const Mh = (vw - (leftCol + rightCol)) / 3;
-
-      // Use the limiting value so both axes fit
-      const M = Math.max(0, Math.min(Mv, Mh));
-
+    // Iterate until --kk-M stabilizes (difference < 0.5px)
+    let raf = 0;
+    const step = () => {
+      const M = computeM();
+      if (M == null) return;
+      const prev = parseFloat(getComputedStyle(root).getPropertyValue("--kk-M")) || 0;
+      if (Math.abs(prev - M) < 0.5) return; // converged
       root.style.setProperty("--kk-M", `${M}px`);
+      raf = requestAnimationFrame(step);
     };
 
-    compute();
-    const ro = new ResizeObserver(compute);
-    ro.observe(document.body);
-    window.addEventListener("resize", compute);
-    window.addEventListener("orientationchange", compute);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", compute);
-      window.removeEventListener("orientationchange", compute);
-    };
+    step();
+    const onResize = () => { cancelAnimationFrame(raf); step(); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return null;
