@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:data": "ts-node --transpile-only scripts/build-data.ts",
+    "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
   },
   "dependencies": {
     "next": "15.5.4",
@@ -23,6 +25,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5",
+    "xlsx": "^0.18.5"
   }
 }
