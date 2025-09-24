@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Analytics from "@/components/Analytics";
 import { landing } from "@/data/site-copy";
+import { kk } from "./fonts/kk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
@@ -30,14 +31,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style dangerouslySetInnerHTML={{
           __html: `
             @font-face {
-              font-family: 'Kaarle & Kumppanit';
-              src: url('/fonts/kaarle-kumppanit/K&K.otf') format('opentype');
-              font-weight: normal;
-              font-style: normal;
-              font-display: swap;
-            }
-            
-            @font-face {
               font-family: 'Garamond Premier';
               src: url('/fonts/garamond-premier/AGaramondPro-Regular.otf') format('opentype');
               font-weight: normal;
@@ -56,14 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             body { 
               font-family: 'Garamond Premier', 'Times New Roman', serif;
             }
-            
-            h1, h2, h3 { 
-              font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif;
-            }
           `
         }} />
       </head>
-      <body>
+      <body className={kk.variable}>
         <Header />
         {children}
         <Analytics />

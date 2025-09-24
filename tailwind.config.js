@@ -23,11 +23,11 @@ module.exports = {
           "2xl": "1400px",
         }
       },
-      fontFamily: { 
-        sans: ["ui-sans-serif","system-ui","Arial"],
-        heading: ["Kaarle & Kumppanit", "ui-sans-serif", "system-ui", "Arial"],
-        serif: ["Garamond Premier", "ui-serif", "Georgia", "serif"]
-      },
+          fontFamily: { 
+            sans: ["var(--font-kk)", "system-ui", "sans-serif"],
+            heading: ["var(--font-kk)", "ui-sans-serif", "system-ui", "Arial"],
+            serif: ["Garamond Premier", "ui-serif", "Georgia", "serif"]
+          },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',
