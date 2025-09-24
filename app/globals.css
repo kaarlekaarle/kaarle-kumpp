@@ -6,8 +6,8 @@
 html,body { height: 100%; }
 body { @apply bg-paper text-ink antialiased; }
 
-/* Links inherit color by default. Accent is set per-section. */
-a { color: inherit; }
+/* Inherit color for links; remove global blue */
+a { color: inherit; text-decoration: underline; }
 
 /* Headings default: uppercase, tracking; no forced bold */
 h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
@@ -40,15 +40,14 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Layout rhythm + sizes */
+/* Vertical+horizontal margin variable G */
 :root{
-  --kk-gap: 96px;        /* spacing unit for vertical rhythm */
-  --kk-gap-sm: 64px;
-  --kk-right-size: 24px; /* WORKS/heading/CTA/ABOUT */
-  --kk-logo-size: 36px;  /* KAARLE/KUMPP. */
-}
-@media (max-width: 1024px){
-  :root{ --kk-gap: var(--kk-gap-sm); }
+  --kk-g: clamp(64px, 10vh, 160px);   /* global margin */
+  --kk-left: 420px;                    /* left logo column */
+  --kk-gap:  80px;                     /* middle gap */
+  --kk-right:520px;                    /* right text column */
+  --kk-size-right: 24px;               /* Works/Heading/CTA/About */
+  --kk-size-logo: 36px;                /* KAARLE/KUMPP. */
 }
 
 /* Debug font loading */
