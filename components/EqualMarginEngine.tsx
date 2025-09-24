@@ -28,7 +28,11 @@ export default function EqualMarginEngine() {
       // Horizontal content width = leftCol + rightCol, gaps = 3M
       const styles = getComputedStyle(root);
       const leftCol  = parseFloat(styles.getPropertyValue("--kk-left-col"));
-      const rightCol = parseFloat(styles.getPropertyValue("--kk-right-col"));
+      
+      // Get actual right column width from the rendered element
+      const rightColElement = document.querySelector('article[data-id="heading"]') as HTMLElement;
+      const rightCol = rightColElement ? rightColElement.getBoundingClientRect().width : 520; // fallback
+      
       const Mh = (vw - (leftCol + rightCol)) / 3;
 
       // Use the limiting value so both axes fit

@@ -33,7 +33,7 @@ export default function Page() {
         </div>
 
         {/* RIGHT text block: heading/body/cta; key labels 24; body blue only */}
-        <article className="row-start-4 col-start-4 self-start max-w-[var(--kk-right-col)]">
+        <article className="row-start-4 col-start-4 self-start" style={{maxWidth: 'var(--kk-right-col)'}}>
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[24px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
