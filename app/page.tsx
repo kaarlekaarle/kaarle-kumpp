@@ -35,8 +35,14 @@ export default function Page() {
           </h1>
           <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.</p>
-            <p>Too often, projects get tangled in too many hands, wasted time, and money spent. Budgets grow, meetings multiply, and the focus shifts from solving the problem to justifying the invoices.</p>
-            <p>I do the work like it&apos;s mine. If I&apos;m not the man for the job, I&apos;ll say so. I don&apos;t drag things out to look busy. I don&apos;t bill by the hour. I charge by the solution.</p>
+            <p>Too often, projects get tangled<br />
+            in too many hands, wasted time,<br />
+            and money spent. Budgets grow,<br />
+            meetings multiply, and the focus shifts<br />
+            from solving the problem to justifying the invoices.</p>
+            <p>I do the work like it&apos;s mine. If I&apos;m not the man for the job,<br />
+            I&apos;ll say so. I don&apos;t drag things out to look busy.<br />
+            I don&apos;t bill by the hour. I charge by the solution.</p>
           </div>
           <p data-id="cta" className="mt-4 uppercase font-normal text-[20px] text-accent font-sans">
             What is your problem?
