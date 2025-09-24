@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -59,14 +60,14 @@ export default function AboutPage() {
 
           <div className="mt-5 space-y-4 leading-[1.55] text-[15px] text-accent">
             <p>
-              After working with projects and companies big and small, I've gotten good at figuring
+              After working with projects and companies big and small, I&apos;ve gotten good at figuring
               out the problem and solving it. Setting the direction and finding the right people.
               What the modern creative business loves – workshops, cheap talk, fetishising the
               processes – is what I steer away from. I design solutions that outlast me.
             </p>
             <p>
               Drawn to simple things that last, both in work and in life. Inspired by photography,
-              internet's early and future days, crafty people, unorthodox thinking and big trees.
+              internet&apos;s early and future days, crafty people, unorthodox thinking and big trees.
             </p>
             <p><em>Lives and works from Helsinki, Finland.</em></p>
           </div>
@@ -74,9 +75,9 @@ export default function AboutPage() {
 
         {/* BOTTOM NAV — aligns to right column left edge, 24px, black, no underline */}
         <div className="row-start-6 col-start-4 flex items-center">
-          <a href="/works" className="uppercase tracking-wide font-normal text-[24px]">
+          <Link href="/works" className="uppercase tracking-wide font-normal text-[24px]">
             Works
-          </a>
+          </Link>
         </div>
       </div>
     </main>
