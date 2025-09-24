@@ -8,18 +8,18 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* rows: M | top | M | right | M | bottom | M */}
+      {/* rows: M | works | M | right | M | about/contact | M */}
       {/* cols: left (centered) | M | right | M */}
       <div className="min-h-screen grid
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
         grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
-        {/* TOP (aligned with right block) */}
+        {/* WORKS (black, 20px) - aligned with right text block */}
         <div className="row-start-2 col-start-3 self-start">
           <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
         </div>
 
-        {/* LEFT column */}
+        {/* LEFT: contact card centered in flexible space */}
         <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
@@ -63,9 +63,12 @@ export default function AboutPage() {
           </div>
         </article>
 
-        {/* BOTTOM ROW: empty left, WORKS on right - same structure as main page */}
-        <div className="row-start-6 col-start-1 flex items-center justify-center">
-          {/* Empty space to match main page structure */}
+        {/* BOTTOM ROW: contact and WORKS centered vertically, same row */}
+        <div data-id="contact" className="row-start-6 col-start-1 flex items-center justify-center">
+          <p className="text-[12px] tracking-wide text-center font-normal">
+            <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span className="font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
+            <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+          </p>
         </div>
         <div className="row-start-6 col-start-3 flex items-center">
           <Link data-id="about" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
