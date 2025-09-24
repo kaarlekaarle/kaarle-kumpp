@@ -13,13 +13,13 @@ export default function AboutPage() {
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
         grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
-        {/* TOP LABEL (black, 20px) - aligned with right text block */}
+        {/* TOP (aligned with right block) */}
         <div className="row-start-2 col-start-3 self-start">
-          <p data-id="top" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
+          <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
         </div>
 
-        {/* LEFT: contact card centered in flexible space */}
-        <div data-id="left-card" className="row-start-4 col-start-1 self-center flex justify-center">
+        {/* LEFT column */}
+        <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
             <div className="text-[12px] mt-1 font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
           {/* Empty space to match main page structure */}
         </div>
         <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
+          <Link data-id="about" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
         </div>
       </div>
 
