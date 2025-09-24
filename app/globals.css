@@ -2,45 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Kaarle & Kumppanit';
-  src: url('/fonts/kaarle-kumppanit/K&K.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garamond Premier';
-  src: url('/fonts/garamond-premier/AGaramondPro-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garamond Premier';
-  src: url('/fonts/garamond-premier/AGaramondPro-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garamond Premier';
-  src: url('/fonts/garamond-premier/AGaramondPro-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garamond Premier';
-  src: url('/fonts/garamond-premier/AGaramondPro-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
+/* Fonts are defined in layout.tsx */
 
 :root { 
   color-scheme: light; 
@@ -96,4 +58,9 @@ h1, h2, h3 {
 /* Smooth transitions for better UX */
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Debug font loading */
+.debug-font {
+  font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif !important;
 }
