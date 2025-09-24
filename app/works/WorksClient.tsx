@@ -145,7 +145,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
       </div>
 
       <div className="mt-6">
-        <BottomNav right={{ href: "/about", label: "About" }} />
+        <BottomNav right={{ href: "/about", label: "ABOUT" }} />
       </div>
     </main>
   );

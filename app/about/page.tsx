@@ -25,7 +25,7 @@ export default function About() {
           <p key={index} className="text-base leading-relaxed mb-4" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>{paragraph}</p>
         ))}
       </article>
-      <div className="col-span-full"><BottomNav right={{ href: "/works", label: "Works" }} /></div>
+      <div className="col-span-full"><BottomNav right={{ href: "/works", label: "WORKS" }} /></div>
     </main>
   );
 }

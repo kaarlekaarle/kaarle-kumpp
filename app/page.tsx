@@ -15,7 +15,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <div className="col-span-full"><BottomNav right={{ href: "/about", label: "About" }} /></div>
+      <div className="col-span-full"><BottomNav right={{ href: "/about", label: "ABOUT" }} /></div>
     </main>
   );
 }
