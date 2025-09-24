@@ -98,7 +98,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
             return (
               <li
                 key={f.id}
-                ref={el => (fieldRefs.current[f.id] = el)}
+                ref={el => { fieldRefs.current[f.id] = el; }}
                 tabIndex={0}
                 role="button"
                 onMouseEnter={() => { setHoveredField(f.id); setHoveredClient(null); }}
@@ -126,7 +126,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
             return (
               <li
                 key={cid}
-                ref={el => (clientRefs.current[cid] = el)}
+                ref={el => { clientRefs.current[cid] = el; }}
                 tabIndex={0}
                 role="button"
                 onMouseEnter={() => { setHoveredClient(cid); setHoveredField(null); }}
