@@ -45,4 +45,14 @@ export async function loadSiteData() {
   return parsed;
 }
 
+export async function getFields() {
+  const data = await loadSiteData();
+  return data.fields;
+}
+
+export async function getClients() {
+  const data = await loadSiteData();
+  return data.clients;
+}
+
 export type { Slide as _Slide, Link as _Link, Person as _Person };
