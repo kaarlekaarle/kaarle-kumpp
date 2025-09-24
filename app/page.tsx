@@ -17,20 +17,20 @@ export default function Page() {
         {/* LEFT: logo centered in flexible space */}
         <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
           <div className="text-center leading-tight">
-            <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KAARLE</div>
+            <div className="uppercase tracking-wide font-normal text-[32px] font-sans">KAARLE</div>
             <div className="my-3 flex justify-center">
-              <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
-                <circle cx="14" cy="14" r="13" fill="none" stroke="#111111" strokeWidth="2" />
-                <circle cx="14" cy="14" r="7"  fill="none" stroke="#111111" strokeWidth="2" />
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#111111" strokeWidth="2" />
+                <circle cx="12" cy="12" r="6"  fill="none" stroke="#111111" strokeWidth="2" />
               </svg>
             </div>
-            <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KUMPP.</div>
+            <div className="uppercase tracking-wide font-normal text-[32px] font-sans">KUMPP.</div>
           </div>
         </div>
 
         {/* RIGHT BLOCK (heading+body+cta) */}
         <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
-          <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[24px] text-accent font-sans">
+          <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
           <div className="mt-4 space-y-3 leading-[1.55] text-[15px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
