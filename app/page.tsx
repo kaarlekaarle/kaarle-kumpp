@@ -5,17 +5,17 @@ export default function Page() {
     <div className="min-h-screen bg-gray-100">
       {/* Top Right - WORKS Button - Aligned with main text */}
       <div className="absolute top-6" style={{left: 'calc(50% + 3rem)'}}>
-        <Link href="/works" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <Link href="/works" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors font-sans">
           WORKS
         </Link>
       </div>
 
       {/* Main Content with proper margins */}
-      <div className="flex h-screen py-16">
+      <div className="flex h-screen py-24">
         {/* Left Side - Branding */}
         <div className="w-1/2 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-4xl font-normal uppercase tracking-wide text-gray-900 mb-4" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-4xl font-normal uppercase tracking-wide text-gray-900 mb-4 font-sans">
               KAARLE
             </div>
             <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -23,7 +23,7 @@ export default function Page() {
                 <div className="w-6 h-6 border-2 border-gray-900 rounded-full"></div>
               </div>
             </div>
-            <div className="text-4xl font-normal uppercase tracking-wide text-gray-900" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-4xl font-normal uppercase tracking-wide text-gray-900 font-sans">
               KUMPP.
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Page() {
         <div className="w-1/2 flex items-center justify-center p-12">
           <div className="max-w-lg">
             {/* Main Heading */}
-            <h1 className="text-4xl font-normal uppercase tracking-wide leading-tight text-accent mb-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <h1 className="text-4xl font-normal uppercase tracking-wide leading-tight text-accent mb-8 font-sans">
               PROBLEM SOLVING AND STORYTELLING.
             </h1>
             
@@ -51,7 +51,7 @@ export default function Page() {
             </div>
             
             {/* Key Question */}
-            <div className="text-3xl font-normal uppercase tracking-wide text-accent mt-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-3xl font-normal uppercase tracking-wide text-accent mt-8 font-sans">
               WHAT IS YOUR PROBLEM?
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function Page() {
 
         {/* ABOUT Button - Aligned with main text */}
         <div className="w-1/2 flex justify-end">
-          <Link href="/about" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+          <Link href="/about" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors font-sans">
             ABOUT
           </Link>
         </div>

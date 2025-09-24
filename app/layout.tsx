@@ -31,6 +31,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style dangerouslySetInnerHTML={{
           __html: `
             @font-face {
+              font-family: 'Kaarle & Kumppanit';
+              src: url('/fonts/kaarle-kumppanit/kk_regular.otf') format('opentype');
+              font-weight: normal;
+              font-style: normal;
+              font-display: swap;
+            }
+            
+            @font-face {
               font-family: 'Garamond Premier';
               src: url('/fonts/garamond-premier/AGaramondPro-Regular.otf') format('opentype');
               font-weight: normal;
@@ -48,6 +56,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             
             body { 
               font-family: 'Garamond Premier', 'Times New Roman', serif;
+            }
+            
+            h1, h2, h3, .font-sans { 
+              font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif;
             }
           `
         }} />
