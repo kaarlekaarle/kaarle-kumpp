@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
 
 export default function AboutPage() {
@@ -64,9 +65,9 @@ export default function AboutPage() {
 
         {/* BOTTOM NAV — 24px black, aligned with right col, centered vertically with left row */}
         <div className="row-start-6 col-start-3 flex items-center">
-          <a data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[24px] font-sans">
+          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[24px] font-sans">
             Works
-          </a>
+          </Link>
         </div>
       </div>
 
