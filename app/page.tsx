@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gray-100 border border-gray-300">
+    <div className="min-h-screen bg-gray-100">
       {/* Top Right - WORKS Button */}
       <div className="absolute top-6 right-6">
         <Link href="/works" className="text-sm font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
