@@ -94,13 +94,13 @@ function WorksClient({ fields, clients }: { fields: Field[]; clients: Client[] }
   }, [recompute]);
 
   return (
-    <main className="container min-h-[70vh] mt-16">
-      <div ref={containerRef} className="relative grid md:grid-cols-2 gap-24">
+    <main className="container min-h-[70vh] mt-12 md:mt-16">
+      <div ref={containerRef} className="relative grid md:grid-cols-2 gap-10 md:gap-24">
         {/* SVG overlay sits on top */}
         <ConnectionsOverlay edges={edges} />
 
         {/* Fields (left) */}
-        <ul className="space-y-3 uppercase">
+        <ul className="space-y-2 md:space-y-3 uppercase">
           {fields.map(f => {
             const activeFromClient = hoveredClient && (fieldsForClient(hoveredClient).some(x => x.id === f.id));
             const isActive = hoveredClient ? activeFromClient : hoveredField === f.id;
@@ -127,7 +127,7 @@ function WorksClient({ fields, clients }: { fields: Field[]; clients: Client[] }
         </ul>
 
         {/* Clients (right) */}
-        <ul className="space-y-2 font-semibold uppercase">
+        <ul className="space-y-2 md:space-y-3 font-semibold uppercase">
           {clients.map(c => {
             const cid = c.id ?? c.slug;
             const activeFromField = hoveredField && (c.fields?.includes(hoveredField));

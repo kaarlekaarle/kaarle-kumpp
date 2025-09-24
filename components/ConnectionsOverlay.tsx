@@ -6,7 +6,7 @@ type Edge = { a: Pt; b: Pt };
 export default function ConnectionsOverlay({ edges }: { edges: Edge[] }) {
   if (!edges.length) return null;
   return (
-    <svg className="pointer-events-none absolute inset-0" aria-hidden="true">
+    <svg className="hidden md:block absolute inset-0 pointer-events-none" aria-hidden="true">
       {edges.map((e, i) => (
         <line
           key={i}

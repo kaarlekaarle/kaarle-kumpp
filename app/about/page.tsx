@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="container min-h-[70vh] grid md:grid-cols-2 gap-24 mt-16">
+    <main className="container min-h-[70vh] grid md:grid-cols-2 gap-10 md:gap-24 mt-12 md:mt-16">
       <div>
         <h1>{about.name}</h1>
         <p className="mt-1">{about.phone}</p>
@@ -22,7 +22,7 @@ export default function About() {
       <article className="max-w-prose">
         <h2>{about.tagline}</h2>
         {about.bio.map((paragraph, index) => (
-          <p key={index} className="mt-4 text-sm text-neutral-700">{paragraph}</p>
+          <p key={index} className="mt-4 text-sm text-neutral-700 leading-relaxed md:leading-loose">{paragraph}</p>
         ))}
       </article>
       <div className="col-span-full"><BottomNav right={{ href: "/works", label: "Works" }} /></div>
