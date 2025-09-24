@@ -3,35 +3,28 @@ import Link from "next/link";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
 
 export default function AboutPage() {
-  // choose the existing file: change to .svg if that's what we have
   const portraitSrc = "/images/portrait.jpg";
 
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* rows: M | top | M | right | M | bottom | M
-          cols: left | M | right | M */}
-      <div className="
-        min-h-screen grid
+      {/* rows: M | top | M | right | M | bottom | M */}
+      {/* cols: left (centered) | M | right | M */}
+      <div className="min-h-screen grid
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-        grid-cols-[var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]
-      ">
+        grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
-        {/* TOP LABEL — 20px black aligned to right col */}
+        {/* TOP LABEL (black, 20px) - aligned with right text block */}
         <div className="row-start-2 col-start-3 self-start">
-          <p data-id="top" className="uppercase tracking-wide font-normal text-[20px] font-sans">
-            Kaarle & Kumpp.
-          </p>
+          <p data-id="top" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
         </div>
 
-        {/* LEFT CARD — centered within LEFT column */}
-        <section className="row-start-4 col-start-1 self-center" data-id="left-card">
-          <div className="leading-tight">
+        {/* LEFT: contact card centered in flexible space */}
+        <div data-id="left-card" className="row-start-4 col-start-1 self-center flex justify-center">
+          <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[12px]">+358 440 522 753</div>
+            <div className="text-[12px] mt-1">+358 440 522 753</div>
             <div className="text-[12px]">
-              <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                kaarle.hurtig@gmail.com
-              </a>
+              <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
             </div>
 
             <div className="mt-4">
@@ -51,11 +44,13 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* RIGHT TEXT BLOCK — 20px heading black; body 16px accent */}
-        <article className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]" data-id="right-block">
-          <h1 className="uppercase tracking-wide font-normal text-[20px] text-ink font-sans">About</h1>
+        {/* RIGHT BLOCK (heading+body) */}
+        <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
+          <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[20px] text-ink font-sans">
+            About
+          </h1>
           <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small, I&apos;ve gotten good at figuring out the problem and solving it. Setting the direction and finding the right people. What the modern creative business loves – workshops, cheap talk, fetishising the processes – is what I steer away from. I design solutions that outlast me.</p>
             <p>Drawn to simple things that last, both in work and in life. Inspired by photography, internet&apos;s early and future days, crafty people, unorthodox thinking and big trees.</p>
@@ -63,11 +58,15 @@ export default function AboutPage() {
           </div>
         </article>
 
-        {/* BOTTOM NAV — 20px black, aligned with right col, centered vertically with left row */}
+        {/* BOTTOM ROW: contact and WORKS centered vertically, same row */}
+        <div data-id="contact" className="row-start-6 col-start-1 flex items-center justify-center">
+          <p className="text-[12px] tracking-wide text-center font-normal">
+            <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
+            <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+          </p>
+        </div>
         <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">
-            Works
-          </Link>
+          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
         </div>
       </div>
 
