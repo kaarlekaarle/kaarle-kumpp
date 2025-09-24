@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Top Right - WORKS Button */}
-      <div className="absolute top-6 right-6">
-        <Link href="/works" className="text-sm font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+      {/* Top Right - WORKS Button - Aligned with main text */}
+      <div className="absolute top-6" style={{left: 'calc(50% + 3rem)'}}>
+        <Link href="/works" className="text-base font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           WORKS
         </Link>
       </div>
@@ -60,13 +60,13 @@ export default function Page() {
 
       {/* Bottom Section */}
       <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center">
-        {/* Contact Info - Garamond font */}
-        <div className="text-sm font-medium text-gray-900" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-          KAARLE HURTIG | +358 440 522 753 | <em>kaarle.hurtig@gmail.com</em>
+        {/* Contact Info - Mixed fonts */}
+        <div className="text-base font-medium text-gray-900">
+          <span style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>KAARLE HURTIG</span> | <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> | <em style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</em>
         </div>
 
-        {/* ABOUT Button */}
-        <Link href="/about" className="text-sm font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        {/* ABOUT Button - Aligned with main text */}
+        <Link href="/about" className="text-base font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           ABOUT
         </Link>
       </div>
