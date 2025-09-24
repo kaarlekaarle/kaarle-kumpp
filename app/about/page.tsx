@@ -22,9 +22,9 @@ export default function AboutPage() {
         <div data-id="left-card" className="row-start-4 col-start-1 self-center flex justify-center">
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[12px] mt-1">+358 440 522 753</div>
+            <div className="text-[12px] mt-1 font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</div>
             <div className="text-[12px]">
-              <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+              <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
             </div>
 
             <div className="mt-4">
@@ -39,7 +39,7 @@ export default function AboutPage() {
             </div>
 
             <div className="pt-3">
-              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[12px]">
+              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[12px] font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
                 Download CV
               </a>
             </div>
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
         {/* RIGHT BLOCK (body only) */}
         <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
-          <div className="mt-4 space-y-3 leading-[1.4] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+          <div className="mt-4 space-y-3 leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
             Setting the direction and finding the right people.<br />

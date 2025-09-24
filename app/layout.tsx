@@ -48,6 +48,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             
             @font-face {
               font-family: 'Garamond Premier';
+              src: url('/fonts/garamond-premier/AGaramondPro-Semibold.otf') format('opentype');
+              font-weight: 600;
+              font-style: normal;
+              font-display: swap;
+            }
+            
+            @font-face {
+              font-family: 'Garamond Premier';
               src: url('/fonts/garamond-premier/AGaramondPro-Bold.otf') format('opentype');
               font-weight: bold;
               font-style: normal;
