@@ -66,7 +66,6 @@ export default function Page() {
       </div>
 
       <EqualMarginEngine />
-      {process.env.NODE_ENV !== "production" && <EMDebugOverlay />}
     </main>
   );
 }
