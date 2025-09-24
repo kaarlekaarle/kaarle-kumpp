@@ -34,7 +34,10 @@ export default function Page() {
             Problem solving and storytelling.
           </h1>
                     <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-            <p>Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.</p>
+            <p>Everything starts with a question: <em>What are we doing here?</em><br />
+            Once we agree on the task, I lay out a plan.<br />
+            You need clarity, the right perspective, and the right people.<br />
+            When we&apos;ve got those, we&apos;re halfway there.</p>
             <p>Too often, projects get tangled<br />
             in too many hands, wasted time,<br />
             and money spent. Budgets grow,<br />

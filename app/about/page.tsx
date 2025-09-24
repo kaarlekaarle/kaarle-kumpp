@@ -52,8 +52,15 @@ export default function AboutPage() {
             About
           </h1>
           <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-            <p>After working with projects and companies big and small, I&apos;ve gotten good at figuring out the problem and solving it. Setting the direction and finding the right people. What the modern creative business loves – workshops, cheap talk, fetishising the processes – is what I steer away from. I design solutions that outlast me.</p>
-            <p>Drawn to simple things that last, both in work and in life. Inspired by photography, internet&apos;s early and future days, crafty people, unorthodox thinking and big trees.</p>
+            <p>After working with projects and companies big and small,<br />
+            I&apos;ve gotten good at figuring out the problem and solving it.<br />
+            Setting the direction and finding the right people.<br />
+            What the modern creative business loves<br />
+            – workshops, cheap talk, fetishising the processes –<br />
+            is what I steer away from. I design solutions that outlast me.</p>
+            <p>Drawn to simple things that last, both in work and in life.<br />
+            Inspired by photography, internet&apos;s early and future days,<br />
+            crafty people, unorthodox thinking and big trees.</p>
             <p>Lives and works from Helsinki, Finland.</p>
           </div>
         </article>
