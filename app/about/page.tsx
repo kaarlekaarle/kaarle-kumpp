@@ -11,7 +11,7 @@ export default function About() {
         <a href={`mailto:${about.email}`} className="underline">{about.email}</a>
         <div className="mt-6 w-60 h-72 relative">
           <Image
-            src="/images/portrait.jpg"
+            src="/images/portrait.svg"
             alt={`Portrait of ${about.name}`}
             fill
             className="object-cover"
