@@ -5,8 +5,6 @@ export default function EqualMarginEngine() {
   useEffect(() => {
     const root = document.documentElement;
 
-    const getPxVar = (name: string) =>
-      parseFloat(getComputedStyle(root).getPropertyValue(name));
 
     const computeM = () => {
       const styles = getComputedStyle(root);
