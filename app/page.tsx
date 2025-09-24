@@ -1,5 +1,4 @@
 import EqualMarginEngine from "@/components/EqualMarginEngine";
-import EMDebugOverlay from "@/components/EMDebugOverlay";
 
 export default function Page() {
   return (
@@ -54,7 +53,7 @@ export default function Page() {
         </article>
 
         {/* BOTTOM ROW: contact and ABOUT centered vertically, same row */}
-        <div data-id="contact" className="row-start-6 col-start-1 flex items-center justify-center">
+        <div className="row-start-6 col-start-1 flex items-center justify-center">
           <p className="text-[12px] tracking-wide text-center font-normal">
             <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span className="font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
             <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
