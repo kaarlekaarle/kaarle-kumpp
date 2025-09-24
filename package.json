@@ -14,7 +14,6 @@
     "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
     "autoprefixer": "^10.4.21",
     "next": "15.5.4",
     "react": "19.1.0",
@@ -28,7 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "tailwindcss": "^4",
+    "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
     "typescript": "^5",
     "xlsx": "^0.18.5"

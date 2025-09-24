@@ -2,11 +2,12 @@ import Carousel from "@/components/Carousel";
 import { notFound } from "next/navigation";
 import { getClients } from "@/lib/data";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export default async function ClientPage({ params }: Props) {
+  const { slug } = await params;
   const clients = await getClients();
-  const client = clients.find(c => c.slug === params.slug);
+  const client = clients.find(c => c.slug === slug);
   if (!client) return notFound();
 
   return (
