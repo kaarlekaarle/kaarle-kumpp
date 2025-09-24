@@ -21,10 +21,8 @@ export default function Page() {
           <div className="row-start-2 col-start-2 self-center">
             <div className="text-center leading-tight">
               <div className="uppercase tracking-wide font-sans" style={{ fontSize: "var(--kk-logo-size)" }}>KAARLE</div>
-              <div className="my-3 flex justify-center">
-                <div className="w-12 h-12 border-2 border-gray-900 rounded-full flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-gray-900 rounded-full"></div>
-                </div>
+              <div className="my-2 flex justify-center">
+                <span className="text-2xl">⌘</span>
               </div>
               <div className="uppercase tracking-wide font-sans" style={{ fontSize: "var(--kk-logo-size)" }}>KUMPP.</div>
             </div>
@@ -32,8 +30,6 @@ export default function Page() {
 
           {/* RIGHT text block — key items 24px; body blue only */}
           <article className="row-start-2 col-start-4 self-center max-w-[520px]">
-            {/* equal gap: WORKS → heading */}
-            <div className="mt-[var(--kk-gap)]" />
             <h1 className="text-accent font-normal font-sans" style={{ fontSize: "var(--kk-right-size)" }}>
               Problem solving and storytelling.
             </h1>
