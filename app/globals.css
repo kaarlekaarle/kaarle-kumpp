@@ -1,4 +1,6 @@
-/* Tailwind CSS temporarily disabled for build fix */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: 'Kaarle & Kumppanit';

@@ -5,15 +5,15 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <div style={{minHeight: '100vh', backgroundColor: 'white'}}>
+    <div className="min-h-screen bg-white">
       {/* Top Navigation */}
-      <nav style={{position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #e5e7eb'}}>
-        <div style={{maxWidth: '1280px', margin: '0 auto', padding: '1rem 1.5rem'}}>
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <Link href="/" style={{fontSize: '1.125rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif", textDecoration: 'none', color: '#111'}}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="text-lg sm:text-xl font-bold uppercase tracking-wider text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KAARLE ✳ KUMPP.
             </Link>
-            <Link href="/works" style={{fontSize: '0.875rem', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.025em', fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif", textDecoration: 'none', color: '#111'}}>
+            <Link href="/works" className="text-xs sm:text-sm font-medium uppercase tracking-wide text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               WORKS
             </Link>
           </div>
@@ -21,51 +21,51 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section style={{paddingTop: '5rem', paddingBottom: '3rem'}}>
-        <div style={{maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem'}}>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center'}}>
+      <section className="pt-20 sm:pt-24 pb-12 sm:pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
             {/* Left Column - Visual Impact */}
-            <div>
-              <div style={{position: 'relative'}}>
+            <div className="order-2 lg:order-1">
+              <div className="relative">
                 {/* Large Typography Statement */}
-                <h1 style={{fontSize: '3rem', fontWeight: 'bold', textTransform: 'uppercase', lineHeight: '1.1', marginBottom: '2rem', color: '#111', fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold uppercase leading-tight mb-8 text-ink" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   PROBLEM SOLVING AND STORYTELLING.
                 </h1>
                 
                 {/* Decorative Element */}
-                <div style={{width: '4rem', height: '4px', backgroundColor: '#1F37FF', marginBottom: '2rem'}}></div>
+                <div className="w-16 h-1 bg-accent mb-8"></div>
                 
                 {/* Key Question */}
-                <div style={{fontSize: '1.5rem', fontWeight: 'bold', textTransform: 'uppercase', color: '#1F37FF', marginBottom: '2rem', fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase text-accent mb-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   WHAT IS YOUR PROBLEM?
                 </div>
               </div>
             </div>
 
             {/* Right Column - Content */}
-            <div>
-              <div style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                <div style={{marginBottom: '1.5rem'}}>
+            <div className="order-1 lg:order-2">
+              <div className="prose prose-lg max-w-none" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                <div className="space-y-6 text-gray-700 leading-relaxed">
                   {landing.intro.split('\n').filter(p => p.trim()).map((paragraph, index) => (
-                    <p key={index} style={{fontSize: '1.125rem', lineHeight: '1.6', color: '#374151', marginBottom: '1.5rem'}}>
+                    <p key={index} className="text-base sm:text-lg">
                       {paragraph}
                     </p>
                   ))}
                 </div>
                 
                 {/* Portrait Image */}
-                <div style={{marginTop: '3rem', position: 'relative'}}>
-                  <div style={{position: 'relative', width: '16rem', height: '20rem', margin: '0 auto'}}>
+                <div className="mt-12 relative">
+                  <div className="relative w-48 sm:w-64 h-60 sm:h-80 mx-auto lg:mx-0">
                     <Image
                       src="/images/portrait.jpg"
                       alt="Kaarle Hurtig"
                       fill
-                      style={{objectFit: 'cover', borderRadius: '0.5rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'}}
+                      className="object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                       priority
                     />
                   </div>
                   {/* Decorative frame */}
-                  <div style={{position: 'absolute', top: '-1rem', left: '-1rem', right: '-1rem', bottom: '-1rem', border: '2px solid rgba(31, 55, 255, 0.2)', borderRadius: '0.75rem'}}></div>
+                  <div className="absolute -inset-4 border-2 border-accent/20 rounded-xl"></div>
                 </div>
               </div>
             </div>
@@ -74,11 +74,11 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <footer style={{borderTop: '1px solid #e5e7eb', backgroundColor: '#f9fafb'}}>
-        <div style={{maxWidth: '1280px', margin: '0 auto', padding: '2rem 1.5rem'}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start'}}>
+      <footer className="border-t border-gray-100 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 sm:gap-6">
             {/* Contact Info */}
-            <div style={{fontSize: '0.875rem', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.025em', color: '#6b7280', fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-xs sm:text-sm font-medium uppercase tracking-wide text-gray-600" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KAARLE HURTIG | +358 440 522 753 | kaarle.hurtig@gmail.com
             </div>
 
