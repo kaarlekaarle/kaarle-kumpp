@@ -27,16 +27,23 @@ export default function Page() {
             {/* Left Column - Visual Impact */}
             <div className="order-2 lg:order-1">
               <div className="relative">
+                {/* Background decorative elements */}
+                <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/5 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-accent/10 rounded-full blur-lg"></div>
+                
                 {/* Large Typography Statement */}
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-[0.9] mb-12 text-ink" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-[0.9] mb-12 text-ink relative z-10" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   PROBLEM SOLVING AND STORYTELLING.
                 </h1>
                 
                 {/* Decorative Element */}
-                <div className="w-20 h-1.5 bg-accent mb-12"></div>
+                <div className="w-20 h-1.5 bg-accent mb-12 relative">
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent/50 rounded-full"></div>
+                  <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-accent/30 rounded-full"></div>
+                </div>
                 
                 {/* Key Question */}
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-accent mb-12 leading-tight" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-accent mb-12 leading-tight relative z-10" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   WHAT IS YOUR PROBLEM?
                 </div>
               </div>
@@ -44,11 +51,18 @@ export default function Page() {
 
             {/* Right Column - Content */}
             <div className="order-1 lg:order-2">
-              <div className="prose prose-xl max-w-none" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                <div className="space-y-8 text-gray-800 leading-relaxed">
+              <div className="prose prose-xl max-w-none relative" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                {/* Subtle background pattern */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-accent/5 rounded-full blur-sm"></div>
+                <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-accent/10 rounded-full blur-sm"></div>
+                
+                <div className="space-y-8 text-gray-800 leading-relaxed relative z-10">
                   {landing.intro.split('\n').filter(p => p.trim()).map((paragraph, index) => (
-                    <p key={index} className="text-lg sm:text-xl leading-8">
-                      {paragraph}
+                    <p key={index} className="text-lg sm:text-xl leading-8 relative">
+                      {index === 0 && (
+                        <span className="absolute -left-6 top-2 w-1 h-8 bg-accent/30 rounded-full"></span>
+                      )}
+                      <span className="relative z-10">{paragraph}</span>
                     </p>
                   ))}
                 </div>
@@ -77,16 +91,21 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <footer className="border-t-2 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <footer className="border-t-2 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-0 right-0 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             {/* Contact Info */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="text-sm sm:text-base font-semibold uppercase tracking-wider text-gray-800" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                 KAARLE HURTIG
               </div>
-              <div className="text-sm text-gray-600" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                +358 440 522 753 | kaarle.hurtig@gmail.com
+              <div className="text-sm text-gray-600 space-y-1" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                <div>+358 440 522 753</div>
+                <div>kaarle.hurtig@gmail.com</div>
               </div>
             </div>
 
