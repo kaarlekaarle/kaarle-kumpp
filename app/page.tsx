@@ -5,13 +5,13 @@ export default function Page() {
     <div className="min-h-screen bg-gray-100">
       {/* Top Right - WORKS Button - Aligned with main text */}
       <div className="absolute top-6" style={{left: 'calc(50% + 3rem)'}}>
-        <Link href="/works" className="text-base font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <Link href="/works" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           WORKS
         </Link>
       </div>
 
-      {/* Main Content */}
-      <div className="flex h-screen">
+      {/* Main Content with proper margins */}
+      <div className="flex h-screen py-16">
         {/* Left Side - Branding */}
         <div className="w-1/2 flex items-center justify-center">
           <div className="text-center">
@@ -69,7 +69,7 @@ export default function Page() {
 
         {/* ABOUT Button - Aligned with main text */}
         <div className="w-1/2 flex justify-end">
-          <Link href="/about" className="text-base font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+          <Link href="/about" className="text-xl font-normal uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
             ABOUT
           </Link>
         </div>
