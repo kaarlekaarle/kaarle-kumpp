@@ -4,13 +4,13 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-paper text-ink">
       {/* rows: M | works | M | right | M | about/contact | M */}
-      {/* cols: M | left | M | right | M */}
+      {/* cols: left (centered) | M | right | M */}
       <div className="min-h-screen grid
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-        grid-cols-[var(--kk-M)_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
+        grid-cols-[1fr_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
         {/* WORKS (black, 24) */}
-        <div className="row-start-2 col-start-4 self-start">
+        <div className="row-start-2 col-start-3 self-start">
           <p data-id="works" className="uppercase tracking-wide font-normal text-[24px] font-sans">Works</p>
         </div>
 
