@@ -7,6 +7,9 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit",
+    "build:prod": "next build",
     "build:data": "ts-node --transpile-only scripts/build-data.ts",
     "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
   },
