@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import BottomNav from "@/components/BottomNav";
 import { cn } from "@/lib/cn";
@@ -7,15 +5,12 @@ import ConnectionsOverlay from "@/components/ConnectionsOverlay";
 import { getFields, getClients } from "@/lib/data";
 import type { Field, Client } from "@/types/site";
 
-// Server wrapper keeps; client interactor below
-export default function Works() {
-  return <WorksServerWrapper />;
-}
-
-async function WorksServerWrapper() {
+export default async function Works() {
   const [fields, clients] = await Promise.all([getFields(), getClients()]);
   return <WorksClient fields={fields} clients={clients} />;
 }
+
+"use client";
 
 function WorksClient({ fields, clients }: { fields: Field[]; clients: Client[] }) {
   const [hoveredField, setHoveredField] = useState<string | null>(null);
