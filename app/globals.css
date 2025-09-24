@@ -64,9 +64,18 @@ h1, h2, h3 {
   --col-left: 420px;   /* logo column width */
   --col-gap:  80px;    /* space between columns */
   --col-right:520px;   /* text column width */
+  --kk-gap: 96px;        /* desktop rhythm */
+  --kk-gap-sm: 64px;     /* mobile rhythm */
+  --kk-right-size: 24px; /* shared size for labels, heading, CTA, ABOUT */
+  --kk-logo-size: 36px;  /* KAARLE / KUMPP. */
 }
 @media (max-width: 1024px){
-  :root{ --col-left:auto; --col-gap:24px; --col-right:auto; }
+  :root{ 
+    --col-left:auto; 
+    --col-gap:24px; 
+    --col-right:auto; 
+    --kk-gap: var(--kk-gap-sm); 
+  }
 }
 
 /* Debug font loading */
