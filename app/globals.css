@@ -2,35 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts are defined in layout.tsx */
+:root { color-scheme: light; }
+html,body { height: 100%; }
+body { @apply bg-paper text-ink antialiased; }
 
-:root { 
-  color-scheme: light; 
-  --color-paper: #F4F4F4;
-  --color-ink: #111111;
-  --color-accent: #1F37FF;
-}
+/* Links inherit color by default. Accent is set per-section. */
+a { @apply underline; color: inherit; }
 
-html, body { 
-  height: 100%; 
-  scroll-behavior: smooth;
-}
-
-body { 
-  @apply bg-white text-gray-900 antialiased;
-  font-family: 'Garamond Premier', 'Times New Roman', serif;
-  line-height: 1.6;
-}
-
-a { 
-  @apply text-accent hover:text-accent/80 transition-colors;
-}
-
-h1, h2, h3 { 
-  @apply uppercase tracking-wide font-semibold;
-  font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif;
-  line-height: 1.2;
-}
+/* Headings default: uppercase, tracking; no forced bold */
+h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -60,22 +40,15 @@ h1, h2, h3 {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Layout rhythm + sizes */
 :root{
-  --col-left: 420px;   /* logo column width */
-  --col-gap:  80px;    /* space between columns */
-  --col-right:520px;   /* text column width */
-  --kk-gap: 96px;        /* desktop rhythm */
-  --kk-gap-sm: 64px;     /* mobile rhythm */
-  --kk-right-size: 24px; /* shared size for labels, heading, CTA, ABOUT */
-  --kk-logo-size: 36px;  /* KAARLE / KUMPP. */
+  --kk-gap: 96px;        /* spacing unit for vertical rhythm */
+  --kk-gap-sm: 64px;
+  --kk-right-size: 24px; /* WORKS/heading/CTA/ABOUT */
+  --kk-logo-size: 36px;  /* KAARLE/KUMPP. */
 }
 @media (max-width: 1024px){
-  :root{ 
-    --col-left:auto; 
-    --col-gap:24px; 
-    --col-right:auto; 
-    --kk-gap: var(--kk-gap-sm); 
-  }
+  :root{ --kk-gap: var(--kk-gap-sm); }
 }
 
 /* Debug font loading */
