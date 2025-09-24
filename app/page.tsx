@@ -19,9 +19,7 @@ export default function Page() {
               KAARLE
             </div>
             <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <div className="w-12 h-12 border-2 border-gray-900 rounded-full flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-gray-900 rounded-full"></div>
-              </div>
+              <div className="text-3xl text-gray-900">⌘</div>
             </div>
             <div className="text-4xl font-bold uppercase text-gray-900" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KUMPP.
