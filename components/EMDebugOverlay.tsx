@@ -5,9 +5,13 @@ import { useEqualMarginDebug } from "@/lib/useEqualMarginDebug";
 
 export default function EMDebugOverlay() {
   const ref = useRef<HTMLDivElement | null>(null);
-  useEqualMarginDebug(document.body);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
+    useEqualMarginDebug(document.body);
+
     const r = document.documentElement;
     const M = parseFloat(getComputedStyle(r).getPropertyValue('--kk-M')) || 0;
     const el = document.createElement('div');

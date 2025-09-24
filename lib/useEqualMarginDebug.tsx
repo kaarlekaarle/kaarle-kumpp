@@ -7,7 +7,7 @@ const getH = (el: HTMLElement | null) => (el ? Math.round(el.getBoundingClientRe
 
 export function useEqualMarginDebug(root: HTMLElement | null) {
   useEffect(() => {
-    if (!root) return;
+    if (!root || typeof window === 'undefined') return;
     const q: Q = (s) => root.querySelector<HTMLElement>(s);
 
     const top = q('[data-id="works"]');          // top label

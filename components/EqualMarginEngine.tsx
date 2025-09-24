@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 export default function EqualMarginEngine() {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const root = document.documentElement;
 
 
