@@ -7,8 +7,8 @@ export default function About() {
     <main className="container min-h-[70vh] grid md:grid-cols-2 gap-10 md:gap-24 mt-12 md:mt-16">
       <div>
         <h1 className="text-2xl font-bold uppercase mb-2" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{about.name}</h1>
-        <p className="text-lg mb-1" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{about.phone}</p>
-        <a href={`mailto:${about.email}`} className="text-lg underline italic" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{about.email}</a>
+        <p className="text-lg mb-1 uppercase" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{about.phone}</p>
+        <a href={`mailto:${about.email}`} className="text-lg underline italic uppercase" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{about.email}</a>
         <div className="mt-6 w-60 h-72 relative">
           <Image
             src="/images/portrait.svg"

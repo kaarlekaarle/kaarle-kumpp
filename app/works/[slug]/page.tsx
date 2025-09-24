@@ -11,7 +11,7 @@ export default async function ClientPage({ params }: Props) {
 
   return (
     <main className="container min-h-[70vh] mt-10">
-      <h1 className="text-3xl font-bold uppercase mb-6" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{client.name}</h1>
+      <h1 className="text-3xl font-bold uppercase mb-6" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{client.name.toUpperCase()}</h1>
 
       <div className="mt-6">
         <Carousel slides={client.slides ?? []} />
