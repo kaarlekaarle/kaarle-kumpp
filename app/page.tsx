@@ -1,5 +1,4 @@
 import BottomNav from "@/components/BottomNav";
-import { landing } from "@/data/site-copy";
 import Link from "next/link";
 
 export default function Page() {
@@ -30,14 +29,23 @@ export default function Page() {
                 PROBLEM SOLVING AND STORYTELLING.
               </h1>
               
+              {/* Subheading */}
+              <div className="text-xl text-gray-800" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                PROBLEM SOLVING AND STORYTELLING.
+              </div>
+              
               {/* Content Text */}
               <div className="prose prose-lg max-w-none" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
                 <div className="space-y-6 text-gray-800 leading-relaxed">
-                  {landing.intro.split('\n').filter(p => p.trim()).map((paragraph, index) => (
-                    <p key={index} className="text-lg leading-7">
-                      {paragraph}
-                    </p>
-                  ))}
+                  <p className="text-lg leading-7">
+                    Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.
+                  </p>
+                  <p className="text-lg leading-7">
+                    Too often, projects get tangled in too many hands, wasted time, and money spent. Budgets grow, meetings multiply, and the focus shifts from solving the problem to justifying the invoices.
+                  </p>
+                  <p className="text-lg leading-7">
+                    I do the work like it&apos;s mine. If I&apos;m not the man for the job, I&apos;ll say so. I don&apos;t drag things out to look busy. I don&apos;t bill by the hour. I charge by the solution.
+                  </p>
                 </div>
               </div>
               
