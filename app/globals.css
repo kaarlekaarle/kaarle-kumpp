@@ -4,7 +4,7 @@
 
 :root { color-scheme: light; }
 html, body { height: 100%; }
-body { @apply bg-paper text-ink antialiased; }
-a { @apply text-accent hover:underline; }
+body { @apply bg-gray-100 text-gray-900 antialiased; }
+a { @apply text-blue-600 hover:underline; }
 h1,h2,h3 { @apply uppercase tracking-wide font-semibold; }
 :focus-visible { outline: 2px solid #1F37FF; outline-offset: 2px; }

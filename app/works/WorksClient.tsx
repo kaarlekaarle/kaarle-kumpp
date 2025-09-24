@@ -20,7 +20,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
   );
   const fieldsForClient = useCallback(
     (cid: string) => {
-      const c = clients.find(x => (x.id ?? x.slug) === cid);
+      const c = clients.find(x => x.slug === cid);
       return fields.filter(f => c?.fields?.includes(f.id));
     },
     [clients, fields]
@@ -44,7 +44,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
       if (fEl) {
         const a = computeCenter(fEl, root);
         for (const c of clientsForField(hoveredField)) {
-          const cid = c.id ?? c.slug;
+          const cid = c.slug;
           const cEl = clientRefs.current[cid];
           if (!cEl) continue;
           const b = computeCenter(cEl, root);
@@ -116,7 +116,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
         {/* Clients (right) */}
         <ul className="space-y-2 md:space-y-3 font-semibold uppercase">
           {clients.map(c => {
-            const cid = c.id ?? c.slug;
+            const cid = c.slug;
             const activeFromField = hoveredField && (c.fields?.includes(hoveredField));
             const isActive = hoveredField ? activeFromField : hoveredClient === cid;
             const isDimmed =
