@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 
 type Q = (s: string) => HTMLElement | null;

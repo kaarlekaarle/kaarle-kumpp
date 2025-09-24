@@ -36,6 +36,14 @@ export default function EqualMarginEngine() {
       // Debug logging
       console.log("EM", {M, Htop: hTop, contentHeight: hMid, Hbottom: hBot, Mv, Mh});
       
+      // Runtime assertion to catch margin leakage
+      const rb = document.querySelector('[data-id="right-block"]');
+      if (rb) {
+        const fc = rb.firstElementChild as HTMLElement | null;
+        const mt = fc ? parseFloat(getComputedStyle(fc).marginTop) : 0;
+        if (mt !== 0) console.warn('[M] right-block first-child marginTop leaking:', mt);
+      }
+      
       // Fail the build if TOP has margins
       const topEl = document.querySelector('[data-id="works"]') as HTMLElement;
       if (topEl) {
@@ -44,6 +52,21 @@ export default function EqualMarginEngine() {
           console.warn("[EqualMargin] TOP has margin-bottom", mb);
         }
       }
+      
+      // Log grid track sizes and margin analysis
+      const grid = document.querySelector('.grid') || document.querySelector('[class*="grid"]');
+      if (grid) {
+        console.log('rows:', getComputedStyle(grid).gridTemplateRows);
+      }
+      
+      const f = (sel: string) => { 
+        const e = document.querySelector(sel); 
+        return e ? getComputedStyle(e).marginTop : 'n/a'; 
+      };
+      console.table({
+        about_firstChild_mt: f('[data-id="right-block"] > :first-child'),
+        works_p_mb: getComputedStyle(document.querySelector('[data-id="works"] p') || document.createElement('div')).marginBottom
+      });
       
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
       return M;

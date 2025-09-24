@@ -48,7 +48,7 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 }
 a { color: inherit; text-decoration: none; } /* default no underline */
 
-/* Ensure no extra margins/paddings on measured blocks */
+/* Kill margin leakage in measured cells */
 [data-id="works"],
 [data-id="logo-col"],
 [data-id="right-block"],
@@ -56,6 +56,30 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+/* Critical: remove top/bottom margins of first/last children */
+[data-id="right-block"] > :first-child,
+[data-id="logo-col"] > :first-child,
+[data-id="works"] > :first-child,
+[data-id="about"] > :first-child {
+  margin-top: 0;
+}
+
+[data-id="right-block"] > :last-child,
+[data-id="logo-col"] > :last-child,
+[data-id="works"] > :last-child,
+[data-id="about"] > :last-child {
+  margin-bottom: 0;
+}
+
+/* Normalize headings/paragraphs inside right block */
+[data-id="right-block"] h1,
+[data-id="right-block"] h2,
+[data-id="right-block"] p,
+[data-id="right-block"] ul,
+[data-id="right-block"] ol {
+  margin: 0;
 }
 
 /* forbid extra spacing leaking from the top label into the gap */
