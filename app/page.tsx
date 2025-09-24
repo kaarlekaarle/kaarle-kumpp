@@ -28,11 +28,11 @@ export default function Page() {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 {/* Background decorative elements */}
-                <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/5 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-accent/10 rounded-full blur-lg"></div>
+                <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-accent/10 rounded-full blur-lg animate-pulse delay-1000"></div>
                 
                 {/* Large Typography Statement */}
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-[0.9] mb-12 text-ink relative z-10" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-[0.9] mb-12 text-ink relative z-10 hover:text-accent transition-colors duration-500" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   PROBLEM SOLVING AND STORYTELLING.
                 </h1>
                 
@@ -43,7 +43,7 @@ export default function Page() {
                 </div>
                 
                 {/* Key Question */}
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-accent mb-12 leading-tight relative z-10" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-accent mb-12 leading-tight relative z-10 hover:scale-105 transition-transform duration-300 cursor-default" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
                   WHAT IS YOUR PROBLEM?
                 </div>
               </div>
@@ -58,9 +58,9 @@ export default function Page() {
                 
                 <div className="space-y-8 text-gray-800 leading-relaxed relative z-10">
                   {landing.intro.split('\n').filter(p => p.trim()).map((paragraph, index) => (
-                    <p key={index} className="text-lg sm:text-xl leading-8 relative">
+                    <p key={index} className="text-lg sm:text-xl leading-8 relative hover:text-gray-900 transition-colors duration-300">
                       {index === 0 && (
-                        <span className="absolute -left-6 top-2 w-1 h-8 bg-accent/30 rounded-full"></span>
+                        <span className="absolute -left-6 top-2 w-1 h-8 bg-accent/30 rounded-full hover:bg-accent/50 transition-colors duration-300"></span>
                       )}
                       <span className="relative z-10">{paragraph}</span>
                     </p>
