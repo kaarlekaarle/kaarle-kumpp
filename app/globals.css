@@ -7,7 +7,7 @@ html,body { height: 100%; }
 body { @apply bg-paper text-ink antialiased; }
 
 /* Links inherit color by default. Accent is set per-section. */
-a { @apply underline; color: inherit; }
+a { color: inherit; }
 
 /* Headings default: uppercase, tracking; no forced bold */
 h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
