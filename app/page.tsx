@@ -7,13 +7,13 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md border-b-2 border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl sm:text-2xl font-bold uppercase tracking-widest text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <Link href="/" className="text-xl sm:text-2xl font-bold uppercase tracking-widest text-ink hover:text-accent transition-all duration-300 hover:scale-105" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               KAARLE ✳ KUMPP.
             </Link>
-            <Link href="/works" className="text-sm sm:text-base font-semibold uppercase tracking-wider text-ink hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <Link href="/works" className="text-sm sm:text-base font-semibold uppercase tracking-wider text-ink hover:text-accent transition-all duration-300 hover:scale-105 px-4 py-2 rounded-lg hover:bg-accent/5" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               WORKS
             </Link>
           </div>
@@ -21,9 +21,9 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <section className="pt-24 sm:pt-28 pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 sm:gap-20 lg:gap-32 items-start lg:items-center">
             {/* Left Column - Visual Impact */}
             <div className="order-2 lg:order-1">
               <div className="relative">
@@ -54,18 +54,21 @@ export default function Page() {
                 </div>
                 
                 {/* Portrait Image */}
-                <div className="mt-12 relative">
-                  <div className="relative w-48 sm:w-64 h-60 sm:h-80 mx-auto lg:mx-0">
+                <div className="mt-16 relative">
+                  <div className="relative w-56 sm:w-72 h-72 sm:h-96 mx-auto lg:mx-0">
                     <Image
                       src="/images/portrait.jpg"
                       alt="Kaarle Hurtig"
                       fill
-                      className="object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      className="object-cover rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
                       priority
                     />
                   </div>
                   {/* Decorative frame */}
-                  <div className="absolute -inset-4 border-2 border-accent/20 rounded-xl"></div>
+                  <div className="absolute -inset-6 border-2 border-accent/30 rounded-3xl"></div>
+                  {/* Additional decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent/20 rounded-full"></div>
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/30 rounded-full"></div>
                 </div>
               </div>
             </div>
@@ -74,12 +77,17 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <footer className="border-t border-gray-100 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 sm:gap-6">
+      <footer className="border-t-2 border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             {/* Contact Info */}
-            <div className="text-sm sm:text-base font-semibold uppercase tracking-wider text-gray-700" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
-              KAARLE HURTIG | +358 440 522 753 | kaarle.hurtig@gmail.com
+            <div className="space-y-2">
+              <div className="text-sm sm:text-base font-semibold uppercase tracking-wider text-gray-800" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+                KAARLE HURTIG
+              </div>
+              <div className="text-sm text-gray-600" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                +358 440 522 753 | kaarle.hurtig@gmail.com
+              </div>
             </div>
 
             {/* Bottom Navigation */}
