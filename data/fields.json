@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "id": "advertising",
+    "name": "Advertising",
+    "blurb": "Campaigns, placements, effectiveness."
+  },
+  {
+    "id": "gun-for-hire",
+    "name": "Gun-for-hire",
+    "blurb": "Specific tasks, rapid execution."
+  },
+  {
+    "id": "identity-building",
+    "name": "Identity Building",
+    "blurb": "Brand clarity and systems."
+  },
+  {
+    "id": "legacy-transition",
+    "name": "Legacy Transition",
+    "blurb": "From founders to the next era."
+  },
+  {
+    "id": "message-media",
+    "name": "Message & Media",
+    "blurb": "Narrative and channel strategy."
+  },
+  {
+    "id": "strategic-vision",
+    "name": "Strategic Vision",
+    "blurb": "Direction, choices, trade-offs."
+  },
+  {
+    "id": "talk-shows",
+    "name": "Talk Shows",
+    "blurb": "Formats, hosting, production."
+  }
+]
