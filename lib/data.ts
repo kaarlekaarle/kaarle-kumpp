@@ -1,6 +1,7 @@
 import { z } from "zod";
 import fs from "node:fs/promises";
 import path from "node:path";
+import type { Field, Client } from "@/types/site";
 
 const Slide = z.object({ src: z.string(), alt: z.string().optional() });
 const Link = z.object({ label: z.string(), href: z.string().url() });
@@ -27,7 +28,7 @@ export const SiteDataSchema = z.object({
   clients: z.array(ClientSchema),
 });
 
-let cache: { fields: any[]; clients: any[] } | null = null;
+let cache: { fields: Field[]; clients: Client[] } | null = null;
 
 export async function loadSiteData() {
   if (cache) return cache;
