@@ -9,7 +9,7 @@ export default function Page() {
         <div className="grid grid-cols-12 gap-x-8 md:gap-x-10 grid-rows-[auto_minmax(0,1fr)_auto]">
           {/* Row 1: section label — left edge = right column start */}
           <div className="row-start-1 col-start-8 col-span-5">
-            <Link href="/works" className="uppercase tracking-wide text-base font-sans hover:text-accent transition-colors">
+            <Link href="/works" className="uppercase tracking-wide text-lg font-sans hover:text-accent transition-colors">
               Works
             </Link>
           </div>
@@ -29,10 +29,10 @@ export default function Page() {
 
           {/* Row 2: right text block — shares left edge with WORKS/ABOUT */}
           <article className="row-start-2 col-start-8 col-span-5 self-center">
-            <h1 className="uppercase tracking-wide text-accent text-2xl md:text-3xl font-sans">
+            <h1 className="uppercase tracking-wide text-accent text-3xl md:text-4xl font-sans">
               Problem solving and storytelling.
             </h1>
-            <div className="mt-5 space-y-4 leading-relaxed md:leading-loose text-base" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+            <div className="mt-6 space-y-5 leading-relaxed md:leading-loose text-lg" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
               <p>
                 Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.
               </p>
@@ -43,7 +43,7 @@ export default function Page() {
                 I do the work like it&apos;s mine. If I&apos;m not the man for the job, I&apos;ll say so. I don&apos;t drag things out to look busy. I don&apos;t bill by the hour. I charge by the solution.
               </p>
             </div>
-            <p className="mt-4 uppercase font-semibold text-accent font-sans">What is your problem?</p>
+            <p className="mt-6 uppercase font-semibold text-accent text-xl md:text-2xl font-sans">What is your problem?</p>
           </article>
 
           {/* Row 3: contact — centered under logo */}
@@ -56,7 +56,7 @@ export default function Page() {
 
           {/* Row 3: ABOUT — same left edge as right text/WORKS */}
           <div className="row-start-3 col-start-8 col-span-5 mt-10">
-            <Link href="/about" className="uppercase tracking-wide text-base font-sans hover:text-accent transition-colors">
+            <Link href="/about" className="uppercase tracking-wide text-lg font-sans hover:text-accent transition-colors">
               About
             </Link>
           </div>
