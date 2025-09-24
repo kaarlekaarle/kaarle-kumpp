@@ -5,7 +5,7 @@ export default function Page() {
     <div className="min-h-screen bg-gray-100">
       {/* Top Right - WORKS Button - Aligned with main text */}
       <div className="absolute top-6" style={{left: 'calc(50% + 3rem)'}}>
-        <Link href="/works" className="text-base font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <Link href="/works" className="text-sm font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
           WORKS
         </Link>
       </div>
@@ -33,25 +33,25 @@ export default function Page() {
         <div className="w-1/2 flex items-center justify-center p-12">
           <div className="max-w-lg">
             {/* Main Heading */}
-            <h1 className="text-2xl font-bold uppercase leading-tight text-accent mb-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <h1 className="text-3xl font-bold uppercase leading-tight text-accent mb-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               PROBLEM SOLVING AND STORYTELLING.
             </h1>
             
             {/* Content Text - All in Blue, Garamond font */}
             <div className="space-y-6 text-accent leading-relaxed" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-              <p className="text-base">
+              <p className="text-lg">
                 Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.
               </p>
-              <p className="text-base">
+              <p className="text-lg">
                 Too often, projects get tangled in too many hands, wasted time, and money spent. Budgets grow, meetings multiply, and the focus shifts from solving the problem to justifying the invoices.
               </p>
-              <p className="text-base">
+              <p className="text-lg">
                 I do the work like it&apos;s mine. If I&apos;m not the man for the job, I&apos;ll say so. I don&apos;t drag things out to look busy. I don&apos;t bill by the hour. I charge by the solution.
               </p>
             </div>
             
             {/* Key Question */}
-            <div className="text-xl font-bold uppercase text-accent mt-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            <div className="text-2xl font-bold uppercase text-accent mt-8" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               WHAT IS YOUR PROBLEM?
             </div>
           </div>
@@ -60,15 +60,19 @@ export default function Page() {
 
       {/* Bottom Section */}
       <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center">
-        {/* Contact Info - Mixed fonts */}
-        <div className="text-base font-medium text-gray-900">
-          <span style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>KAARLE HURTIG</span> | <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> | <em style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</em>
+        {/* Contact Info - Centered with logo */}
+        <div className="w-1/2 flex justify-center">
+          <div className="text-sm font-medium text-gray-900">
+            <span style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>KAARLE HURTIG</span> | <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> | <em style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</em>
+          </div>
         </div>
 
         {/* ABOUT Button - Aligned with main text */}
-        <Link href="/about" className="text-base font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
-          ABOUT
-        </Link>
+        <div className="w-1/2 flex justify-end">
+          <Link href="/about" className="text-sm font-bold uppercase tracking-wide text-gray-900 hover:text-accent transition-colors" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+            ABOUT
+          </Link>
+        </div>
       </div>
     </div>
   );
