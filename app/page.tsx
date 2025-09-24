@@ -7,15 +7,15 @@ export default function Page() {
       {/* cols: left (centered) | M | right | M */}
       <div className="min-h-screen grid
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-        grid-cols-[1fr_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
+        grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
-        {/* WORKS (black, 24) */}
+        {/* WORKS (black, 24) - aligned with right text block */}
         <div className="row-start-2 col-start-3 self-start">
           <p data-id="works" className="uppercase tracking-wide font-normal text-[24px] font-sans">Works</p>
         </div>
 
-        {/* LEFT: logo centered */}
-        <div data-id="logo-col" className="row-start-4 col-start-2 self-center">
+        {/* LEFT: logo centered in flexible space */}
+        <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KAARLE</div>
             <div className="my-3 flex justify-center">
@@ -29,7 +29,7 @@ export default function Page() {
         </div>
 
         {/* RIGHT BLOCK (heading+body+cta) */}
-        <article data-id="right-block" className="row-start-4 col-start-4 self-start max-w-[var(--kk-right-col)]">
+        <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[24px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
@@ -44,13 +44,13 @@ export default function Page() {
         </article>
 
         {/* BOTTOM ROW: contact and ABOUT centered vertically, same row */}
-        <div data-id="contact" className="row-start-6 col-start-2 flex items-center justify-center">
+        <div data-id="contact" className="row-start-6 col-start-1 flex items-center justify-center">
           <p className="text-[13px] tracking-wide text-center font-normal">
             <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
             <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
           </p>
         </div>
-        <div className="row-start-6 col-start-4 flex items-center">
+        <div className="row-start-6 col-start-3 flex items-center">
           <a data-id="about" href="/about" className="uppercase tracking-wide font-normal text-[24px] font-sans">About</a>
         </div>
       </div>

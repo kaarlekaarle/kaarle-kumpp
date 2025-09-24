@@ -27,12 +27,11 @@ export default function EqualMarginEngine() {
       // vertical M from remaining space: (vh - sum(content heights)) / 4
       const Mv = (vh - (H_works + H_right + H_about)) / 4;
 
-      // horizontal M from remaining width: (vw - (left + right)) / 2
-      // Since left column is centered in 1fr, we have: 1fr + left + M + right + M
+      // horizontal M from remaining width: (vw - right) / 2
+      // Since left column is centered in 1fr, we have: 1fr + M + right + M
       const vw = window.innerWidth;
-      const L  = getPxVar("--kk-left-col");
       const R  = getPxVar("--kk-right-col");
-      const Mh = (vw - (L + R)) / 2; // Only 2 M gaps now
+      const Mh = (vw - R) / 2; // Only 2 M gaps now
 
       // Choose non-negative minimum so both axes fit
       return Math.max(0, Math.min(Mv, Mh));
