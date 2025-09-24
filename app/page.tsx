@@ -33,7 +33,7 @@ export default function Page() {
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
-          <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+                    <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>Everything starts with a question: <em>What are we doing here?</em> Once we agree on the task, I lay out a plan. You need clarity, the right perspective, and the right people. When we&apos;ve got those, we&apos;re halfway there.</p>
             <p>Too often, projects get tangled<br />
             in too many hands, wasted time,<br />
