@@ -14,7 +14,6 @@
     "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "@tailwindcss/postcss": "^4.1.13",
     "autoprefixer": "^10.4.21",
     "next": "15.5.4",
