@@ -60,6 +60,15 @@ h1, h2, h3 {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+:root{
+  --col-left: 420px;   /* logo column width */
+  --col-gap:  80px;    /* space between columns */
+  --col-right:520px;   /* text column width */
+}
+@media (max-width: 1024px){
+  :root{ --col-left:auto; --col-gap:24px; --col-right:auto; }
+}
+
 /* Debug font loading */
 .debug-font {
   font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif !important;
