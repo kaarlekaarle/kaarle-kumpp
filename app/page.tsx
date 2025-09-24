@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Column - Main Content Area (Peach/Salmon Background) */}
-      <div className="flex-1 bg-gradient-to-br from-orange-100 to-orange-200 relative overflow-hidden">
+      <div className="flex-1 lg:flex-1 bg-gradient-to-br from-orange-100 to-orange-200 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-10 right-10 w-32 h-32 bg-orange-300/20 rounded-full blur-xl"></div>
         <div className="absolute bottom-10 left-10 w-24 h-24 bg-orange-400/30 rounded-full blur-lg"></div>
@@ -64,21 +64,21 @@ export default function Page() {
       </div>
 
       {/* Right Column - Navigation and Client List */}
-      <div className="w-1/3 flex flex-col">
+      <div className="w-full lg:w-1/3 flex flex-col lg:flex-col">
         {/* Top Section - Logo/Brand (Light Purple) */}
-        <div className="flex-1 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center p-8">
-          <Link href="/" className="text-2xl sm:text-3xl font-bold uppercase tracking-widest text-gray-800 hover:text-accent transition-all duration-300 hover:scale-105" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <div className="h-20 lg:flex-1 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center p-4 lg:p-8">
+          <Link href="/" className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase tracking-widest text-gray-800 hover:text-accent transition-all duration-300 hover:scale-105" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
             KAARLE ✳ KUMPP.
           </Link>
         </div>
 
         {/* Middle Section - Client List (Light Green) */}
-        <div className="flex-2 bg-gradient-to-br from-green-100 to-green-200 p-8 overflow-y-auto">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold uppercase tracking-wide text-gray-800 mb-6" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <div className="h-64 lg:flex-2 bg-gradient-to-br from-green-100 to-green-200 p-4 lg:p-8 overflow-y-auto">
+          <div className="space-y-3 lg:space-y-4">
+            <h3 className="text-base lg:text-lg font-semibold uppercase tracking-wide text-gray-800 mb-4 lg:mb-6" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               CLIENTS
             </h3>
-            <div className="space-y-3">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-3">
               {[
                 "BASSO RADIO", "ED / HARTWALL", "EV. LUT. KIRKKO", "FLOW FESTIVAL", 
                 "HOBO HOTEL", "HELSINKI UNI", "JCAD", "KESKO", "KESKUSTELUOHJELMA", 
@@ -87,7 +87,7 @@ export default function Page() {
               ].map((client, index) => (
                 <div 
                   key={index} 
-                  className="text-sm font-medium text-gray-700 hover:text-accent hover:translate-x-2 transition-all duration-300 cursor-pointer" 
+                  className="text-xs lg:text-sm font-medium text-gray-700 hover:text-accent hover:translate-x-2 transition-all duration-300 cursor-pointer" 
                   style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}
                 >
                   {client}
@@ -98,9 +98,9 @@ export default function Page() {
         </div>
 
         {/* Bottom Section - Navigation (Light Purple) */}
-        <div className="flex-1 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center p-8">
-          <div className="flex flex-col items-center space-y-4">
-            <Link href="/works" className="text-lg font-semibold uppercase tracking-wider text-gray-800 hover:text-accent transition-all duration-300 hover:scale-105" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
+        <div className="h-20 lg:flex-1 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center p-4 lg:p-8">
+          <div className="flex flex-row lg:flex-col items-center space-x-4 lg:space-x-0 lg:space-y-4">
+            <Link href="/works" className="text-sm lg:text-lg font-semibold uppercase tracking-wider text-gray-800 hover:text-accent transition-all duration-300 hover:scale-105" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>
               WORKS
             </Link>
             <BottomNav right={{ href: "/about", label: "ABOUT" }} />
