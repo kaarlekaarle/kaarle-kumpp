@@ -16,9 +16,9 @@ export default function AboutPage() {
         grid-cols-[var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]
       ">
 
-        {/* TOP LABEL — 24px black aligned to right col */}
+        {/* TOP LABEL — 20px black aligned to right col */}
         <div className="row-start-2 col-start-3 self-start">
-          <p data-id="top" className="uppercase tracking-wide font-normal text-[24px] font-sans">
+          <p data-id="top" className="uppercase tracking-wide font-normal text-[20px] font-sans">
             Kaarle & Kumpp.
           </p>
         </div>
@@ -27,9 +27,9 @@ export default function AboutPage() {
         <section className="row-start-4 col-start-1 self-center" data-id="left-card">
           <div className="leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[15px]">+358 440 522 753</div>
-            <div className="text-[15px]">
-              <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com">
+            <div className="text-[12px]">+358 440 522 753</div>
+            <div className="text-[12px]">
+              <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
                 kaarle.hurtig@gmail.com
               </a>
             </div>
@@ -46,26 +46,26 @@ export default function AboutPage() {
             </div>
 
             <div className="pt-3">
-              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[15px]">
+              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[12px]">
                 Download CV
               </a>
             </div>
           </div>
         </section>
 
-        {/* RIGHT TEXT BLOCK — 24px heading black; body 15px accent */}
+        {/* RIGHT TEXT BLOCK — 20px heading black; body 16px accent */}
         <article className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]" data-id="right-block">
-          <h1 className="uppercase tracking-wide font-normal text-[24px] text-ink font-sans">About</h1>
-          <div className="mt-5 space-y-4 leading-[1.55] text-[15px] text-accent">
+          <h1 className="uppercase tracking-wide font-normal text-[20px] text-ink font-sans">About</h1>
+          <div className="mt-4 space-y-3 leading-[1.55] text-[16px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small, I&apos;ve gotten good at figuring out the problem and solving it. Setting the direction and finding the right people. What the modern creative business loves – workshops, cheap talk, fetishising the processes – is what I steer away from. I design solutions that outlast me.</p>
             <p>Drawn to simple things that last, both in work and in life. Inspired by photography, internet&apos;s early and future days, crafty people, unorthodox thinking and big trees.</p>
             <p><em>Lives and works from Helsinki, Finland.</em></p>
           </div>
         </article>
 
-        {/* BOTTOM NAV — 24px black, aligned with right col, centered vertically with left row */}
+        {/* BOTTOM NAV — 20px black, aligned with right col, centered vertically with left row */}
         <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[24px] font-sans">
+          <Link data-id="bottom" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">
             Works
           </Link>
         </div>
