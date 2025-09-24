@@ -11,13 +11,13 @@ export default async function ClientPage({ params }: Props) {
 
   return (
     <main className="container min-h-[70vh] mt-10">
-      <h1 className="text-2xl uppercase">{client.name}</h1>
+      <h1 className="text-3xl font-bold uppercase mb-6" style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}>{client.name}</h1>
 
       <div className="mt-6">
         <Carousel slides={client.slides ?? []} />
       </div>
 
-      <p className="mt-4 max-w-2xl text-sm text-neutral-700">
+      <p className="mt-6 max-w-2xl text-base leading-relaxed" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
         {client.summary ?? "Summary coming soon."}
       </p>
     </main>
