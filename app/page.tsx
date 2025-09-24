@@ -1,43 +1,40 @@
-import LogoMark from "@/components/LogoMark";
 import MarginInspector from "@/components/MarginInspector";
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* Outer grid sets equal margins top/bottom/left/right = G */}
+      {/* Outer grid with margins and inter-block gaps defined by --kk-M */}
       <div
         className="
           min-h-screen
           grid
-          grid-rows-[var(--kk-g)_auto_var(--kk-g)]
-          grid-cols-[var(--kk-g)_var(--kk-left)_var(--kk-gap)_var(--kk-right)_var(--kk-g)]
+          grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
+          grid-cols-[var(--kk-M)_var(--kk-left-col)_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]
         "
       >
-        {/* Row 1: WORKS (black), aligned to right column start */}
-        <div className="row-start-1 col-start-4 self-end" data-id="works">
-          <p className="uppercase tracking-wide font-normal font-sans" style={{ fontSize: "var(--kk-size-right)" }}>
-            Works
-          </p>
+        {/* WORKS — black, same size as heading/CTA/About */}
+        <div className="row-start-2 col-start-4 self-start">
+          <p className="uppercase tracking-wide font-normal text-[24px] font-sans" data-id="works">Works</p>
         </div>
 
-        {/* Row 2: Left logo block; horizontally aligned with right text */}
-        <div className="row-start-2 col-start-2 self-center" data-id="logo-col">
+        {/* LEFT COLUMN — logo block centered within its column */}
+        <div className="row-start-4 col-start-2 self-center" data-id="logo-col">
           <div className="text-center leading-tight">
-            <div className="uppercase tracking-wide font-normal font-sans" style={{ fontSize: "var(--kk-size-logo)" }}>
-              KAARLE
-            </div>
+            <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KAARLE</div>
             <div className="my-3 flex justify-center">
-              <LogoMark size={28} />
+              {/* inline symbol; replace if you have a final SVG */}
+              <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+                <circle cx="14" cy="14" r="13" fill="none" stroke="#111111" strokeWidth="2" />
+                <circle cx="14" cy="14" r="7"  fill="none" stroke="#111111" strokeWidth="2" />
+              </svg>
             </div>
-            <div className="uppercase tracking-wide font-normal font-sans" style={{ fontSize: "var(--kk-size-logo)" }}>
-              KUMPP.
-            </div>
+            <div className="uppercase tracking-wide font-normal text-[36px] font-sans">KUMPP.</div>
           </div>
         </div>
 
-        {/* Row 2: Right text block; body copy blue only */}
-        <article className="row-start-2 col-start-4 self-center max-w-[var(--kk-right)]">
-          <h1 className="uppercase tracking-wide font-normal text-accent font-sans" style={{ fontSize: "var(--kk-size-right)" }} data-id="heading">
+        {/* RIGHT TEXT BLOCK — starts after WORKS by one M; all key labels 24px; body blue only */}
+        <article className="row-start-4 col-start-4 self-start" data-id="heading">
+          <h1 className="uppercase tracking-wide font-normal text-[24px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>
           <div className="mt-4 space-y-3 leading-[1.55] text-[15px] text-accent" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
@@ -45,21 +42,22 @@ export default function Page() {
             <p>Too often, projects get tangled in too many hands, wasted time, and money spent. Budgets grow, meetings multiply, and the focus shifts from solving the problem to justifying the invoices.</p>
             <p>I do the work like it&apos;s mine. If I&apos;m not the man for the job, I&apos;ll say so. I don&apos;t drag things out to look busy. I don&apos;t bill by the hour. I charge by the solution.</p>
           </div>
-          <p className="mt-4 uppercase font-normal text-accent font-sans" style={{ fontSize: "var(--kk-size-right)" }} data-id="cta">
+          <p className="mt-4 uppercase font-normal text-[24px] text-accent font-sans" data-id="cta">
             What is your problem?
           </p>
         </article>
 
-        {/* Row 3: Contact centered under logo; ABOUT centered on row; both same baseline center */}
-        <div className="row-start-3 col-start-2 self-start flex justify-center items-center" data-id="contact">
+        {/* CONTACT — centered in LEFT COLUMN; vertically centered with ABOUT */}
+        <div className="row-start-6 col-start-2 flex items-center justify-center" data-id="contact">
           <p className="text-[13px] tracking-wide text-center font-normal">
             <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
-            <a className="[font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+            <a className="underline [font-style:oblique_10deg]" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
           </p>
         </div>
 
-        <div className="row-start-3 col-start-4 self-start flex items-center" data-id="about">
-          <a href="/about" className="uppercase tracking-wide font-normal font-sans" style={{ fontSize: "var(--kk-size-right)" }}>
+        {/* ABOUT — black, same 24px, no underline; vertically centered with contact */}
+        <div className="row-start-6 col-start-4 flex items-center">
+          <a href="/about" className="uppercase tracking-wide font-normal text-[24px] font-sans" data-id="about">
             About
           </a>
         </div>
