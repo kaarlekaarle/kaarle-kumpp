@@ -2,10 +2,10 @@ import EMLayout from "@/components/EMLayout";
 
 export default function About(){
   return (
-    <main className="bg-paper text-ink about-page">
+    <main className="bg-paper text-ink">
       <EMLayout
-        top="Kaarle & Kumpp."
-        left={
+        topLabel="Kaarle & Kumpp."
+        leftMain={
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
             <div className="text-[12px] mt-1 font-serif font-semibold">+358 440 522 753</div>
@@ -26,7 +26,8 @@ export default function About(){
             </div>
           </div>
         }
-        right={
+        rightHeading="Problem solving and storytelling."
+        rightBody={
           <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
@@ -40,7 +41,15 @@ export default function About(){
             <p>Lives and works from Helsinki, Finland.</p>
           </div>
         }
-        bottom={<a href="/works">Works</a>}
+        bottomRightLabel="Works"
+        bottomRightHref="/works"
+        leftBottomLine={
+          <p className="text-[12px] tracking-wide text-center font-normal">
+            <span className="font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp;
+            <span className="font-serif font-semibold">+358 440 522 753</span> &nbsp;|&nbsp;
+            <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+          </p>
+        }
       />
     </main>
   );

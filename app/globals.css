@@ -41,27 +41,32 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 }
 
 :root{
-  --left: 420px;      /* left column width */
-  --right: 52ch;      /* right column max width */
+  --left: 420px;     /* left column width */
+  --right: 52ch;     /* right text width */
 }
-.em { min-height: 100svh; display:grid; gap:0;
-  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;      /* 4 equal M's */
-  grid-template-columns: 1fr var(--left) 1fr var(--right) 1fr; /* 4 equal M's */
+
+.em{
+  min-height: 100svh;
+  display: grid;
+  gap: 0;
+  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;          /* vertical M's */
+  grid-template-columns: var(--left) 1fr var(--right) 1fr;      /* horizontal M's */
 }
+
+/* hardening */
 [data-id="works"]{ display:inline-block; line-height:1; margin:0; padding:0; }
 [data-id="right-block"]{ display:grid; row-gap:10px; }
-[data-id="right-block"] > *{ margin:0; }   /* kill prose/mt leaks */
+[data-id="right-block"] > *{ margin:0; }  /* no mt/space-y/prose margins */
 
-/* Ensure both columns have equal visual weight */
-[data-id="logo-col"] { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  min-height: 100%; /* Take full height of the grid cell */
-}
+/* left cells removed from flow and centered */
+.left-cell{ position: relative; min-height: 0; }
+.left-abs{ position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); }
 
-.font-sans{ font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
-.font-serif{ font-family:"Times New Roman",Times,serif; }
+/* bottom-left line centered within bottom row */
+.left-bottom{ position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); }
+
+.font-sans { font-family: var(--font-sans), system-ui; }
+.font-serif { font-family: var(--font-serif), serif; }
 
 /* Hide heading on about page but keep height */
 .about-page [data-id="right-block"] h1 { visibility: hidden; }
