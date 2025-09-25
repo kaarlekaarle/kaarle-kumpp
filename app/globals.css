@@ -52,6 +52,14 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 [data-id="right-block"]{ display:grid; row-gap:10px; }
 [data-id="right-block"] > *{ margin:0; }   /* kill prose/mt leaks */
 
+/* Ensure both columns have equal visual weight */
+[data-id="logo-col"] { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  min-height: 100%; /* Take full height of the grid cell */
+}
+
 .font-sans{ font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
 .font-serif{ font-family:"Times New Roman",Times,serif; }
 
