@@ -23,10 +23,8 @@ export default function Page(){
               You need clarity, the right perspective, and the right people.<br />
               When we&apos;ve got those, we&apos;re halfway there.</p>
               <br />
-              <p>Too often, projects get tangled<br />
-              in too many hands, wasted time,<br />
-              and money spent. Budgets grow,<br />
-              meetings multiply, and the focus shifts<br />
+              <p>Too often, projects get tangled in too many hands, wasted time,<br />
+              and money spent. Budgets grow, meetings multiply, and the focus shifts<br />
               from solving the problem to justifying the invoices.</p>
               <br />
               <p>I do the work like it&apos;s mine. If I&apos;m not the man for the job,<br />
