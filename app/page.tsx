@@ -17,7 +17,6 @@ export default function Page(){
         rightHeading="Problem solving and storytelling."
         rightBody={
           <>
-            <br />
             <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
               <p>Everything starts with a question: <em>What are we doing here?</em><br />
               Once we agree on the task, I lay out a plan.<br />
