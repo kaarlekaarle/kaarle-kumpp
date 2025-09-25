@@ -27,8 +27,17 @@ export default function FontTest() {
   // All printable ASCII characters
   const ascii = Array.from({length: 95}, (_, i) => String.fromCharCode(i + 32)).join('');
   
-  // Special symbols including Apple logo
+  // Special symbols including Apple logo - comprehensive Unicode ranges
   const specialSymbols = "⌘⌥⌃⇧⌫⌦⌨⌕⌖⌗⌘⌙⌚⌛⌜⌝⌞⌟⌠⌡⌢⌣⌤⌥⌦⌧⌨⌫⌬⌭⌮⌯⌰⌱⌲⌳⌴⌵⌶⌷⌸⌹⌺⌻⌼⌽⌾⌿⍀⍁⍂⍃⍄⍅⍆⍇⍈⍉⍊⍋⍌⍍⍎⍏⍐⍑⍒⍓⍔⍕⍖⍗⍘⍙⍚⍛⍜⍝⍞⍟⍠⍡⍢⍣⍤⍥⍦⍧⍨⍩⍪⍫⍬⍭⍮⍯⍰⍱⍲⍳⍴⍵⍶⍷⍸⍹⍺⍻⍼⍽⍾⍿⎀⎁⎂⎃⎄⎅⎆⎇⎈⎉⎊⎋⎌⎍⎎⎏⎐⎑⎒⎓⎔⎕⎖⎗⎘⎙⎚⎛⎜⎝⎞⎟⎠⎡⎢⎣⎤⎥⎦⎧⎨⎩⎪⎫⎬⎭⎮⎯⎰⎱⎲⎳⎴⎵⎶⎷⎸⎹⎺⎻⎼⎽⎾⎿";
+  
+  // Extended Unicode ranges for special symbols
+  const extendedSymbols = Array.from({length: 256}, (_, i) => String.fromCharCode(0x2000 + i)).join('');
+  
+  // Apple and tech symbols specifically
+  const appleSymbols = "⌘⌥⌃⇧⌫⌦⌨⌕⌖⌗⌘⌙⌚⌛⌜⌝⌞⌟⌠⌡⌢⌣⌤⌥⌦⌧⌨⌫⌬⌭⌮⌯⌰⌱⌲⌳⌴⌵⌶⌷⌸⌹⌺⌻⌼⌽⌾⌿⍀⍁⍂⍃⍄⍅⍆⍇⍈⍉⍊⍋⍌⍍⍎⍏⍐⍑⍒⍓⍔⍕⍖⍗⍘⍙⍚⍛⍜⍝⍞⍟⍠⍡⍢⍣⍤⍥⍦⍧⍨⍩⍪⍫⍬⍭⍮⍯⍰⍱⍲⍳⍴⍵⍶⍷⍸⍹⍺⍻⍼⍽⍾⍿";
+  
+  // Unicode Private Use Area (where custom symbols often live)
+  const privateUseArea = Array.from({length: 100}, (_, i) => String.fromCharCode(0xE000 + i)).join('');
   
   // Emoji and symbols
   const emoji = "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏";
@@ -42,7 +51,9 @@ export default function FontTest() {
     { name: "Geometric Shapes", chars: shapes },
     { name: "Arrows", chars: arrows },
     { name: "Currency", chars: currency },
-    { name: "Special Symbols (⌘)", chars: specialSymbols },
+    { name: "Apple & Tech Symbols", chars: appleSymbols },
+    { name: "Extended Unicode", chars: extendedSymbols },
+    { name: "Private Use Area", chars: privateUseArea },
     { name: "Emoji", chars: emoji },
     { name: "All ASCII", chars: ascii }
   ];
@@ -58,6 +69,13 @@ export default function FontTest() {
             This page displays all available characters in the Kaarle & Kumppanit font.
             Look through the sections below to find the perfect character for your logo symbol.
           </p>
+          <div className="mt-4 p-3 bg-blue-50 rounded">
+            <h3 className="font-semibold text-blue-800 mb-2">Looking for the Apple logo (⌘)?</h3>
+            <p className="text-sm text-blue-700">
+              Check the "Apple & Tech Symbols" section below. The Apple logo is Unicode U+2318.
+              If you don't see it there, it might be in the "Extended Unicode" or "Private Use Area" sections.
+            </p>
+          </div>
         </div>
 
         {unicodeBlocks.map((block, index) => (
