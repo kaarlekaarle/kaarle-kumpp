@@ -63,10 +63,10 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   margin: 0 !important; 
 }
 
-/* Use grid for controlled spacing in right-block */
+/* Use grid for controlled spacing in right-block - prevents margin collapse */
 [data-id="right-block"] { 
   display: grid; 
-  row-gap: 10px; 
+  gap: 10px; 
 }
 
 /* Critical: remove top/bottom margins of first/last children */

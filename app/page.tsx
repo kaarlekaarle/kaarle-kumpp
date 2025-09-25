@@ -33,8 +33,8 @@ export default function Page() {
           data-id="right-block"
           className="
             row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]
-            [&>*]:m-0                 /* zero all direct child margins */
-            [&>*+*]:mt-[10px]         /* set inter-element spacing explicitly */
+            grid gap-[10px]               /* prevents margin-collapse, controls spacing */
+            [&>*]:m-0                     /* zero direct child margins */
           "
         >
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans">
