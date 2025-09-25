@@ -29,7 +29,14 @@ export default function Page() {
         </div>
 
         {/* RIGHT BLOCK (heading+body+cta) */}
-        <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
+        <article
+          data-id="right-block"
+          className="
+            row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]
+            [&>*]:m-0                 /* zero all direct child margins */
+            [&>*+*]:mt-[10px]         /* set inter-element spacing explicitly */
+          "
+        >
           <h1 data-id="heading" className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans">
             Problem solving and storytelling.
           </h1>

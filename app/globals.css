@@ -58,6 +58,17 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   border: 0;
 }
 
+/* Belt and suspenders: zero all child margins in right-block */
+[data-id="right-block"] > * { 
+  margin: 0 !important; 
+}
+
+/* Use grid for controlled spacing in right-block */
+[data-id="right-block"] { 
+  display: grid; 
+  row-gap: 10px; 
+}
+
 /* Critical: remove top/bottom margins of first/last children */
 [data-id="right-block"] > :first-child,
 [data-id="logo-col"] > :first-child,
@@ -89,6 +100,11 @@ a { color: inherit; text-decoration: none; } /* default no underline */
 }
 [data-id="works"] { 
   line-height: 1; 
+}
+
+/* If typography plugin 'prose' is used anywhere: neutralize it inside right-block */
+[data-id="right-block"] .prose :where(p, h1, h2, h3, h4, ul, ol, blockquote) { 
+  margin: 0; 
 }
 
 /* Debug font loading */
