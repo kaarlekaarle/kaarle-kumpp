@@ -27,6 +27,12 @@ export default function FontTest() {
   // All printable ASCII characters
   const ascii = Array.from({length: 95}, (_, i) => String.fromCharCode(i + 32)).join('');
   
+  // Special symbols including Apple logo
+  const specialSymbols = "⌘⌥⌃⇧⌫⌦⌨⌕⌖⌗⌘⌙⌚⌛⌜⌝⌞⌟⌠⌡⌢⌣⌤⌥⌦⌧⌨⌫⌬⌭⌮⌯⌰⌱⌲⌳⌴⌵⌶⌷⌸⌹⌺⌻⌼⌽⌾⌿⍀⍁⍂⍃⍄⍅⍆⍇⍈⍉⍊⍋⍌⍍⍎⍏⍐⍑⍒⍓⍔⍕⍖⍗⍘⍙⍚⍛⍜⍝⍞⍟⍠⍡⍢⍣⍤⍥⍦⍧⍨⍩⍪⍫⍬⍭⍮⍯⍰⍱⍲⍳⍴⍵⍶⍷⍸⍹⍺⍻⍼⍽⍾⍿⎀⎁⎂⎃⎄⎅⎆⎇⎈⎉⎊⎋⎌⎍⎎⎏⎐⎑⎒⎓⎔⎕⎖⎗⎘⎙⎚⎛⎜⎝⎞⎟⎠⎡⎢⎣⎤⎥⎦⎧⎨⎩⎪⎫⎬⎭⎮⎯⎰⎱⎲⎳⎴⎵⎶⎷⎸⎹⎺⎻⎼⎽⎾⎿";
+  
+  // Emoji and symbols
+  const emoji = "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏";
+  
   // Unicode blocks to explore
   const unicodeBlocks = [
     { name: "Basic Latin", chars: basicLatin },
@@ -36,6 +42,8 @@ export default function FontTest() {
     { name: "Geometric Shapes", chars: shapes },
     { name: "Arrows", chars: arrows },
     { name: "Currency", chars: currency },
+    { name: "Special Symbols (⌘)", chars: specialSymbols },
+    { name: "Emoji", chars: emoji },
     { name: "All ASCII", chars: ascii }
   ];
 
