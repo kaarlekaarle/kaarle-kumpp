@@ -22,7 +22,7 @@ export default function EMLayout({
       </div>
 
       {/* right content row: defines row height */}
-      <article data-id="right-block" className="row-start-4 col-start-4 self-start max-w-[var(--right)] grid gap-[10px]">
+      <article data-id="right-block" className="row-start-4 col-start-4">
         <h1 className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans leading-none">{rightHeading}</h1>
         {rightBody}
       </article>
