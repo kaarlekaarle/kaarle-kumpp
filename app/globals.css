@@ -90,11 +90,12 @@ article[data-id="right-block"] {
   margin: 0 !important;
   padding: 0 !important;            /* no internal top padding */
   align-self: start !important;     /* anchor to top of its grid row */
-  max-width: var(--right) !important;
+  width: var(--right) !important;   /* fixed width instead of max-width */
   position: relative !important;
   top: 0 !important;
-  /* Align with navigation elements, not pushed to far right */
-  margin-left: 0 !important;
+  /* Always align to right edge of browser */
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 /* Kill stray margins */
