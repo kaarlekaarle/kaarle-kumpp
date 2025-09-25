@@ -126,6 +126,48 @@ export default function FontTest() {
             </div>
           </div>
         </div>
+
+        <div className="mt-8 p-6 bg-red-50 rounded-lg border-2 border-red-200">
+          <h3 className="text-lg font-semibold mb-4 text-red-800">🔍 Apple Logo (⌘) Search Results:</h3>
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded border">
+              <h4 className="font-semibold mb-2">Direct Apple Logo Test:</h4>
+              <div className="text-4xl font-mono">
+                <span className={`${sans.className} p-2 border-2 border-red-300 rounded`} title="Apple Logo U+2318">
+                  ⌘
+                </span>
+                <span className="ml-4 text-sm text-gray-600">Unicode: U+2318</span>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded border">
+              <h4 className="font-semibold mb-2">Alternative Apple Symbols:</h4>
+              <div className="text-2xl space-x-2">
+                <span className={`${sans.className} p-1 border rounded`} title="U+2318">⌘</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+2319">⌙</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231A">⌚</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231B">⌛</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231C">⌜</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231D">⌝</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231E">⌞</span>
+                <span className={`${sans.className} p-1 border rounded`} title="U+231F">⌟</span>
+              </div>
+            </div>
+
+            <div className="p-4 bg-white rounded border">
+              <h4 className="font-semibold mb-2">Font Support Test:</h4>
+              <p className="text-sm text-gray-600 mb-2">
+                If the Apple logo (⌘) above looks like a square or placeholder, 
+                the Kaarle & Kumppanit font doesn't include this character.
+              </p>
+              <div className="text-sm text-gray-500">
+                <p>• Check if it renders as a proper ⌘ symbol</p>
+                <p>• If it shows as □ or ⬜, the font lacks this character</p>
+                <p>• Try the alternative symbols above</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
