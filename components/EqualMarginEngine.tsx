@@ -18,15 +18,23 @@ export default function EqualMarginEngine() {
 
       // vertical M - use unified data-ids
       const vh = window.innerHeight;
-      const hTop = (document.querySelector('[data-id="works"]') as HTMLElement)?.offsetHeight ?? 0;
-      const hMid = (document.querySelector('[data-id="right-block"]') as HTMLElement)?.offsetHeight ?? 0;
-      const hBot = (document.querySelector('[data-id="about"]') as HTMLElement)?.offsetHeight ?? 0;
+      const hTop = (document.querySelector('[data-id="works"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
+      const hRight = (document.querySelector('[data-id="right-block"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
+      const hLeft = (document.querySelector('[data-id="logo-col"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
+      const hMid = Math.max(hLeft, hRight);
+      const hBot = (document.querySelector('[data-id="about"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
 
       const Mv = (vh - (hTop + hMid + hBot)) / 4;
       const M = Math.max(0, Math.min(Mv, Mh));
 
       // Debug logging
-      console.log("EM", {M, Htop: hTop, contentHeight: hMid, Hbottom: hBot, Mv, Mh});
+      console.log("EM", {M, Htop: hTop, Hleft: hLeft, Hright: hRight, Hmid: hMid, Hbottom: hBot, Mv, Mh});
+
+      // Sanity check - log all element heights
+      ['works','logo-col','right-block','about'].forEach(id=>{
+        const el = document.querySelector(`[data-id="${id}"]`);
+        console.log(`${id}:`, el?.getBoundingClientRect().height);
+      });
 
       // Runtime assertion to catch margin leakage
       const rb = document.querySelector('[data-id="right-block"]');
