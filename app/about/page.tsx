@@ -2,7 +2,7 @@ import EMLayout from "@/components/EMLayout";
 
 export default function About(){
   return (
-    <main className="bg-paper text-ink">
+    <main className="bg-paper text-ink about-page">
       <EMLayout
         top="Kaarle & Kumpp."
         left={
@@ -27,24 +27,18 @@ export default function About(){
           </div>
         }
         right={
-          <>
-            {/* keep heading to normalize internal offset */}
-            <h1 className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans leading-none">
-              Problem solving and storytelling.
-            </h1>
-            <div className="leading-[1.4] text-[16px] text-accent font-semibold font-serif">
-              <p>After working with projects and companies big and small,<br />
-              I&apos;ve gotten good at figuring out the problem and solving it.<br />
-              Setting the direction and finding the right people.<br />
-              What the modern creative business loves<br />
-              – workshops, cheap talk, fetishising the processes –<br />
-              is what I steer away from. I design solutions that outlast me.</p>
-              <p>Drawn to simple things that last, both in work and in life.<br />
-              Inspired by photography, internet&apos;s early and future days,<br />
-              crafty people, unorthodox thinking and big trees.</p>
-              <p>Lives and works from Helsinki, Finland.</p>
-            </div>
-          </>
+          <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
+            <p>After working with projects and companies big and small,<br />
+            I&apos;ve gotten good at figuring out the problem and solving it.<br />
+            Setting the direction and finding the right people.<br />
+            What the modern creative business loves<br />
+            – workshops, cheap talk, fetishising the processes –<br />
+            is what I steer away from. I design solutions that outlast me.</p>
+            <p>Drawn to simple things that last, both in work and in life.<br />
+            Inspired by photography, internet&apos;s early and future days,<br />
+            crafty people, unorthodox thinking and big trees.</p>
+            <p>Lives and works from Helsinki, Finland.</p>
+          </div>
         }
         bottom={<a href="/works">Works</a>}
       />
