@@ -93,6 +93,8 @@ article[data-id="right-block"] {
   max-width: var(--right) !important;
   position: relative !important;
   top: 0 !important;
+  /* Ensure the text content aligns with horizontal margin */
+  margin-left: auto !important;
 }
 
 /* Kill stray margins */
@@ -107,6 +109,10 @@ article[data-id="right-block"] {
 [data-id="right-block"] h1 {
   line-height: 1 !important;
   margin: 0 !important;
+  padding: 0 !important;
+  /* Ensure first line of text starts at the very top */
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Critical: remove top/bottom margins of first/last children */
