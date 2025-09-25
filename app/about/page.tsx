@@ -15,7 +15,7 @@ export default function AboutPage() {
 
         {/* KAARLE & KUMPP. (black, 20px) - aligned with right text block */}
         <div className="row-start-2 col-start-3 self-start">
-          <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
+          <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none inline-block m-0 p-0">Kaarle & Kumpp.</p>
         </div>
 
         {/* LEFT: contact card centered in flexible space */}
@@ -77,6 +77,22 @@ export default function AboutPage() {
       </div>
 
       <EqualMarginEngine />
+      
+      {/* Diagnostic script */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          (function(){
+            const $ = s => document.querySelector(s);
+            const M = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--kk-M'))||0;
+            const top = $('[data-id="works"]');
+            const right = $('[data-id="right-block"]');
+            if (top && right) {
+              const gap = right.getBoundingClientRect().top - top.getBoundingClientRect().bottom;
+              console.log('[GAP]', { M, gap, diff: gap - M });
+            }
+          })();
+        `
+      }} />
     </main>
   );
 }

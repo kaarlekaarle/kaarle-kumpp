@@ -28,6 +28,25 @@ export default function EqualMarginEngine() {
       // Debug logging
       console.log("EM", {M, Htop: hTop, Hleft: hLeft, Hright: hRight, Hmid: hMid, Hbottom: hBot, Mv, Mh});
 
+      // Detailed gap diagnostic
+      const cs = getComputedStyle;
+      const top = document.querySelector('[data-id="works"]');
+      const right = document.querySelector('[data-id="right-block"]');
+      const grid = document.querySelector('.min-h-screen.grid');
+      if (top && right && grid) {
+        const rows = cs(grid).gridTemplateRows;
+        const gapPix = right.getBoundingClientRect().top - top.getBoundingClientRect().bottom;
+        console.table({
+          M: cs(document.documentElement).getPropertyValue('--kk-M'),
+          grid_rows: rows,
+          grid_gap: cs(grid).rowGap,
+          top_h: top.getBoundingClientRect().height,
+          top_mb: cs(top).marginBottom,
+          right_mt: cs(right).marginTop,
+          measured_gap: gapPix
+        });
+      }
+
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
       return M;
     };
