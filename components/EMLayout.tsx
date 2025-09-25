@@ -12,26 +12,26 @@ export default function EMLayout({
   return (
     <div className="em">
       {/* top label aligned to right column */}
-      <div className="row-start-2 col-start-3 self-start">
+      <div className="row-start-2 col-start-4 self-start">
         <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none">{topLabel}</p>
       </div>
 
       {/* left content row: out of flow, vertically centered */}
-      <div className="row-start-4 col-start-1 left-cell">
+      <div className="row-start-4 col-start-2 left-cell">
         <div className="left-abs">{leftMain}</div>
       </div>
 
       {/* right content row: defines row height */}
-      <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--right)] grid gap-[10px]">
+      <article data-id="right-block" className="row-start-4 col-start-4 self-start max-w-[var(--right)] grid gap-[10px]">
         <h1 className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans leading-none">{rightHeading}</h1>
         {rightBody}
       </article>
 
       {/* bottom row */}
-      <div className="row-start-6 col-start-1 left-cell">
+      <div className="row-start-6 col-start-2 left-cell">
         {leftBottomLine ? <div className="left-bottom">{leftBottomLine}</div> : null}
       </div>
-      <div className="row-start-6 col-start-3 self-center">
+      <div className="row-start-6 col-start-4 self-center">
         <a data-id="about" href={bottomRightHref} className="uppercase tracking-wide font-normal text-[20px] font-sans">
           {bottomRightLabel}
         </a>
