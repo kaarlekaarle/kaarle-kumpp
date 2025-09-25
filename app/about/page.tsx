@@ -1,25 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import EMPage from "@/components/EMPage";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
 
-export default function AboutPage() {
-  const portraitSrc = "/images/portrait.jpg";
-
+export default function About() {
   return (
     <main className="min-h-screen bg-paper text-ink">
-      {/* rows: M | works | M | right | M | about/contact | M */}
-      {/* cols: left (centered) | M | right | M */}
-      <div className="min-h-screen grid
-        grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-        grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
-
-        {/* KAARLE & KUMPP. (black, 20px) - aligned with right text block */}
-        <div className="row-start-2 col-start-3 self-start">
-          <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none inline-block m-0 p-0">Kaarle & Kumpp.</p>
-        </div>
-
-        {/* LEFT: contact card centered in flexible space */}
-        <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
+      <EMPage
+        topLabel="Kaarle & Kumpp."
+        leftSlot={
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
             <div className="text-[12px] mt-1 font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</div>
@@ -39,25 +26,9 @@ export default function AboutPage() {
               </span>
             </div>
           </div>
-        </div>
-
-        {/* RIGHT BLOCK (about text only) */}
-        <article
-          data-id="right-block"
-          className="
-            row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]
-            grid gap-[10px] [&>*]:m-0
-          "
-        >
-          {/* spacer: matches main heading box exactly */}
-          <h1
-            aria-hidden="true"
-            className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none invisible select-none"
-          >
-            Problem solving and storytelling.
-          </h1>
-
-          {/* body */}
+        }
+        rightHeading="Problem solving and storytelling."
+        rightBody={
           <div className="leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
@@ -70,37 +41,10 @@ export default function AboutPage() {
             crafty people, unorthodox thinking and big trees.</p>
             <p>Lives and works from Helsinki, Finland.</p>
           </div>
-        </article>
-
-        {/* BOTTOM ROW: contact and WORKS centered vertically, same row */}
-        <div className="row-start-6 col-start-1 flex items-center justify-center">
-          <p className="text-[12px] tracking-wide text-center font-normal">
-            <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span className="font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
-            <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
-          </p>
-        </div>
-        <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="about" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
-        </div>
-      </div>
-
+        }
+        bottomLabel="Works"
+      />
       <EqualMarginEngine />
-      
-      {/* Diagnostic script */}
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          (function(){
-            const $ = s => document.querySelector(s);
-            const M = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--kk-M'))||0;
-            const top = $('[data-id="works"]');
-            const right = $('[data-id="right-block"]');
-            if (top && right) {
-              const gap = right.getBoundingClientRect().top - top.getBoundingClientRect().bottom;
-              console.log('[GAP]', { M, gap, diff: gap - M });
-            }
-          })();
-        `
-      }} />
     </main>
   );
 }

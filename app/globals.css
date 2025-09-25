@@ -46,6 +46,15 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   --kk-right-col: 52ch;  /* right text width */
   --kk-M: 100px;         /* will be computed */
 }
+
+/* Grid hardening */
+.kk-grid{ gap:0; row-gap:0; column-gap:0; }
+[data-id="works"]{ display:inline-block; line-height:1; margin:0; padding:0; }
+[data-id="right-block"]{ display:grid; row-gap:10px; }
+[data-id="right-block"] > *{ margin:0; }
+
+/* On ABOUT only: hide heading but keep its height */
+:root[data-route="about"] [data-id="right-block"] [data-id="heading"]{ visibility:hidden; }
 a { color: inherit; text-decoration: none; } /* default no underline */
 
 /* Kill margin leakage in measured cells */
