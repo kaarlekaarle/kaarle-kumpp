@@ -27,9 +27,9 @@ export default function EMLayout({
         {rightBody}
       </article>
 
-      {/* bottom row - just space */}
+      {/* bottom row */}
       <div className="row-start-6 col-start-2 left-cell">
-        <div className="left-bottom">&nbsp;</div>
+        {leftBottomLine ? <div className="left-bottom">{leftBottomLine}</div> : <div className="left-bottom">&nbsp;</div>}
       </div>
       <div className="row-start-6 col-start-4 self-center">
         <a data-id="about" href={bottomRightHref} className="uppercase tracking-wide font-normal text-[20px] font-sans">

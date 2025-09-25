@@ -39,6 +39,13 @@ export default function Page(){
         }
         bottomRightLabel="About"
         bottomRightHref="/about"
+        leftBottomLine={
+          <p className="text-[12px] tracking-wide text-center font-normal">
+            <span className="font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp;
+            <span className="font-serif font-semibold">+358 440 522 753</span> &nbsp;|&nbsp;
+            <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+          </p>
+        }
       />
     </main>
   );
