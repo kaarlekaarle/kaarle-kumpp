@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 
 export const sans = localFont({
-  src: [{ path: "./fonts/kaarle-kumppanit/kk_regular.otf", weight: "400" }],
+  src: [{ path: "../public/fonts/kaarle-kumppanit/kk_regular.otf", weight: "400" }],
   variable: "--font-sans",
   preload: true,
   display: "swap",
@@ -10,9 +10,9 @@ export const sans = localFont({
 
 export const serif = localFont({
   src: [
-    { path: "./fonts/garamond-premier/AGaramondPro-Regular.otf", weight: "400" },
-    { path: "./fonts/garamond-premier/AGaramondPro-Semibold.otf", weight: "600" },
-    { path: "./fonts/garamond-premier/AGaramondPro-Bold.otf", weight: "700" }
+    { path: "../public/fonts/garamond-premier/AGaramondPro-Regular.otf", weight: "400" },
+    { path: "../public/fonts/garamond-premier/AGaramondPro-Semibold.otf", weight: "600" },
+    { path: "../public/fonts/garamond-premier/AGaramondPro-Bold.otf", weight: "700" }
   ],
   variable: "--font-serif",
   preload: true,
