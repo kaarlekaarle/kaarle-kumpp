@@ -60,7 +60,7 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 
 /* left cells removed from flow and centered */
 .left-cell{ position: relative; min-height: 0; }
-.left-abs{ position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; }
+.left-abs{ position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: right; }
 
 /* bottom-left line centered within bottom row */
 .left-bottom{ position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); }
