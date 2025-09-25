@@ -65,8 +65,8 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 /* bottom-left line centered within bottom row */
 .left-bottom{ position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); }
 
-.font-sans { font-family: var(--font-sans), system-ui; }
-.font-serif { font-family: var(--font-serif), serif; }
+.font-sans { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+.font-serif { font-family: "Times New Roman", Times, serif; }
 
 /* Hide heading on about page but keep height */
 .about-page [data-id="right-block"] h1 { visibility: hidden; }
