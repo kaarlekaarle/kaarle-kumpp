@@ -48,12 +48,6 @@ export default function EqualMarginEngine() {
       }
 
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
-      
-      // After computing M, also compute the right-block heading height if present
-      const heading = document.querySelector('[data-id="heading"]') as HTMLElement | null;
-      const rightTopOffset = heading ? heading.getBoundingClientRect().height : 0;
-      document.documentElement.style.setProperty('--kk-right-top-offset', `${rightTopOffset}px`);
-      
       return M;
     };
 

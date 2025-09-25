@@ -46,11 +46,19 @@ export default function AboutPage() {
           data-id="right-block"
           className="
             row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]
-            grid gap-[10px]
-            [&>*]:m-0
+            grid gap-[10px] [&>*]:m-0
           "
         >
-          <div className="space-y-3 leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+          {/* spacer: matches main heading box exactly */}
+          <h1
+            aria-hidden="true"
+            className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none invisible select-none"
+          >
+            Problem solving and storytelling.
+          </h1>
+
+          {/* body */}
+          <div className="leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
             Setting the direction and finding the right people.<br />
