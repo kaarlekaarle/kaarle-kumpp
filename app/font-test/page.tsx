@@ -7,11 +7,11 @@ export default function FontTest() {
         <h1 className="text-3xl font-bold mb-8 text-center">Kaarle ⌘ Kumppanit Font Test</h1>
         
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Your Specific Character</h2>
+          <h2 className="text-2xl font-medium mb-6 text-center">Your Specific Character</h2>
           
           <div className="text-center space-y-8">
             <div className="p-6 bg-green-50 rounded-lg border-2 border-green-200">
-              <h3 className="text-lg font-semibold mb-4 text-green-800">GID: 75, Unicode: U+F8FF</h3>
+              <h3 className="text-lg font-medium mb-4 text-green-800">GID: 75, Unicode: U+F8FF</h3>
               
               <div className="text-8xl font-sans mb-4">
                 <span className="p-4 border-2 border-green-300 rounded-lg bg-white inline-block">

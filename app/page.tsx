@@ -17,7 +17,7 @@ export default function Page(){
         rightHeading="Problem solving and storytelling."
         rightBody={
           <>
-            <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
+            <div className="font-serif leading-[1.4] text-[16px] text-accent font-medium">
               <p>Everything starts with a question: <em>What are we doing here?</em><br />
               Once we agree on the task, I lay out a plan.<br />
               You need clarity, the right perspective, and the right people.<br />
@@ -39,8 +39,8 @@ export default function Page(){
         leftBottomLine={
           <p className="text-[12px] tracking-wide text-center font-normal">
             <span className="font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp;
-            <span className="font-serif font-semibold">+358 440 522 753</span> &nbsp;|&nbsp;
-            <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+            <span className="font-serif font-medium">+358 440 522 753</span> &nbsp;|&nbsp;
+            <a className="underline [font-style:oblique_10deg] font-serif font-medium" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
           </p>
         }
       />

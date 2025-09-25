@@ -105,7 +105,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                 onMouseLeave={() => setHoveredField(null)}
                 onFocus={() => { setHoveredField(f.id); setHoveredClient(null); }}
                 onBlur={() => setHoveredField(null)}
-                className={cn("cursor-pointer transition-colors text-lg uppercase", isActive && "text-accent font-semibold", isDimmed && "opacity-40")}
+                className={cn("cursor-pointer transition-colors text-lg uppercase", isActive && "text-accent font-medium", isDimmed && "opacity-40")}
                 style={{fontFamily: "'Kaarle ⌘ Kumppanit', Arial, sans-serif"}}
               >
                 {f.name}
@@ -115,7 +115,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
         </ul>
 
         {/* Clients (right) */}
-        <ul className="space-y-2 md:space-y-3 font-semibold uppercase">
+        <ul className="space-y-2 md:space-y-3 font-medium uppercase">
           {clients.map(c => {
             const cid = c.slug;
             const activeFromField = hoveredField && (c.fields?.includes(hoveredField));

@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { EB_Garamond } from "next/font/google";
 
 export const sans = localFont({
   src: [{ path: "../public/fonts/kaarle-kumppanit/kk_regular.otf", weight: "400" }],
@@ -8,14 +9,10 @@ export const sans = localFont({
   fallback: ["system-ui", "Arial"]
 });
 
-export const serif = localFont({
-  src: [
-    { path: "../public/fonts/garamond-premier/AGaramondPro-Regular.otf", weight: "400" },
-    { path: "../public/fonts/garamond-premier/AGaramondPro-Semibold.otf", weight: "600" },
-    { path: "../public/fonts/garamond-premier/AGaramondPro-Bold.otf", weight: "700" }
-  ],
+export const serif = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-serif",
-  preload: true,
   display: "swap",
   fallback: ["Times New Roman", "serif"]
 });

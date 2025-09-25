@@ -9,9 +9,9 @@ export default function About(){
         leftMain={
           <div className="leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[12px] mt-1 font-serif font-semibold">+358 440 522 753</div>
+            <div className="text-[12px] mt-1 font-serif font-medium">+358 440 522 753</div>
             <div className="text-[12px]">
-              <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+              <a className="underline [font-style:oblique_10deg] font-serif font-medium" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
             </div>
 
             <div className="mt-4 flex justify-end">
@@ -26,7 +26,7 @@ export default function About(){
             </div>
 
             <div className="pt-3">
-              <span className="uppercase text-[12px] font-sans font-semibold">
+              <span className="uppercase text-[12px] font-sans font-medium">
                 Download CV
               </span>
             </div>
@@ -34,7 +34,7 @@ export default function About(){
         }
         rightHeading="Problem solving and storytelling."
         rightBody={
-          <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
+          <div className="font-serif leading-[1.4] text-[16px] text-accent font-medium">
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
             Setting the direction and finding the right people.<br />
