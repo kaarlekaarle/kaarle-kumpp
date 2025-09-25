@@ -93,8 +93,8 @@ article[data-id="right-block"] {
   max-width: var(--right) !important;
   position: relative !important;
   top: 0 !important;
-  /* Ensure the text content aligns with horizontal margin */
-  margin-left: auto !important;
+  /* Align with navigation elements, not pushed to far right */
+  margin-left: 0 !important;
 }
 
 /* Kill stray margins */
@@ -160,8 +160,8 @@ article[data-id="right-block"] {
   font-family: 'Kaarle ⌘ Kumppanit', 'Arial', sans-serif !important;
 }
 
-/* Debug right block alignment */
-article[data-id="right-block"] {
+/* Debug right block alignment - remove when alignment is correct */
+/* article[data-id="right-block"] {
   border: 2px solid red !important;
   background: rgba(255, 0, 0, 0.1) !important;
-}
+} */
