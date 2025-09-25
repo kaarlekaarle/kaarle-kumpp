@@ -46,7 +46,7 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 }
 .em { min-height: 100svh; display:grid; gap:0;
   grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;      /* 4 equal M's */
-  grid-template-columns: var(--left) 1fr var(--right) 1fr; /* 3 equal M's */
+  grid-template-columns: 1fr var(--left) 1fr var(--right) 1fr; /* 4 equal M's */
 }
 [data-id="works"]{ display:inline-block; line-height:1; margin:0; padding:0; }
 [data-id="right-block"]{ display:grid; row-gap:10px; }
