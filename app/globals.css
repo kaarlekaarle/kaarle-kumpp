@@ -84,13 +84,15 @@ a { color: inherit; text-decoration: none; } /* default no underline */
 }
 
 /* Right column hardening */
-[data-id="right-block"] {
+article[data-id="right-block"] {
   display: grid !important;
   row-gap: 10px !important;         /* controlled spacing only */
   margin: 0 !important;
   padding: 0 !important;            /* no internal top padding */
   align-self: start !important;     /* anchor to top of its grid row */
   max-width: var(--right) !important;
+  position: relative !important;
+  top: 0 !important;
 }
 
 /* Kill stray margins */
@@ -150,4 +152,10 @@ a { color: inherit; text-decoration: none; } /* default no underline */
 /* Debug font loading */
 .debug-font {
   font-family: 'Kaarle ⌘ Kumppanit', 'Arial', sans-serif !important;
+}
+
+/* Debug right block alignment */
+article[data-id="right-block"] {
+  border: 2px solid red !important;
+  background: rgba(255, 0, 0, 0.1) !important;
 }
