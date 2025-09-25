@@ -32,7 +32,7 @@ export default function EMLayout({
         </p>
       </div>
       <div className="row-start-6 col-start-3 flex items-center">
-        <a data-id="about" className="uppercase tracking-wide font-normal text-[20px] font-sans">{bottom}</a>
+        <div data-id="about" className="uppercase tracking-wide font-normal text-[20px] font-sans">{bottom}</div>
       </div>
     </div>
   );
