@@ -20,7 +20,7 @@ export default function About(){
             </div>
 
             <div className="pt-3">
-              <span className="uppercase text-[12px] font-serif font-semibold">
+              <span className="uppercase text-[12px] font-sans font-semibold">
                 Download CV
               </span>
             </div>
