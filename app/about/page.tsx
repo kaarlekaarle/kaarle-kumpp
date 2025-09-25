@@ -6,7 +6,7 @@ export default function About(){
       <EMLayout
         topLabel="Kaarle & Kumpp."
         leftMain={
-          <div className="text-center leading-tight">
+          <div className="leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
             <div className="text-[12px] mt-1 font-serif font-semibold">+358 440 522 753</div>
             <div className="text-[12px]">
