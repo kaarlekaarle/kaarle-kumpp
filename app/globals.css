@@ -44,31 +44,18 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   --left: 420px;     /* left column width */
   --right: 52ch;     /* right text width */
   --kk-M: clamp(48px, 8vmin, 120px); /* modular margin, responsive but fixed per size */
-  --kk-left-col: var(--left);
-  --kk-right-col: var(--right);
 }
 
 .em{
-  width:100%;
-  display:grid;
-  gap:0;
-  grid-template-rows: var(--kk-M) auto var(--kk-M) auto var(--kk-M) auto var(--kk-M);
-  /* Add a LEFT spacer 1fr. Keep RIGHT gutter fixed to M. */
-  grid-template-columns:
-    1fr                         /* spacer that absorbs extra width */
-    var(--kk-left-col)          /* left column */
-    var(--kk-M)                 /* middle gutter */
-    var(--kk-right-col)         /* right text column */
-    var(--kk-M);                /* RIGHT gutter = fixed M */
-  justify-content:stretch;      /* tracks span full width */
+  min-height: 100svh;
+  display: grid;
+  gap: 0;
+  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;          /* vertical M's */
+  grid-template-columns: 1fr var(--left) 1fr var(--right) 1fr; /* horizontal M's - right-aligned */
 }
 
 /* hardening */
 [data-id="works"]{ display:inline-block; line-height:1; margin:0; padding:0; }
-
-/* Place items explicitly */
-.left-cell{ grid-column: 2; }
-[data-id="works"]{ grid-column: 4; }
 
 /* left cells removed from flow and centered */
 .left-cell{ position: relative; min-height: 0; }
@@ -97,16 +84,32 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   border: 0;
 }
 
-[data-id="right-block"]{
-  grid-column: 4;
-  justify-self:end;             /* align to end of its column */
-  width: var(--kk-right-col);
-  margin:0; padding:0;
-  display:grid; row-gap:10px;
+.kk-pr-M { padding-right: var(--kk-M); }
+
+/* Right column hardening */
+article[data-id="right-block"] {
+  display: grid !important;
+  row-gap: 10px !important;         /* controlled spacing only */
+  margin: 0 !important;
+  padding: 0 !important;            /* no internal top padding */
+  align-self: start !important;     /* anchor to top of its grid row */
+  width: var(--right) !important;   /* fixed width instead of max-width */
+  position: relative !important;
+  top: 0 !important;
+  /* Align with navigation elements, not pushed to far right */
+  margin-left: 0 !important;
+  /* Ensure right block has no extra right margin/padding */
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
 
-[data-id="right-block"] > *{ margin:0; }
-[data-id="right-block"] > :first-child{ margin-top:0; }
+/* Kill stray margins */
+[data-id="right-block"] > * {
+  margin: 0 !important;
+}
+[data-id="right-block"] > :first-child {
+  margin-top: 0 !important;
+}
 
 /* Heading normalization */
 [data-id="right-block"] h1 {
