@@ -13,7 +13,7 @@ export default function AboutPage() {
         grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
         grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
 
-        {/* WORKS (black, 20px) - aligned with right text block */}
+        {/* KAARLE & KUMPP. (black, 20px) - aligned with right text block */}
         <div className="row-start-2 col-start-3 self-start">
           <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
         </div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* RIGHT BLOCK (body only) */}
+        {/* RIGHT BLOCK (about text only) */}
         <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
           <div className="mt-4 space-y-3 leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
             <p>After working with projects and companies big and small,<br />
@@ -62,13 +62,7 @@ export default function AboutPage() {
           </div>
         </article>
 
-        {/* BOTTOM ROW: contact and WORKS centered vertically, same row */}
-        <div className="row-start-6 col-start-1 flex items-center justify-center">
-          <p className="text-[12px] tracking-wide text-center font-normal">
-            <span className="font-normal font-sans">KAARLE HURTIG</span> &nbsp;|&nbsp; <span className="font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</span> &nbsp;|&nbsp;
-            <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
-          </p>
-        </div>
+        {/* BOTTOM ROW: WORKS only (no contact line) */}
         <div className="row-start-6 col-start-3 flex items-center">
           <Link data-id="about" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
         </div>
