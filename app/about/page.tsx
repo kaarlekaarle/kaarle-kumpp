@@ -13,7 +13,7 @@ export default function About(){
               <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 flex justify-end">
               <div className="w-[280px] h-[340px] bg-[#e5e5e5] flex items-center justify-center">
                 <div className="text-[#999] text-sm">Portrait placeholder</div>
               </div>
