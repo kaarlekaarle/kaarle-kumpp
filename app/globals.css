@@ -41,16 +41,19 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 }
 
 :root{
-  --left: 420px;     /* left column width */
-  --right: 52ch;     /* right text width */
+  --left: 420px;                 /* left column */
+  --right: 52ch;                 /* right text width */
+  --M: clamp(48px, 8vmin, 120px); /* modular margin, responsive but fixed per size */
 }
 
 .em{
   min-height: 100svh;
   display: grid;
   gap: 0;
-  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;          /* vertical M's */
-  grid-template-columns: 1fr var(--left) 1fr var(--right) 1fr; /* horizontal M's - right-aligned */
+  /* rows: M | top | M | content | M | bottom | M */
+  grid-template-rows: var(--M) auto var(--M) auto var(--M) auto var(--M);
+  /* cols: left | M | right | M  (no fr on the last track) */
+  grid-template-columns: var(--left) var(--M) var(--right) var(--M);
 }
 
 /* hardening */
@@ -83,19 +86,13 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   border: 0;
 }
 
-/* Right column hardening */
-article[data-id="right-block"] {
-  display: grid !important;
-  row-gap: 10px !important;         /* controlled spacing only */
-  margin: 0 !important;
-  padding: 0 !important;            /* no internal top padding */
-  align-self: start !important;     /* anchor to top of its grid row */
-  width: var(--right) !important;   /* fixed width instead of max-width */
-  position: relative !important;
-  top: 0 !important;
-  /* Always align to right edge of browser */
-  margin-left: auto !important;
-  margin-right: 0 !important;
+/* right column hardening */
+[data-id="right-block"]{
+  grid-column: 3;
+  align-self: start;
+  width: var(--right);           /* fixed to the right column track */
+  margin: 0; padding: 0;
+  display: grid; row-gap: 10px;
 }
 
 /* Kill stray margins */
