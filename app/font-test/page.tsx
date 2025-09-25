@@ -4,7 +4,7 @@ export default function FontTest() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Kaarle & Kumppanit Font Test</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Kaarle ⌘ Kumppanit Font Test</h1>
         
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Your Specific Character</h2>
@@ -22,7 +22,7 @@ export default function FontTest() {
               <div className="text-sm text-gray-600 space-y-2">
                 <p><strong>GID:</strong> 75 (Glyph ID in font)</p>
                 <p><strong>Unicode:</strong> U+F8FF (Private Use Area)</p>
-                <p><strong>Font:</strong> Kaarle & Kumppanit Sans</p>
+                <p><strong>Font:</strong> Kaarle ⌘ Kumppanit Sans</p>
               </div>
               
               <div className="mt-4 p-3 bg-blue-50 rounded border">

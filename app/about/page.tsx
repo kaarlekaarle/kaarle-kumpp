@@ -5,7 +5,7 @@ export default function About(){
   return (
     <main className="bg-paper text-ink about-page">
       <EMLayout
-        topLabel="Kaarle & Kumpp."
+        topLabel={`Kaarle ${String.fromCharCode(0xF8FF)} Kumpp.`}
         leftMain={
           <div className="leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>

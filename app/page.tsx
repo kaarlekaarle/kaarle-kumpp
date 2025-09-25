@@ -9,10 +9,7 @@ export default function Page(){
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KAARLE</div>
             <div className="my-3 flex justify-center">
-              <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="14" fill="none" stroke="#111111" strokeWidth="2" />
-                <circle cx="15" cy="15" r="7"  fill="none" stroke="#111111" strokeWidth="2" />
-              </svg>
+              <span className="text-[30px] font-sans">{String.fromCharCode(0xF8FF)}</span>
             </div>
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KUMPP.</div>
           </div>

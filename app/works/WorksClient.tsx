@@ -106,7 +106,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                 onFocus={() => { setHoveredField(f.id); setHoveredClient(null); }}
                 onBlur={() => setHoveredField(null)}
                 className={cn("cursor-pointer transition-colors text-lg uppercase", isActive && "text-accent font-semibold", isDimmed && "opacity-40")}
-                style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}
+                style={{fontFamily: "'Kaarle ⌘ Kumppanit', Arial, sans-serif"}}
               >
                 {f.name}
               </li>
@@ -135,7 +135,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                 onFocus={() => { setHoveredClient(cid); setHoveredField(null); }}
                 onBlur={() => setHoveredClient(null)}
                 className={cn("cursor-pointer transition-colors text-lg uppercase", isActive && "text-accent", isDimmed && "opacity-40")}
-                style={{fontFamily: "'Kaarle & Kumppanit', Arial, sans-serif"}}
+                style={{fontFamily: "'Kaarle ⌘ Kumppanit', Arial, sans-serif"}}
               >
                 <a href={`/works/${c.slug}`}>{c.name}</a>
               </li>
