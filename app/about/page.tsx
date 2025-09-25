@@ -2,7 +2,7 @@ import EMLayout from "@/components/EMLayout";
 
 export default function About(){
   return (
-    <main className="bg-paper text-ink">
+    <main className="bg-paper text-ink about-page">
       <EMLayout
         topLabel="Kaarle & Kumpp."
         leftMain={
