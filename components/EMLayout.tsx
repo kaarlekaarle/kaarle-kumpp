@@ -11,8 +11,8 @@ export default function EMLayout({
 }){
   return (
     <div className="em">
-      {/* top label centered */}
-      <div className="row-start-2 col-start-4 self-center flex justify-center">
+      {/* top label aligned to right column */}
+      <div className="row-start-2 col-start-4 self-start">
         <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none">{topLabel}</p>
       </div>
 
@@ -22,16 +22,16 @@ export default function EMLayout({
       </div>
 
       {/* right content row: defines row height */}
-      <article data-id="right-block" className="row-start-4 col-start-4 self-center max-w-[var(--right)] grid gap-[10px] text-center">
+      <article data-id="right-block" className="row-start-4 col-start-4 self-start max-w-[var(--right)] grid gap-[10px]">
         <h1 className="uppercase tracking-wide font-normal text-[20px] text-accent font-sans leading-none">{rightHeading}</h1>
-        <div className="text-left">{rightBody}</div>
+        {rightBody}
       </article>
 
       {/* bottom row - just space */}
       <div className="row-start-6 col-start-2 left-cell">
         <div className="left-bottom">&nbsp;</div>
       </div>
-      <div className="row-start-6 col-start-4 self-center flex justify-center">
+      <div className="row-start-6 col-start-4 self-center">
         <a data-id="about" href={bottomRightHref} className="uppercase tracking-wide font-normal text-[20px] font-sans">
           {bottomRightLabel}
         </a>
