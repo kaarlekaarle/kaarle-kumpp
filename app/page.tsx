@@ -17,6 +17,7 @@ export default function Page(){
         rightHeading="Problem solving and storytelling."
         rightBody={
           <>
+            <br />
             <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
               <p>Everything starts with a question: <em>What are we doing here?</em><br />
               Once we agree on the task, I lay out a plan.<br />
@@ -32,7 +33,6 @@ export default function Page(){
               <p>I do the work like it&apos;s mine. If I&apos;m not the man for the job,<br />
               I&apos;ll say so. I don&apos;t drag things out to look busy.<br />
               I don&apos;t bill by the hour. I charge by the solution.</p>
-              <br />
             </div>
             <p className="uppercase font-normal text-[20px] text-accent font-sans">What is your problem?</p>
           </>
