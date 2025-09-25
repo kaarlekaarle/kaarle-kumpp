@@ -125,6 +125,25 @@ export default function FontTest() {
           </div>
         </div>
 
+        <div className="mt-8 p-6 bg-green-50 rounded-lg border-2 border-green-200">
+          <h3 className="text-lg font-semibold mb-4 text-green-800">🎯 Your Specific Character Search:</h3>
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded border">
+              <h4 className="font-semibold mb-2">GID: 75, Unicode: U+F8FF</h4>
+              <div className="text-4xl font-mono">
+                <span className="font-sans p-2 border-2 border-green-300 rounded" title="Your Character U+F8FF">
+                  {String.fromCharCode(0xF8FF)}
+                </span>
+                <span className="ml-4 text-sm text-gray-600">Unicode: U+F8FF (Private Use Area)</span>
+              </div>
+              <p className="text-sm text-gray-600 mt-2">
+                This character is in the Private Use Area (U+F000-U+F8FF). 
+                If it shows as a square or placeholder, the font doesn't include this specific character.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-8 p-6 bg-red-50 rounded-lg border-2 border-red-200">
           <h3 className="text-lg font-semibold mb-4 text-red-800">🔍 Apple Logo (⌘) Search Results:</h3>
           <div className="space-y-4">
