@@ -45,6 +45,7 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   --kk-left-col: 420px;  /* logo column */
   --kk-right-col: 52ch;  /* right text width */
   --kk-M: 100px;         /* will be computed */
+  --kk-right-top-offset: 0px; /* filled by engine */
 }
 a { color: inherit; text-decoration: none; } /* default no underline */
 
@@ -122,6 +123,7 @@ a { color: inherit; text-decoration: none; } /* default no underline */
 [data-id="right-block"] { 
   display: grid; 
   row-gap: 10px; 
+  padding-top: var(--kk-right-top-offset);
 }
 
 /* Debug font loading */
