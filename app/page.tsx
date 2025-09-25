@@ -1,12 +1,12 @@
 import EMPage from "@/components/EMPage";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
 
-export default function Page() {
+export default function Page(){
   return (
     <main className="min-h-screen bg-paper text-ink">
       <EMPage
         topLabel="Works"
-        leftSlot={
+        left={
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KAARLE</div>
             <div className="my-3 flex justify-center">
@@ -20,7 +20,7 @@ export default function Page() {
         }
         rightHeading="Problem solving and storytelling."
         rightBody={
-          <div className="leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+          <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
             <p>Everything starts with a question: <em>What are we doing here?</em><br />
             Once we agree on the task, I lay out a plan.<br />
             You need clarity, the right perspective, and the right people.<br />
@@ -39,8 +39,9 @@ export default function Page() {
           </div>
         }
         bottomLabel="About"
+        bottomHref="/about"
       />
-      <EqualMarginEngine />
+      <EqualMarginEngine/>
     </main>
   );
 }

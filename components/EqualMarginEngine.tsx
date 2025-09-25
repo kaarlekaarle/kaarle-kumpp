@@ -3,78 +3,35 @@ import { useEffect } from "react";
 
 export default function EqualMarginEngine() {
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const root = document.documentElement;
+    const qs = (s:string)=>document.querySelector(s) as HTMLElement|null;
+    const rectH = (el:HTMLElement|null)=> el? el.getBoundingClientRect().height : 0;
 
-    const qs = (sel: string) => document.querySelector(sel) as HTMLElement | null;
+    const compute = () => {
+      const L = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--kk-left-col"));
+      const R = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--kk-right-col"));
+      const Mh = (window.innerWidth - (L + R)) / 3;
 
-    const computeM = () => {
-      const styles = getComputedStyle(document.documentElement);
-      const L = parseFloat(styles.getPropertyValue("--kk-left-col"));
-      const R = parseFloat(styles.getPropertyValue("--kk-right-col"));
-      const vw = window.innerWidth;
-      const Mh = (vw - (L + R)) / 3;
+      const hTop = rectH(qs('[data-id="works"]'));
+      const hLeft = rectH(qs('[data-id="logo-col"]'));
+      const hRight= rectH(qs('[data-id="right-block"]'));
+      const hBot = rectH(qs('[data-id="about"]'));
+      const content = Math.max(hLeft, hRight);
 
-      const vh = window.innerHeight;
-      const hTop = qs('[data-id="works"]')?.getBoundingClientRect().height ?? 0;
-      const hRight = qs('[data-id="right-block"]')?.getBoundingClientRect().height ?? 0;
-      const hLeft = qs('[data-id="logo-col"]')?.getBoundingClientRect().height ?? 0;
-      const hMid = Math.max(hLeft, hRight);
-      const hBot = qs('[data-id="about"]')?.getBoundingClientRect().height ?? 0;
-
-      const Mv = (vh - (hTop + hMid + hBot)) / 4;
+      const Mv = (window.innerHeight - (hTop + content + hBot)) / 4;
       const M = Math.max(0, Math.min(Mv, Mh));
-
-      // Debug logging
-      console.log("EM", {M, Htop: hTop, Hleft: hLeft, Hright: hRight, Hmid: hMid, Hbottom: hBot, Mv, Mh});
-
-      // Detailed gap diagnostic
-      const cs = getComputedStyle;
-      const top = document.querySelector('[data-id="works"]');
-      const right = document.querySelector('[data-id="right-block"]');
-      const grid = document.querySelector('.min-h-screen.grid');
-      if (top && right && grid) {
-        const rows = cs(grid).gridTemplateRows;
-        const gapPix = right.getBoundingClientRect().top - top.getBoundingClientRect().bottom;
-        console.table({
-          M: cs(document.documentElement).getPropertyValue('--kk-M'),
-          grid_rows: rows,
-          grid_gap: cs(grid).rowGap,
-          top_h: top.getBoundingClientRect().height,
-          top_mb: cs(top).marginBottom,
-          right_mt: cs(right).marginTop,
-          measured_gap: gapPix
-        });
-      }
-
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
-      return M;
     };
 
-    // Recompute on resize, font load, and element size changes.
-    const run = () => computeM();
-    run();
-
-    const onResize = () => run();
-    window.addEventListener("resize", onResize);
-
-    // Fonts
-    if ((document as any).fonts?.ready) {
-      (document as any).fonts.ready.then(run);
-    }
-
-    // Observe measured elements
-    const ro = new ResizeObserver(run);
+    const ro = new ResizeObserver(compute);
     ['[data-id="works"]','[data-id="logo-col"]','[data-id="right-block"]','[data-id="about"]']
-      .map(qs)
-      .filter(Boolean)
-      .forEach(el => ro.observe(el!));
+      .map(qs).forEach(el=> el && ro.observe(el));
+    window.addEventListener("resize", compute);
+    // fonts
+    // @ts-ignore
+    document.fonts?.ready?.then(compute);
 
-    return () => {
-      window.removeEventListener("resize", onResize);
-      ro.disconnect();
-    };
+    compute();
+    return () => { ro.disconnect(); window.removeEventListener("resize", compute); };
   }, []);
-
   return null;
 }

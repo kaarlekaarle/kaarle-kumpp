@@ -1,17 +1,17 @@
 import EMPage from "@/components/EMPage";
 import EqualMarginEngine from "@/components/EqualMarginEngine";
 
-export default function About() {
+export default function About(){
   return (
     <main className="min-h-screen bg-paper text-ink">
       <EMPage
         topLabel="Kaarle & Kumpp."
-        leftSlot={
+        left={
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[12px] mt-1 font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</div>
+            <div className="text-[12px] mt-1 font-serif font-semibold">+358 440 522 753</div>
             <div className="text-[12px]">
-              <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+              <a className="underline [font-style:oblique_10deg] font-serif font-semibold" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
             </div>
 
             <div className="mt-4">
@@ -21,7 +21,7 @@ export default function About() {
             </div>
 
             <div className="pt-3">
-              <span className="uppercase text-[12px] font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+              <span className="uppercase text-[12px] font-serif font-semibold">
                 Download CV
               </span>
             </div>
@@ -29,7 +29,7 @@ export default function About() {
         }
         rightHeading="Problem solving and storytelling."
         rightBody={
-          <div className="leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+          <div className="font-serif leading-[1.4] text-[16px] text-accent font-semibold">
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
             Setting the direction and finding the right people.<br />
@@ -43,8 +43,9 @@ export default function About() {
           </div>
         }
         bottomLabel="Works"
+        bottomHref="/works"
       />
-      <EqualMarginEngine />
+      <EqualMarginEngine/>
     </main>
   );
 }

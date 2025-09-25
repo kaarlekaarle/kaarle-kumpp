@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { sans, serif } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Kaarle & Kumpp.",
@@ -12,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-route="main">
-      <body>{children}</body>
+    <html lang="en">
+      <body className={`${sans.variable} ${serif.variable}`}>{children}</body>
     </html>
   );
 }
