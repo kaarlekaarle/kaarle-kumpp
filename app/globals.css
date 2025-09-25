@@ -85,39 +85,41 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   border: 0;
 }
 
-/* Belt and suspenders: zero all child margins in right-block */
-[data-id="right-block"] > * { 
-  margin: 0 !important; 
+/* Right column hardening */
+[data-id="right-block"] {
+  display: grid;
+  row-gap: 10px;         /* controlled spacing only */
+  margin: 0;
+  padding: 0;            /* no internal top padding */
+  align-self: start;     /* anchor to top of its grid row */
+  max-width: var(--right);
 }
 
-/* Use grid for controlled spacing in right-block - prevents margin collapse */
-[data-id="right-block"] { 
-  display: grid; 
-  gap: 10px; 
+/* Kill stray margins */
+[data-id="right-block"] > * {
+  margin: 0;
+}
+[data-id="right-block"] > :first-child {
+  margin-top: 0;
+}
+
+/* Heading normalization */
+[data-id="right-block"] h1 {
+  line-height: 1;
+  margin: 0;
 }
 
 /* Critical: remove top/bottom margins of first/last children */
-[data-id="right-block"] > :first-child,
 [data-id="logo-col"] > :first-child,
 [data-id="works"] > :first-child,
 [data-id="about"] > :first-child {
   margin-top: 0;
 }
 
-[data-id="right-block"] > :last-child,
 [data-id="logo-col"] > :last-child,
 [data-id="works"] > :last-child,
 [data-id="about"] > :last-child {
   margin-bottom: 0;
-}
-
-/* Normalize headings/paragraphs inside right block */
-[data-id="right-block"] h1,
-[data-id="right-block"] h2,
-[data-id="right-block"] p,
-[data-id="right-block"] ul,
-[data-id="right-block"] ol {
-  margin: 0;
 }
 
 /* forbid extra spacing leaking from the top label into the gap */
@@ -145,10 +147,6 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   line-height: 1; 
   margin: 0; 
   padding: 0; 
-}
-[data-id="right-block"] { 
-  display: grid; 
-  row-gap: 10px; 
 }
 
 /* Debug font loading */
