@@ -41,9 +41,11 @@ export default function About(){
             What the modern creative business loves<br />
             – workshops, cheap talk, fetishising the processes –<br />
             is what I steer away from. I design solutions that outlast me.</p>
+            <br />
             <p>Drawn to simple things that last, both in work and in life.<br />
             Inspired by photography, internet&apos;s early and future days,<br />
             crafty people, unorthodox thinking and big trees.</p>
+            <br />
             <p>Lives and works from Helsinki, Finland.</p>
           </div>
         }
