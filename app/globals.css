@@ -107,6 +107,23 @@ a { color: inherit; text-decoration: none; } /* default no underline */
   margin: 0; 
 }
 
+/* Ensure no grid row gap leaks */
+.min-h-screen.grid { 
+  gap: 0; 
+  row-gap: 0; 
+  column-gap: 0; 
+}
+[data-id="works"] { 
+  display: inline-block; 
+  line-height: 1; 
+  margin: 0; 
+  padding: 0; 
+}
+[data-id="right-block"] { 
+  display: grid; 
+  row-gap: 10px; 
+}
+
 /* Debug font loading */
 .debug-font {
   font-family: 'Kaarle & Kumppanit', 'Arial', sans-serif !important;

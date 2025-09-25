@@ -6,23 +6,21 @@ export default function EqualMarginEngine() {
     if (typeof window === 'undefined') return;
     const root = document.documentElement;
 
+    const qs = (sel: string) => document.querySelector(sel) as HTMLElement | null;
+
     const computeM = () => {
-      // Now both pages use the same data-ids: works, logo-col, right-block, about
       const styles = getComputedStyle(document.documentElement);
       const L = parseFloat(styles.getPropertyValue("--kk-left-col"));
       const R = parseFloat(styles.getPropertyValue("--kk-right-col"));
       const vw = window.innerWidth;
-
-      // horizontal M - both pages use same formula now
       const Mh = (vw - (L + R)) / 3;
 
-      // vertical M - use unified data-ids
       const vh = window.innerHeight;
-      const hTop = (document.querySelector('[data-id="works"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
-      const hRight = (document.querySelector('[data-id="right-block"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
-      const hLeft = (document.querySelector('[data-id="logo-col"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
+      const hTop = qs('[data-id="works"]')?.getBoundingClientRect().height ?? 0;
+      const hRight = qs('[data-id="right-block"]')?.getBoundingClientRect().height ?? 0;
+      const hLeft = qs('[data-id="logo-col"]')?.getBoundingClientRect().height ?? 0;
       const hMid = Math.max(hLeft, hRight);
-      const hBot = (document.querySelector('[data-id="about"]') as HTMLElement)?.getBoundingClientRect().height ?? 0;
+      const hBot = qs('[data-id="about"]')?.getBoundingClientRect().height ?? 0;
 
       const Mv = (vh - (hTop + hMid + hBot)) / 4;
       const M = Math.max(0, Math.min(Mv, Mh));
@@ -30,63 +28,33 @@ export default function EqualMarginEngine() {
       // Debug logging
       console.log("EM", {M, Htop: hTop, Hleft: hLeft, Hright: hRight, Hmid: hMid, Hbottom: hBot, Mv, Mh});
 
-      // Sanity check - log all element heights
-      ['works','logo-col','right-block','about'].forEach(id=>{
-        const el = document.querySelector(`[data-id="${id}"]`);
-        console.log(`${id}:`, el?.getBoundingClientRect().height);
-      });
-
-      // Runtime assertion to catch margin leakage
-      const rb = document.querySelector('[data-id="right-block"]');
-      if (rb) {
-        const fc = rb.firstElementChild as HTMLElement | null;
-        const mt = fc ? parseFloat(getComputedStyle(fc).marginTop) : 0;
-        if (mt !== 0) console.warn('[M] right-block first-child marginTop leaking:', mt);
-      }
-
-      // Fail the build if TOP has margins
-      const topEl = document.querySelector('[data-id="works"]') as HTMLElement;
-      if (topEl) {
-        const mb = parseFloat(getComputedStyle(topEl).marginBottom || "0");
-        if (mb !== 0) {
-          console.warn("[EqualMargin] TOP has margin-bottom", mb);
-        }
-      }
-
-      // Log grid track sizes and margin analysis
-      const grid = document.querySelector('.grid') || document.querySelector('[class*="grid"]');
-      if (grid) {
-        console.log('rows:', getComputedStyle(grid).gridTemplateRows);
-      }
-
-      const f = (sel: string) => {
-        const e = document.querySelector(sel);
-        return e ? getComputedStyle(e).marginTop : 'n/a';
-      };
-      console.table({
-        about_firstChild_mt: f('[data-id="right-block"] > :first-child'),
-        works_p_mb: getComputedStyle(document.querySelector('[data-id="works"] p') || document.createElement('div')).marginBottom
-      });
-
       document.documentElement.style.setProperty("--kk-M", `${M}px`);
       return M;
     };
 
-    // Iterate until --kk-M stabilizes (difference < 0.5px)
-    let raf = 0;
-    const step = () => {
-      const M = computeM();
-      if (M == null) return;
-      const prev = parseFloat(getComputedStyle(root).getPropertyValue("--kk-M")) || 0;
-      if (Math.abs(prev - M) < 0.5) return; // converged
-      root.style.setProperty("--kk-M", `${M}px`);
-      raf = requestAnimationFrame(step);
-    };
+    // Recompute on resize, font load, and element size changes.
+    const run = () => computeM();
+    run();
 
-    step();
-    const onResize = () => { cancelAnimationFrame(raf); step(); };
+    const onResize = () => run();
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+
+    // Fonts
+    if ((document as any).fonts?.ready) {
+      (document as any).fonts.ready.then(run);
+    }
+
+    // Observe measured elements
+    const ro = new ResizeObserver(run);
+    ['[data-id="works"]','[data-id="logo-col"]','[data-id="right-block"]','[data-id="about"]']
+      .map(qs)
+      .filter(Boolean)
+      .forEach(el => ro.observe(el!));
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+      ro.disconnect();
+    };
   }, []);
 
   return null;
