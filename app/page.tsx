@@ -8,7 +8,7 @@ export default function Page(){
         leftMain={
           <div className="text-center leading-tight">
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KAARLE</div>
-            <div className="my-3 flex justify-center">
+            <div className="my-1 flex justify-center">
               <span className="text-[30px] font-sans">{String.fromCharCode(0xF8FF)}</span>
             </div>
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KUMPP.</div>
