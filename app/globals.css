@@ -46,8 +46,8 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   --kk-right-col: 52ch;
   --kk-M: 100px;
 }
-body { font-family: var(--font-sans), system-ui; }
-.font-serif { font-family: var(--font-serif), serif; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+.font-serif { font-family: "Times New Roman", Times, serif; }
 
 /* Grid hardening */
 .kk-grid { gap:0; row-gap:0; column-gap:0; }
