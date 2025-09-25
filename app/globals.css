@@ -52,8 +52,8 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
 [data-id="right-block"]{ display:grid; row-gap:10px; }
 [data-id="right-block"] > *{ margin:0; }   /* kill prose/mt leaks */
 
-.font-sans{ font-family:var(--font-sans),system-ui; }
-.font-serif{ font-family:var(--font-serif),serif; }
+.font-sans{ font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+.font-serif{ font-family:"Times New Roman",Times,serif; }
 
 /* Hide heading on about page but keep height */
 .about-page [data-id="right-block"] h1 { visibility: hidden; }

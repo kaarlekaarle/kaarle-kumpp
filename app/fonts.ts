@@ -1,3 +1,8 @@
-import localFont from "next/font/local";
-export const sans = localFont({ src:"./fonts/Inter-Regular.woff2", weight:"400", variable:"--font-sans", preload:true, display:"swap", fallback:["system-ui","Arial"] });
-export const serif = localFont({ src:"./fonts/GaramondPremiere-Regular.woff2", weight:"400", variable:"--font-serif", preload:true, display:"swap", fallback:["Times New Roman","serif"] });
+// Use system fonts - no external font files needed
+export const sans = {
+  variable: "--font-sans"
+};
+
+export const serif = {
+  variable: "--font-serif"
+};
