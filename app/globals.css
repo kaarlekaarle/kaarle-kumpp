@@ -40,20 +40,27 @@ h1,h2,h3 { @apply uppercase tracking-wide font-normal; }
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Global margin system - computed spacing unit M */
+/* Pure CSS grid with fractional tracks */
 :root{
-  --kk-left-col: 420px;
-  --kk-right-col: 52ch;
-  --kk-M: 100px;
+  --left: 420px;          /* left column width */
+  --right: 52ch;          /* right text width */
 }
+
+.em { 
+  min-height: 100svh; 
+  display: grid; 
+  gap: 0;
+  grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;
+  grid-template-columns: var(--left) 1fr var(--right) 1fr;
+}
+
 body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
 .font-serif { font-family: "Times New Roman", Times, serif; }
 
-/* Grid hardening */
-.kk-grid { gap:0; row-gap:0; column-gap:0; }
+/* hardening */
 [data-id="works"]{ display:inline-block; line-height:1; margin:0; padding:0; }
 [data-id="right-block"]{ display:grid; row-gap:10px; }
-[data-id="right-block"] > *{ margin:0; } /* no mt/space-y/prose margins */
+[data-id="right-block"] > *{ margin:0; }          /* no mt/space-y/prose margins */
 a { color: inherit; text-decoration: none; } /* default no underline */
 
 /* Kill margin leakage in measured cells */
