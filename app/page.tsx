@@ -6,9 +6,9 @@ export default function Page(){
       <EMLayout
         topLabel="Works"
         leftMain={
-          <div className="text-center leading-tight">
+          <div className="text-center leading-none">
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KAARLE</div>
-            <div className="my-3 flex justify-center">
+            <div className="flex justify-center">
               <span className="text-[30px] font-sans">{String.fromCharCode(0xF8FF)}</span>
             </div>
             <div className="uppercase tracking-wide font-normal text-[30px] font-sans">KUMPP.</div>
