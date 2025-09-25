@@ -28,20 +28,15 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-4">
-              <Image
-                src={portraitSrc}
-                alt="Portrait"
-                width={280}
-                height={340}
-                className="object-cover bg-[#e5e5e5]"
-                priority
-              />
+              <div className="w-[280px] h-[340px] bg-[#e5e5e5] flex items-center justify-center">
+                <div className="text-[#999] text-sm">Portrait placeholder</div>
+              </div>
             </div>
 
             <div className="pt-3">
-              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[12px] font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+              <span className="uppercase text-[12px] font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
                 Download CV
-              </a>
+              </span>
             </div>
           </div>
         </div>
