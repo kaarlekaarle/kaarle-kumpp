@@ -1,4 +1,5 @@
 import EMLayout from "@/components/EMLayout";
+import Image from "next/image";
 
 export default function About(){
   return (
@@ -14,9 +15,14 @@ export default function About(){
             </div>
 
             <div className="mt-4 flex justify-end">
-              <div className="w-[280px] h-[340px] bg-[#e5e5e5] flex items-center justify-center">
-                <div className="text-[#999] text-sm">Portrait placeholder</div>
-              </div>
+              <Image 
+                src="/images/portr2.png" 
+                alt="Portrait" 
+                width={280} 
+                height={340} 
+                className="object-cover"
+                priority
+              />
             </div>
 
             <div className="pt-3">
