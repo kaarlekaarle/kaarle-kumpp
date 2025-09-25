@@ -1,7 +1,5 @@
 "use client";
 
-import { sans } from "@/app/fonts";
-
 export default function FontTest() {
   // Basic Latin characters
   const basicLatin = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -87,7 +85,7 @@ export default function FontTest() {
               {block.chars.split('').map((char, charIndex) => (
                 <div 
                   key={charIndex} 
-                  className={`${sans.className} p-2 border border-gray-200 rounded text-center hover:bg-blue-50 hover:border-blue-300 transition-colors cursor-pointer`}
+                  className="font-sans p-2 border border-gray-200 rounded text-center hover:bg-blue-50 hover:border-blue-300 transition-colors cursor-pointer"
                   title={`Character: "${char}" (Unicode: U+${char.charCodeAt(0).toString(16).toUpperCase().padStart(4, '0')})`}
                 >
                   {char}
@@ -117,7 +115,7 @@ export default function FontTest() {
               {Array.from({length: 256}, (_, i) => String.fromCharCode(i)).map((char, i) => (
                 <span 
                   key={i}
-                  className={`${sans.className} p-1 hover:bg-yellow-200 rounded cursor-pointer`}
+                  className="font-sans p-1 hover:bg-yellow-200 rounded cursor-pointer"
                   title={`U+${i.toString(16).toUpperCase().padStart(4, '0')}`}
                 >
                   {char}
@@ -133,7 +131,7 @@ export default function FontTest() {
             <div className="p-4 bg-white rounded border">
               <h4 className="font-semibold mb-2">Direct Apple Logo Test:</h4>
               <div className="text-4xl font-mono">
-                <span className={`${sans.className} p-2 border-2 border-red-300 rounded`} title="Apple Logo U+2318">
+                <span className="font-sans p-2 border-2 border-red-300 rounded" title="Apple Logo U+2318">
                   ⌘
                 </span>
                 <span className="ml-4 text-sm text-gray-600">Unicode: U+2318</span>
@@ -143,14 +141,14 @@ export default function FontTest() {
             <div className="p-4 bg-white rounded border">
               <h4 className="font-semibold mb-2">Alternative Apple Symbols:</h4>
               <div className="text-2xl space-x-2">
-                <span className={`${sans.className} p-1 border rounded`} title="U+2318">⌘</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+2319">⌙</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231A">⌚</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231B">⌛</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231C">⌜</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231D">⌝</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231E">⌞</span>
-                <span className={`${sans.className} p-1 border rounded`} title="U+231F">⌟</span>
+                <span className="font-sans p-1 border rounded" title="U+2318">⌘</span>
+                <span className="font-sans p-1 border rounded" title="U+2319">⌙</span>
+                <span className="font-sans p-1 border rounded" title="U+231A">⌚</span>
+                <span className="font-sans p-1 border rounded" title="U+231B">⌛</span>
+                <span className="font-sans p-1 border rounded" title="U+231C">⌜</span>
+                <span className="font-sans p-1 border rounded" title="U+231D">⌝</span>
+                <span className="font-sans p-1 border rounded" title="U+231E">⌞</span>
+                <span className="font-sans p-1 border rounded" title="U+231F">⌟</span>
               </div>
             </div>
 
