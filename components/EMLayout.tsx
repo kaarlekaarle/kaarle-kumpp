@@ -10,7 +10,7 @@ export default function EMLayout({
   leftBottomLine?: React.ReactNode;
 }){
   return (
-    <div className="em kk-pr-M">
+    <div className="em">
       {/* top label aligned to right column */}
       <div className="row-start-2 col-start-4 self-start">
         <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans leading-none">{topLabel}</p>
