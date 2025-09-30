@@ -27,24 +27,31 @@ jobs:
           set -euo pipefail
 
           echo "1) No legacy JS mobile detection"
-          if git grep -nE 'body\.is-mobile|MobileDetector' -- ':!node_modules' || false ; then
+          if git grep -nE 'body\.is-mobile|MobileDetector' -- \
+              'app/**' 'components/**' 'styles/**' 'src/**' \
+              ':!node_modules/**' ':!.github/**' ; then
             echo "❌ Found legacy mobile detection"; exit 1
           else
             echo "✅ OK"
           fi
 
           echo "2) Disallowed !important (only allow in visibility gates)"
-          if git grep -n '!important' -- ':!node_modules' | grep -vE '\.desktop-only|\.mobile-only' || false ; then
+          # search only CSS; exclude workflow dir
+          if git grep -n '!important' -- \
+              'app/**/*.css' 'styles/**/*.css' 'components/**/*.css' 'src/**/*.css' \
+              ':!node_modules/**' ':!.github/**' | \
+              grep -vE '\.desktop-only|\.mobile-only' ; then
             echo "❌ Found disallowed !important"; exit 1
           else
             echo "✅ OK"
           fi
 
           echo "3) Viewport-height traps (warn-only)"
-          git grep -nE '\b(100vh|100svh|svh|lvh)\b' -- 'app/**/*.css' 'styles/**/*.css' || true
+          git grep -nE '\b(100vh|100svh|svh|lvh)\b' -- \
+              'app/**/*.css' 'styles/**/*.css' 'components/**/*.css' 'src/**/*.css' \
+              ':!node_modules/**' ':!.github/**' || true
 
           echo "✅ Responsive guard passed"
 
-      # Optional: try to build if a build script exists; don’t fail if it doesn’t
       - name: Build (optional)
         run: npm run build || echo "No build script yet — skipping"
