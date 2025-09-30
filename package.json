@@ -12,6 +12,7 @@
     "build:prod": "next build",
     "build:data": "ts-node --transpile-only scripts/build-data.ts",
     "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
+    "prebuild": "bash scripts/check-responsive.sh"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
