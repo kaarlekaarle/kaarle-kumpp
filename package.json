@@ -11,9 +11,18 @@
     "typecheck": "tsc --noEmit",
     "build:prod": "next build",
     "build:data": "ts-node --transpile-only scripts/build-data.ts",
-    "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts"
+    "build:data:env": "WORKBOOK_PATH=content/works_content.xlsx ts-node --transpile-only scripts/build-data.ts",
+    "build:excel": "node scripts/build-from-excel.js",
+    "excel:convert": "node scripts/excel-to-json.js",
+    "excel:examine": "node scripts/examine-excel.js",
+    "csv:convert": "node scripts/csv-to-json.js",
+    "build:csv": "node scripts/csv-to-json.js",
+    "excel:to-csv": "node scripts/excel-to-csv.js",
+    "prebuild": "bash scripts/check-responsive.sh",
+    "test:ui": "playwright test --reporter=list"
   },
   "dependencies": {
+    "@types/xlsx": "^0.0.35",
     "autoprefixer": "^10.4.21",
     "next": "15.5.4",
     "react": "19.1.0",
