@@ -12,6 +12,7 @@ export const sans = localFont({
 export const serif = EB_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
   fallback: ["Times New Roman", "serif"]

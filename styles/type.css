@@ -1,0 +1,16 @@
+.text-ink{ color: var(--ink); }
+.text-accent{ color: var(--accent); }
+
+.sans{ font-family: var(--font-sans); }
+.serif{ font-family: var(--font-serif); }
+
+.h1{ font: 700 var(--text-4xl)/1.05 var(--font-sans); letter-spacing:.02em; text-transform:uppercase; }
+.kicker{ font: 600 var(--text-base)/1.1 var(--font-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+
+.body{ font: 500 var(--text-base)/1.4 var(--font-serif); }
+.body-sm{ font: 500 var(--text-sm)/1.35 var(--font-serif); }
+
+.contact{ display:flex; gap:.35rem; align-items:baseline; flex-wrap:wrap; }
+.contact__name{ font: 700 var(--text-sm)/1 var(--font-sans); }
+.contact__phone{ font: 500 var(--text-sm)/1 var(--font-serif); }
+.contact__email{ font: italic 500 var(--text-sm)/1 var(--font-serif); text-decoration:none; color:inherit; }
