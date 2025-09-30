@@ -23,7 +23,27 @@ jobs:
         run: npm ci || npm i
 
       - name: Run responsive guard
-        run: npm run prebuild
+        run: |
+          set -euo pipefail
+
+          echo "1) No legacy JS mobile detection"
+          if git grep -nE 'body\.is-mobile|MobileDetector' -- ':!node_modules' || false ; then
+            echo "❌ Found legacy mobile detection"; exit 1
+          else
+            echo "✅ OK"
+          fi
+
+          echo "2) Disallowed !important (only allow in visibility gates)"
+          if git grep -n '!important' -- ':!node_modules' | grep -vE '\.desktop-only|\.mobile-only' || false ; then
+            echo "❌ Found disallowed !important"; exit 1
+          else
+            echo "✅ OK"
+          fi
+
+          echo "3) Viewport-height traps (warn-only)"
+          git grep -nE '\b(100vh|100svh|svh|lvh)\b' -- 'app/**/*.css' 'styles/**/*.css' || true
+
+          echo "✅ Responsive guard passed"
 
       # Optional: try to build if a build script exists; don’t fail if it doesn’t
       - name: Build (optional)
