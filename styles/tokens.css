@@ -1,0 +1,33 @@
+:root{
+  /* Breakpoints */
+  --bp-mobile-max: 1023px;
+
+  /* Spacing scale (rhythm) */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+
+  /* Type scale (map to current look) */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+
+  /* Fonts & colors (wire to existing vars/files) */
+  --font-sans: system-ui, ui-sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --ink: #000;
+  --accent: #1a33ff;
+}
+
+/* Media helpers */
+@media (max-width: var(--bp-mobile-max)){ :root{ --is-mobile: 1; } }
+@media (min-width: calc(var(--bp-mobile-max) + 1px)){ :root{ --is-desktop: 1; } }

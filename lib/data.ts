@@ -3,8 +3,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import type { Field, Client } from "@/types/site";
 
-const Slide = z.object({ src: z.string(), alt: z.string().optional() });
-const Link = z.object({ label: z.string(), href: z.string().url() });
+const Slide = z.object({ src: z.string(), alt: z.string().optional(), blurDataURL: z.string().optional() });
+const Link = z.object({ url: z.string().url(), icon: z.string().optional() });
 const Person = z.object({ name: z.string(), role: z.string().optional() });
 
 export const FieldSchema = z.object({
@@ -17,10 +17,11 @@ export const ClientSchema = z.object({
   slug: z.string(),
   name: z.string(),
   fields: z.array(z.string()),
-  summary: z.string(),
+  summary: z.union([z.string(), z.array(z.string())]),
   slides: z.array(Slide),
   links: z.array(Link).optional(),
   team: z.array(Person).optional(),
+  logo: z.string().optional(),
 });
 
 export const SiteDataSchema = z.object({

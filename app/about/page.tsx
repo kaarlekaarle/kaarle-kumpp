@@ -1,54 +1,57 @@
+import EMLayout from "@/components/EMLayout";
 import Image from "next/image";
-import Link from "next/link";
-import EqualMarginEngine from "@/components/EqualMarginEngine";
 
-export default function AboutPage() {
-  const portraitSrc = "/images/portrait.jpg";
-
+export default function About(){
   return (
-    <main className="min-h-screen bg-paper text-ink">
-      {/* rows: M | top | M | right | M | bottom | M */}
-      {/* cols: left (centered) | M | right | M */}
-      <div className="min-h-screen grid
-        grid-rows-[var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)_auto_var(--kk-M)]
-        grid-cols-[1fr_var(--kk-M)_var(--kk-right-col)_var(--kk-M)]">
+    <div className="route-about">
+      <main className="bg-paper text-ink about-page">
+      <EMLayout
+        /* Desktop props - keep current desktop layout exactly as is */
+        leftTop={null}
+        leftMiddle={
+          <div className="flex flex-col justify-between h-full">
+            {/* Contact info at top, right-aligned */}
+            <div className="flex-1 flex items-center justify-end">
+              <div className="text-right leading-tight">
+                <div className="uppercase tracking-wide font-normal text-lg sans">KAARLE HURTIG</div>
+                <div className="text-sm mt-1 serif font-medium">+358 440 522 753</div>
+                <div className="text-sm">
+                  <a className="italic serif" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+                </div>
 
-        {/* TOP (aligned with right block) */}
-        <div className="row-start-2 col-start-3 self-start">
-          <p data-id="works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Kaarle & Kumpp.</p>
-        </div>
+                <div className="mt-4 flex justify-end">
+                  <Image 
+                    src="/images/portr2.png" 
+                    alt="Portrait" 
+                    width={158} 
+                    height={191} 
+                    className="object-cover"
+                    priority
+                  />
+                </div>
 
-        {/* LEFT column */}
-        <div data-id="logo-col" className="row-start-4 col-start-1 self-center flex justify-center">
-          <div className="text-center leading-tight">
-            <div className="uppercase tracking-wide font-normal text-[18px] font-sans">KAARLE HURTIG</div>
-            <div className="text-[12px] mt-1 font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>+358 440 522 753</div>
-            <div className="text-[12px]">
-              <a className="underline [font-style:oblique_10deg] font-semibold" href="mailto:kaarle.hurtig@gmail.com" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>kaarle.hurtig@gmail.com</a>
+                <div className="pt-3 text-right">
+                  <a href="/CV_Kaarle_Hurtig_2024_b.png" target="_blank" rel="noopener noreferrer" className="uppercase text-sm sans font-medium hover:underline">
+                    Download CV
+                  </a>
+                </div>
+
+                <div className="text-right">
+                  <a href="https://www.linkedin.com/in/kaarle-hurtig/" target="_blank" rel="noopener noreferrer" className="uppercase text-sm sans font-medium hover:underline">
+                    LINKEDIN
+                  </a>
+                </div>
+              </div>
             </div>
-
-            <div className="mt-4">
-              <Image
-                src={portraitSrc}
-                alt="Portrait"
-                width={280}
-                height={340}
-                className="object-cover bg-[#e5e5e5]"
-                priority
-              />
-            </div>
-
-            <div className="pt-3">
-              <a href="/files/Kaarle_Hurtig_CV.pdf" className="uppercase underline text-[12px] font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
-                Download CV
-              </a>
+            {/* Empty bottom space */}
+            <div className="flex-shrink-0">
+              {/* This creates the same spacing as the main page */}
             </div>
           </div>
-        </div>
-
-        {/* RIGHT BLOCK (body only) */}
-        <article data-id="right-block" className="row-start-4 col-start-3 self-start max-w-[var(--kk-right-col)]">
-          <div className="mt-4 space-y-3 leading-[1.4] text-[16px] text-accent font-semibold" style={{fontFamily: "'Garamond Premier', 'Times New Roman', serif"}}>
+        }
+        rightTop={<a href="/works" className="uppercase tracking-wide font-normal text-xl sans leading-none">WORKS</a>}
+        rightMiddle={
+          <div className="intro about-prose body text-accent space-y-sm">
             <p>After working with projects and companies big and small,<br />
             I&apos;ve gotten good at figuring out the problem and solving it.<br />
             Setting the direction and finding the right people.<br />
@@ -58,20 +61,51 @@ export default function AboutPage() {
             <p>Drawn to simple things that last, both in work and in life.<br />
             Inspired by photography, internet&apos;s early and future days,<br />
             crafty people, unorthodox thinking and big trees.</p>
-            <p>Lives and works from Helsinki, Finland.</p>
+            <p className="signoff"><em>Lives and works from Helsinki, Finland.</em></p>
           </div>
-        </article>
+        }
+        rightBottom={null}
 
-        {/* BOTTOM ROW: empty left, WORKS on right - same structure as main page */}
-        <div className="row-start-6 col-start-1 flex items-center justify-center">
-          {/* Empty space to match main page structure */}
-        </div>
-        <div className="row-start-6 col-start-3 flex items-center">
-          <Link data-id="about" href="/works" className="uppercase tracking-wide font-normal text-[20px] font-sans">Works</Link>
-        </div>
-      </div>
+        /* Mobile-only: use the same stack container the home page uses */
+        left={
+          /* reuse the same logo block we already use on the home mobile */
+          <div className="left-cell flex items-center justify-center logo">
+            <div className="text-center leading-tight" data-apple={String.fromCharCode(0xF8FF)}>
+              <div className="uppercase tracking-wide font-normal text-4xl sans">KAARLE</div>
+              <div className="my-1"><span className="uppercase tracking-wide font-normal text-4xl sans apple-logo"></span></div>
+              <div className="uppercase tracking-wide font-normal text-4xl sans">KUMPP.</div>
+            </div>
+          </div>
+        }
 
-      <EqualMarginEngine />
-    </main>
+        mobileAdditionalContent={
+          <section className="about-mobile">
+            <div className="about-contact">
+              <div className="contact">
+                <span className="contact__name">KAARLE HURTIG</span>
+                <span className="contact__phone">+358 440 522 753</span>
+                <a className="contact__email" href="mailto:kaarle.hurtig@gmail.com">kaarle.hurtig@gmail.com</a>
+              </div>
+            </div>
+
+            <figure className="about-photo">
+              <Image 
+                src="/images/portr2.png" 
+                alt="Kaarle Hurtig portrait" 
+                width={158} 
+                height={191} 
+                className="object-cover"
+                priority
+              />
+            </figure>
+
+            <div className="about-cv">
+              <a href="/CV_Kaarle_Hurtig_2024_b.png" download>DOWNLOAD CV</a>
+            </div>
+          </section>
+        }
+      />
+      </main>
+    </div>
   );
 }
