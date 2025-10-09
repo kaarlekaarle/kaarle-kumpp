@@ -1,3 +1,7 @@
+/* ============================================
+   MAIN PAGE (Desktop + Mobile)
+   ============================================ */
+
 import EMLayout from "@/components/EMLayout";
 import LogoMark from "@/components/LogoMark";
 import Appleify from "@/components/Appleify";
@@ -9,6 +13,7 @@ import SpacingDiagnostic from "@/components/dev/SpacingDiagnostic";
 import FontDiagnostic from "@/components/dev/FontDiagnostic";
 
 export default function Page(){
+  // ========== DESKTOP CONTENT ==========
   const logoBlock = (
     <div className="logo">
       <div className="text-center leading-tight">
@@ -29,6 +34,7 @@ export default function Page(){
     </div>
   );
 
+  // ========== MOBILE CONTENT ==========
   const mobileLogo = (
     <div className="left-cell flex items-center justify-center logo">
       <a href="/" style={{textDecoration: 'none', color: 'inherit', display: 'block'}}>
@@ -81,6 +87,7 @@ export default function Page(){
     </div>
   );
 
+  // ========== RENDER (Desktop + Mobile) ==========
   return (
     <main className="bg-paper text-ink">
       <div id="root">

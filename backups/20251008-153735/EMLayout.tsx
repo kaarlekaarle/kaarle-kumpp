@@ -37,11 +37,11 @@ export default function EMLayout({
       </article>
 
       {/* Mobile Layout */}
-      {left && <div data-id="left-middle" className="mobile-only">{left}</div>}
+      {left && <div data-id="left" className="mobile-only">{left}</div>}
+      {mobileBottomBar && <div data-id="mobile-bottom" className="mobile-only">{mobileBottomBar}</div>}
       {mobileAdditionalContent && (
-        <div className="mobile-only">{mobileAdditionalContent}</div>
+        <div data-id="mobile-additional" className="mobile-only">{mobileAdditionalContent}</div>
       )}
-      {mobileBottomBar && <div data-id="mobile-contact" className="mobile-only">{mobileBottomBar}</div>}
     </main>
   );
 }

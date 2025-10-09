@@ -134,87 +134,80 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
       <EMLayout
         leftTop={null}
         leftMiddle={
-          <>
-            <div className="desktop-only text-right leading-tight">
-              <div 
-                role="listbox" 
-                aria-label="Fields"
-                className="relative"
-              >
-                {fields.map((field, index) => {
-                  const fieldSlug = slugify(field.name);
-                  const isHighlighted = highlightedSlugs.includes(fieldSlug);
-                  const isDimmed = hovered && !isHighlighted;
-                  const isLast = index === fields.length - 1;
-                  
-                  return (
-                    <button
-                      key={field.id}
-                      ref={el => { 
-                        if (el && el.offsetParent !== null) {
-                          fieldRefs.current.set(fieldSlug, el);
-                        }
-                      }}
-                      data-kind="field"
-                      data-slug={fieldSlug}
-                      role="option"
-                      aria-selected={isHighlighted}
-                      tabIndex={0}
-                      onMouseEnter={() => handleFieldHover(fieldSlug)}
-                      onMouseLeave={handleFieldLeave}
-                      onFocus={() => handleFieldHover(fieldSlug)}
-                      onBlur={handleFieldLeave}
-                      className={cn(
-                        "block w-full text-right tracking-wide font-medium transition-colors cursor-default",
-                        !isLast && "mb-6",
-                        isHighlighted && "text-ink",
-                        isDimmed && "opacity-90"
-                      )}
-                      style={{ 
-                        fontFamily: 'var(--font-serif)',
-                        fontSize: '1em',
-                        fontVariant: 'small-caps',
-                        fontWeight: '400'
-                      }}
-                    >
-                      {field.name}
-                    </button>
-                  );
-                })}
-              </div>
+          <div className="text-right leading-tight">
+            <div 
+              role="listbox" 
+              aria-label="Fields"
+              className="relative"
+            >
+              {fields.map((field, index) => {
+                const fieldSlug = slugify(field.name);
+                const isHighlighted = highlightedSlugs.includes(fieldSlug);
+                const isDimmed = hovered && !isHighlighted;
+                const isLast = index === fields.length - 1;
+                
+                return (
+                  <button
+                    key={field.id}
+                    ref={el => { 
+                      if (el && el.offsetParent !== null) {
+                        fieldRefs.current.set(fieldSlug, el);
+                      }
+                    }}
+                    data-kind="field"
+                    data-slug={fieldSlug}
+                    role="option"
+                    aria-selected={isHighlighted}
+                    tabIndex={0}
+                    onMouseEnter={() => handleFieldHover(fieldSlug)}
+                    onMouseLeave={handleFieldLeave}
+                    onFocus={() => handleFieldHover(fieldSlug)}
+                    onBlur={handleFieldLeave}
+                    className={cn(
+                      "block w-full text-right tracking-wide font-medium transition-colors cursor-default",
+                      !isLast && "mb-6",
+                      isHighlighted && "text-ink",
+                      isDimmed && "opacity-90"
+                    )}
+                    style={{ 
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1em',
+                      fontVariant: 'small-caps',
+                      fontWeight: '400'
+                    }}
+                  >
+                    {field.name}
+                  </button>
+                );
+              })}
             </div>
-            <div className="mobile-only">
-              {logoBlock}
-            </div>
-          </>
-        }
-        leftBottom={null}
-        rightTop={<div className="desktop-only"><Link href="/" className="nav-right">KAARLE {String.fromCharCode(0xF8FF)} KUMPP.</Link></div>}
-        rightMiddle={
-          <div className="desktop-only">
-            <InteractiveClientList
-              ref={el => {
-                if (el) {
-                  // Set up refs for each client button
-                  orderedClients.forEach(client => {
-                    const clientEl = el.querySelector(`[data-slug="${client.slug}"]`) as HTMLElement;
-                    if (clientEl && clientEl.offsetParent !== null) {
-                      clientRefs.current.set(client.slug, clientEl);
-                    }
-                  });
-                }
-              }}
-              clients={orderedClients}
-              highlightedSlugs={highlightedSlugs}
-              hovered={hovered}
-              onClientHover={handleClientHover}
-              onClientLeave={handleClientLeave}
-              onClientClick={handleClientClick}
-              onKeyDown={handleKeyDown}
-            />
           </div>
         }
-        rightBottom={<div className="desktop-only"><Link href="/about" className="nav-right">ABOUT</Link></div>}
+        leftBottom={null}
+        rightTop={<Link href="/" className="nav-right">KAARLE {String.fromCharCode(0xF8FF)} KUMPP.</Link>}
+        rightMiddle={
+          <InteractiveClientList
+            ref={el => {
+              if (el) {
+                // Set up refs for each client button
+                orderedClients.forEach(client => {
+                  const clientEl = el.querySelector(`[data-slug="${client.slug}"]`) as HTMLElement;
+                  if (clientEl && clientEl.offsetParent !== null) {
+                    clientRefs.current.set(client.slug, clientEl);
+                  }
+                });
+              }
+            }}
+            clients={orderedClients}
+            highlightedSlugs={highlightedSlugs}
+            hovered={hovered}
+            onClientHover={handleClientHover}
+            onClientLeave={handleClientLeave}
+            onClientClick={handleClientClick}
+            onKeyDown={handleKeyDown}
+          />
+        }
+        rightBottom={<Link href="/about" className="nav-right">ABOUT</Link>}
         left={logoBlock}
         mobileAdditionalContent={
           <>
@@ -228,7 +221,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                 color: '#000000 !important',
                 lineHeight: '1.4'
               }}>
-                {/* Line 1: ALL CLIENTS, IDENTITY BUILDING, */}
+                {/* Line 1 */}
                 <div>
                   <span 
                     className="mobile-field-selector"
@@ -260,10 +253,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[0].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 2: STRATEGIC VISION, ADVERTISING, */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -279,6 +268,10 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[1].name.toUpperCase()}
                   </span>{", "}
+                </div>
+                
+                {/* Line 2 */}
+                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -294,10 +287,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[2].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 3: MESSAGE & MEDIA, LEGACY TRANSITION, */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -313,6 +302,10 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[3].name.toUpperCase()}
                   </span>{", "}
+                </div>
+                
+                {/* Line 3 */}
+                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -328,10 +321,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[4].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 4: TALK SHOWS, GUN-FOR-HIRE */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -366,53 +355,35 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
               </div>
             </div>
             
-            {/* Clients Container - Left edge aligned with ABOUT */}
-            <div 
-              data-id="mobile-clients" 
-              style={{ 
-                width: '100%',
-                paddingRight: '1.5rem', 
-                marginBottom: '2.5rem',
-                textAlign: 'center'
-              }}
-            >
-              <div style={{
-                display: 'inline-block',
-                textAlign: 'left',
-                height: `${orderedClients.length * 1.4}rem`,
-                position: 'relative'
-              }}>
-                {orderedClients.map((client, index) => {
-                  // Check if client matches selected field
-                  const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));
-                  const opacity = isMatch ? 1 : 0.25; // 25% opacity = 75% fade
-                  
-                  return (
-                    <div 
-                      key={client.slug} 
-                      onClick={() => handleClientClick(client.slug)}
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: 'var(--fs-right)',
-                        fontWeight: '400',
-                        lineHeight: '1.2',
-                        textTransform: 'uppercase',
-                        letterSpacing: '.04em',
-                        cursor: 'pointer',
-                        opacity: opacity,
-                        transition: 'opacity 0.3s ease',
-                        color: '#0000EE',
-                        position: 'absolute',
-                        top: `${index * 1.4}rem`, // Vertical spacing
-                        left: 0, // Align to left
-                        whiteSpace: 'nowrap'
-                      }}
-                    >
-                      {client.name}
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Clients Container */}
+            <div data-id="mobile-clients" className="text-center" style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', marginBottom: '2.5rem' }}>
+              {orderedClients.map((client, index) => {
+                // Check if client matches selected field
+                const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));
+                const opacity = isMatch ? 1 : 0.25; // 25% opacity = 75% fade
+                
+                return (
+                  <div 
+                    key={client.slug} 
+                    onClick={() => handleClientClick(client.slug)}
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'var(--fs-right)',
+                      fontWeight: '400',
+                      lineHeight: '1.2',
+                      textTransform: 'uppercase',
+                      letterSpacing: '.04em',
+                      marginBottom: '0.5rem',
+                      cursor: 'pointer',
+                      opacity: opacity,
+                      transition: 'opacity 0.3s ease',
+                      color: '#0000EE'
+                    }}
+                  >
+                    {client.name}
+                  </div>
+                );
+              })}
             </div>
             
             {/* Separate container for ABOUT link */}
@@ -422,14 +393,12 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
           </>
         }
       />
-      <div className="desktop-only">
-        <ConnectionsOverlay 
-          hoveredItem={hovered}
-          fieldRefs={fieldRefs.current}
-          clientRefs={clientRefs.current}
-          containerRef={containerRef}
-        />
-      </div>
+      <ConnectionsOverlay 
+        hoveredItem={hovered}
+        fieldRefs={fieldRefs.current}
+        clientRefs={clientRefs.current}
+        containerRef={containerRef}
+      />
     </main>
   );
 }

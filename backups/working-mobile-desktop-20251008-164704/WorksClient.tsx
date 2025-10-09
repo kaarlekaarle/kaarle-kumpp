@@ -228,7 +228,7 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                 color: '#000000 !important',
                 lineHeight: '1.4'
               }}>
-                {/* Line 1: ALL CLIENTS, IDENTITY BUILDING, */}
+                {/* Line 1 */}
                 <div>
                   <span 
                     className="mobile-field-selector"
@@ -260,10 +260,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[0].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 2: STRATEGIC VISION, ADVERTISING, */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -279,6 +275,10 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[1].name.toUpperCase()}
                   </span>{", "}
+                </div>
+                
+                {/* Line 2 */}
+                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -294,10 +294,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[2].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 3: MESSAGE & MEDIA, LEGACY TRANSITION, */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -313,6 +309,10 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[3].name.toUpperCase()}
                   </span>{", "}
+                </div>
+                
+                {/* Line 3 */}
+                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -328,10 +328,6 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
                   >
                     {fields[4].name.toUpperCase()}
                   </span>{", "}
-                </div>
-                
-                {/* Line 4: TALK SHOWS, GUN-FOR-HIRE */}
-                <div>
                   <span 
                     className="mobile-field-selector"
                     onClick={() => {
@@ -366,53 +362,35 @@ export default function WorksClient({ fields, clients }: { fields: Field[]; clie
               </div>
             </div>
             
-            {/* Clients Container - Left edge aligned with ABOUT */}
-            <div 
-              data-id="mobile-clients" 
-              style={{ 
-                width: '100%',
-                paddingRight: '1.5rem', 
-                marginBottom: '2.5rem',
-                textAlign: 'center'
-              }}
-            >
-              <div style={{
-                display: 'inline-block',
-                textAlign: 'left',
-                height: `${orderedClients.length * 1.4}rem`,
-                position: 'relative'
-              }}>
-                {orderedClients.map((client, index) => {
-                  // Check if client matches selected field
-                  const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));
-                  const opacity = isMatch ? 1 : 0.25; // 25% opacity = 75% fade
-                  
-                  return (
-                    <div 
-                      key={client.slug} 
-                      onClick={() => handleClientClick(client.slug)}
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: 'var(--fs-right)',
-                        fontWeight: '400',
-                        lineHeight: '1.2',
-                        textTransform: 'uppercase',
-                        letterSpacing: '.04em',
-                        cursor: 'pointer',
-                        opacity: opacity,
-                        transition: 'opacity 0.3s ease',
-                        color: '#0000EE',
-                        position: 'absolute',
-                        top: `${index * 1.4}rem`, // Vertical spacing
-                        left: 0, // Align to left
-                        whiteSpace: 'nowrap'
-                      }}
-                    >
-                      {client.name}
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Clients Container */}
+            <div data-id="mobile-clients" className="text-center" style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', marginBottom: '2.5rem' }}>
+              {orderedClients.map((client, index) => {
+                // Check if client matches selected field
+                const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));
+                const opacity = isMatch ? 1 : 0.25; // 25% opacity = 75% fade
+                
+                return (
+                  <div 
+                    key={client.slug} 
+                    onClick={() => handleClientClick(client.slug)}
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'var(--fs-right)',
+                      fontWeight: '400',
+                      lineHeight: '1.2',
+                      textTransform: 'uppercase',
+                      letterSpacing: '.04em',
+                      marginBottom: '0.5rem',
+                      cursor: 'pointer',
+                      opacity: opacity,
+                      transition: 'opacity 0.3s ease',
+                      color: '#0000EE'
+                    }}
+                  >
+                    {client.name}
+                  </div>
+                );
+              })}
             </div>
             
             {/* Separate container for ABOUT link */}

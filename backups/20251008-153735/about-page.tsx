@@ -1,3 +1,7 @@
+/* ============================================
+   ABOUT PAGE (Desktop + Mobile)
+   ============================================ */
+
 import EMLayout from "@/components/EMLayout";
 import Image from "next/image";
 import LogoMark from "@/components/LogoMark";
@@ -7,6 +11,7 @@ import CompareFonts from "@/components/dev/CompareFonts";
 import FontAnalysis from "@/components/dev/FontAnalysis";
 
 export default function About(){
+  // ========== DESKTOP CONTENT ==========
   const contactBlock = (
     <div className="text-right leading-tight">
       <div className="uppercase tracking-wide font-normal sans">KAARLE HURTIG</div>
@@ -70,6 +75,7 @@ export default function About(){
     </div>
   );
 
+  // ========== MOBILE CONTENT ==========
   const mobileLogo = (
     <div className="left-cell flex items-center justify-center logo">
       <a href="/" style={{textDecoration: 'none', color: 'inherit', display: 'block'}}>
@@ -87,21 +93,45 @@ export default function About(){
   const mobileStack = (
     <>
       {/* About prose content */}
-      <div data-id="right-middle">
+      <div data-id="right-middle" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
         <div className="about-prose">{aboutProse}</div>
       </div>
 
       {/* Contacts, Image, and Links Container */}
-      <div className="about-contact-section" style={{ marginTop: '2rem' }}>
+      <div className="about-contact-section" style={{ paddingLeft: '1.5rem', marginTop: '2.5rem', marginBottom: '2.5rem' }}>
         {/* Contacts */}
         <div className="about-contact">
-          <span style={{ fontFamily: 'var(--font-sans)', fontWeight: '400', display: 'block' }}>KAARLE HURTIG</span>
-          <span style={{ fontFamily: 'var(--font-serif)', fontWeight: '400', display: 'block' }}>+358 440 522 753</span>
-          <a href="mailto:kaarle.hurtig@gmail.com" style={{ fontFamily: 'var(--font-serif)', fontWeight: '400', fontStyle: 'italic', display: 'block', color: 'inherit' }}>kaarle.hurtig@gmail.com</a>
+          <div className="contact" style={{
+            display: 'block',
+            lineHeight: '1.1',
+            margin: 0,
+            padding: 0,
+            fontSize: 'var(--text-sm)'
+          }}>
+            <span className="contact__name" style={{
+              display: 'block',
+              fontFamily: 'var(--font-sans)',
+              fontWeight: '400',
+              color: 'var(--color-ink)'
+            }}>KAARLE HURTIG</span>
+            <span className="contact__phone" style={{
+              display: 'block',
+              fontFamily: 'var(--font-serif)',
+              fontWeight: '400',
+              color: 'var(--color-ink)'
+            }}>+358 440 522 753</span>
+            <a className="contact__email" href="mailto:kaarle.hurtig@gmail.com" style={{
+              display: 'block',
+              fontFamily: 'var(--font-serif)',
+              fontWeight: '400',
+              color: 'var(--color-ink)',
+              textDecoration: 'none'
+            }}>kaarle.hurtig@gmail.com</a>
+          </div>
         </div>
 
         {/* Image */}
-        <figure className="about-photo" style={{ paddingTop: '0.25rem', paddingBottom: '0.25rem' }}>
+        <figure className="about-photo" style={{ marginTop: '0.25rem', marginBottom: '0.25rem' }}>
           <Image 
             src="/images/portr2.png" 
             alt="Kaarle Hurtig portrait" 
@@ -114,12 +144,24 @@ export default function About(){
 
         {/* Links */}
         <div className="about-links">
-          <a href="/CV_Kaarle_Hurtig_2024_b.png" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-sans)', fontWeight: '400', textTransform: 'uppercase', fontSize: 'var(--text-sm)', color: 'inherit', textDecoration: 'none', display: 'block' }}>
-            DOWNLOAD CV
-          </a>
-          <a href="https://www.linkedin.com/in/kaarle-hurtig/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-sans)', fontWeight: '400', textTransform: 'uppercase', fontSize: 'var(--text-sm)', color: 'inherit', textDecoration: 'none', display: 'block' }}>
-            LINKEDIN
-          </a>
+          <div style={{ display: 'block' }}>
+            <a href="/CV_Kaarle_Hurtig_2024_b.png" download style={{
+              textDecoration: 'none',
+              color: 'var(--color-ink)',
+              fontFamily: 'var(--font-sans)',
+              fontWeight: '400',
+              fontSize: 'var(--text-sm)'
+            }}>DOWNLOAD CV</a>
+          </div>
+          <div style={{ display: 'block' }}>
+            <a href="https://www.linkedin.com/in/kaarle-hurtig/" target="_blank" rel="noopener noreferrer" style={{
+              textDecoration: 'none',
+              color: 'var(--color-ink)',
+              fontFamily: 'var(--font-sans)',
+              fontWeight: '400',
+              fontSize: 'var(--text-sm)'
+            }}>LINKEDIN</a>
+          </div>
         </div>
       </div>
 
@@ -130,6 +172,7 @@ export default function About(){
     </>
   );
 
+  // ========== RENDER (Desktop + Mobile) ==========
   return (
     <div className="route-about">
       <main className="bg-paper text-ink about-page">
