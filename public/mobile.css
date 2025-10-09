@@ -24,7 +24,7 @@
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    min-height: 100vh; /* Prevent scrollbars when content fits */
+    /* min-height: 100vh; /* Removed - was causing unnecessary scrolling on small content */
   }
   
   /* Logo at top - viewport-based centering */

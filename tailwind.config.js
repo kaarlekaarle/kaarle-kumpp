@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: { 
-        paper: "#F4F4F4", 
+        paper: "#f5f3f0", 
         ink: "#111111", 
         accent: "#1F37FF" 
       },
@@ -24,9 +24,10 @@ module.exports = {
         }
       },
           fontFamily: { 
-            sans: ["var(--font-kk)", "system-ui", "sans-serif"],
-            heading: ["var(--font-kk)", "ui-sans-serif", "system-ui", "Arial"],
-            serif: ["Garamond Premier", "ui-serif", "Georgia", "serif"]
+            // Prefer serif as fallback everywhere to ensure glyph coverage
+            sans: ["var(--font-sans)", "var(--font-serif)", "Georgia", "serif"],
+            heading: ["var(--font-sans)", "var(--font-serif)", "Georgia", "serif"],
+            serif: ["var(--font-serif)", "Georgia", "serif"]
           },
       spacing: {
         '18': '4.5rem',

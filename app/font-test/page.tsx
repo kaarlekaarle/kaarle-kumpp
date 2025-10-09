@@ -4,7 +4,7 @@ export default function FontTest() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Kaarle ⌘ Kumppanit Font Test</h1>
+        <h1 className="text-3xl font-normal mb-8 text-center">Kaarle ⌘ Kumppanit Font Test</h1>
         
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-medium mb-6 text-center">Your Specific Character</h2>

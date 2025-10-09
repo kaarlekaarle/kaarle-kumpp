@@ -2,757 +2,395 @@
   {
     "slug": "basso",
     "name": "BASSO",
-    "fields": [
-      "talk-shows"
-    ],
-    "summary": [
-      "'7th Day' was a talk and music radio show airing on Sunday mornings,",
-      "featuring a special selection of music to ease into the day.",
-      "The show became a beloved weekend ritual for listeners,",
-      "combining thoughtful conversation with carefully curated music",
-      "that set the perfect tone for Sunday mornings."
-    ],
+    "summary": "7th Day' was a talk and music radio show airing on Sunday mornings, featuring a special selection of music to ease into the day.",
+    "fields": ["talk-shows"],
     "slides": [
       {
         "src": "/clients/BASSO/1.png",
-        "alt": "Basso radio studio"
+        "alt": "BASSO project image"
       }
     ],
     "logo": "/clients/BASSO/logo.png",
     "links": [
-      {
-        "url": "https://soundcloud.com/kaarle/hyvat-biisit-1-seitsemas-paiva-12-bassoradio",
-        "icon": "soundcloud"
-      },
-      {
-        "url": "https://soundcloud.com/kaarle/hyvat-biisit-2-seitsemas-paiva-13-bassoradio",
-        "icon": "soundcloud"
-      },
-      {
-        "url": "https://soundcloud.com/kaarle/bassoradio-seitsemas-paiva-124-postcard-to-mark",
-        "icon": "soundcloud"
-      },
-      {
-        "url": "https://soundcloud.com/kaarle/bassoradio-seitsemas-paiva-124-steve-reich",
-        "icon": "soundcloud"
-      },
-      {
-        "url": "https://soundcloud.com/kaarle/steve-reich-for-bassoradio",
-        "icon": "soundcloud"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=wLF-ka6VYgg",
-        "icon": "youtube"
-      }
-    ],
-    "team": [
-      {
-        "name": "Basso Radio",
-        "role": "Station"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Host & Curator"
-      }
+      { "icon": "soundcloud", "url": "https://soundcloud.com/kaarle/hyvat-biisit-1-seitsemas-paiva-12-bassoradio" },
+      { "icon": "soundcloud", "url": "https://soundcloud.com/kaarle/bassoradio-seitsemas-paiva-124-steve-reich" },
+      { "icon": "soundcloud", "url": "https://soundcloud.com/kaarle/steve-reich-for-bassoradio" },
+      { "icon": "youtube", "url": "https://youtu.be/wLF-ka6VYgg?si=KGFsoh0d1NlmiKSd" }
     ]
   },
   {
     "slug": "ed",
-    "name": "ED / HARTWALL",
-    "fields": [
-      "identity-building",
-      "strategic-vision",
-      "advertising",
-      "message-media"
-    ],
-    "summary": [
-      "We told the client we wouldn't take the job unless they agreed on one thing:",
-      "we're not advertising to kids. We were a three-person wildcard team,",
-      "pitching against the usual agency suspects—and we won. Porn-site banners.",
-      "Fake film posters. Nuclear energy jokes. A sweating bottle with a towel.",
-      "A green variation wearing a competitor's cap. The campaign sold energy drinks",
-      "while making fun of how energy drinks are sold."
-    ],
+    "name": "ED",
+    "summary": "We told the client we wouldn't take the job unless they agreed on one thing: we're not advertising to kids. We were a three-person wildcard team, pitching against the usual agency suspects—and we won. Porn-site banners. Fake film posters. Nuclear energy jokes. A sweating bottle with a towel. A green variation wearing a competitor's cap. The campaign sold energy drinks while making fun of how energy drinks are sold.",
+    "fields": ["identity-building", "strategic-vision", "advertising", "message-media"],
     "slides": [
       {
         "src": "/clients/ED/1.png",
-        "alt": "ED Hikoileva Pullo campaign"
+        "alt": "ED project image 1"
       },
       {
         "src": "/clients/ED/2.png",
-        "alt": "ED Monster campaign"
+        "alt": "ED project image 2"
       },
       {
         "src": "/clients/ED/3.jpg",
-        "alt": "ED campaign additional work"
+        "alt": "ED project image 3"
       },
       {
         "src": "/clients/ED/4.png",
-        "alt": "ED brand development"
+        "alt": "ED project image 4"
       },
       {
         "src": "/clients/ED/5.png",
-        "alt": "ED marketing materials"
+        "alt": "ED project image 5"
       },
       {
         "src": "/clients/ED/6.png",
-        "alt": "ED campaign execution"
+        "alt": "ED project image 6"
       },
       {
         "src": "/clients/ED/7.png",
-        "alt": "ED final campaign"
+        "alt": "ED project image 7"
       }
     ],
-    "links": [
-      {
-        "url": "https://youtube.com/watch?v=example",
-        "icon": "youtube"
-      }
-    ],
-    "logo": "/clients/ED/logo.png",
-    "team": [
-      {
-        "name": "Leo",
-        "role": "Team Member"
-      },
-      {
-        "name": "Taro",
-        "role": "Team Member"
-      },
-      {
-        "name": "Tomi",
-        "role": "Team Member"
-      }
-    ]
+    "logo": "/clients/ED/logo.png"
   },
   {
     "slug": "flow-festival",
     "name": "FLOW FESTIVAL",
-    "fields": [
-      "gun-for-hire"
-    ],
-    "summary": [
-      "For Flow Festival, I scripted and hosted FlowTV—short conversations with artists,",
-      "musicians, and thinkers backstage. The idea was to keep it bare: no makeup,",
-      "no setups, no planned answers. These intimate conversations captured the festival's",
-      "spirit and became some of the most authentic content in the music festival space."
-    ],
+    "summary": "For Flow Festival, I scripted and hosted FlowTV—short conversations with artists, musicians, and thinkers backstage. The idea was to keep it bare: no makeup, no setups, no planned answers.",
+    "fields": ["gun-for-hire"],
     "slides": [
       {
         "src": "/clients/FLOW TV/1.gif",
-        "alt": "FlowTV animation"
+        "alt": "Flow Festival project image"
       }
     ],
     "logo": "/clients/FLOW TV/logo.png",
     "links": [
-      {
-        "url": "https://www.youtube.com/user/flowfestival",
-        "icon": "youtube"
-      }
-    ],
-    "team": [
-      {
-        "name": "Veli Creative",
-        "role": "Production Team"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Host & Producer"
-      }
+      { "icon": "youtube", "url": "https://www.youtube.com/user/flowfestival" }
     ]
   },
   {
     "slug": "helsingin-yliopisto",
     "name": "HELSINGIN YLIOPISTO",
-    "fields": [
-      "gun-for-hire"
-    ],
-    "summary": [
-      "As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex",
-      "research to life—subjects like neuroscience, cancer, and mathematics. Given a theme,",
-      "I've gone in with a film crew to figure out what's really there.",
-      "These projects bridge the gap between academic research and public understanding,",
-      "making cutting-edge science accessible and engaging."
-    ],
+    "summary": "As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex research to life—subjects like neuroscience, cancer, and mathematics. Given a theme, I've gone in with a film crew to figure out what's really there.",
+    "fields": ["gun-for-hire"],
     "slides": [
       {
         "src": "/clients/HELSINKI UNI/1.gif",
-        "alt": "Helsinki University animation"
+        "alt": "Helsinki University project image"
       }
     ],
     "logo": "/clients/HELSINKI UNI/logo.png",
     "links": [
-      {
-        "url": "https://youtu.be/4AbFCqvnYNE?si=cX3PCrxiGPXYLCLy",
-        "icon": "youtube"
-      },
-      {
-        "url": "https://youtu.be/XsqlHHTGQrw?si=O74FhpmXY9EneY1g",
-        "icon": "youtube"
-      },
-      {
-        "url": "https://youtu.be/rBuKAxYBRNA?si=Fo1j6Hw5DooZX_R5",
-        "icon": "youtube"
-      }
-    ],
-    "team": [
-      {
-        "name": "Veli Creative",
-        "role": "Production Team"
-      },
-      {
-        "name": "University Communications",
-        "role": "Client Team"
-      }
+      { "icon": "youtube", "url": "https://youtu.be/dXIbEhZczkw?si=tBguiCy4aruCfCIT" },
+      { "icon": "youtube", "url": "https://youtu.be/rBuKAxYBRNA?si=VISZBhxa94wvLpLv" },
+      { "icon": "youtube", "url": "https://youtu.be/XsqlHHTGQrw?si=GwxCZx_2WD5ZE3HX" },
+      { "icon": "youtube", "url": "https://youtu.be/4AbFCqvnYNE?si=Ncnc3bd_RAEntkNe" }
     ]
   },
   {
     "slug": "hobo",
     "name": "HOBO",
-    "fields": [
-      "strategic-vision"
-    ],
-    "summary": [
-      "I had a hand in shaping the tone as Strawberry brought their newest",
-      "central hot-spot hotel to life in Helsinki. We created a voice",
-      "that was both sophisticated and approachable, positioning HOBO as the",
-      "go-to destination for urban travelers who value authenticity over luxury."
-    ],
+    "summary": "I had a hand in shaping the tone as Strawberry brought their newest central hot-spot hotel to life in Helsinki.",
+    "fields": ["strategic-vision"],
     "slides": [
       {
         "src": "/clients/HOBO/1.jpg",
-        "alt": "HOBO hotel interior"
+        "alt": "HOBO project image 1"
       },
       {
         "src": "/clients/HOBO/2.jpg",
-        "alt": "HOBO hotel exterior"
+        "alt": "HOBO project image 2"
       }
     ],
     "logo": "/clients/HOBO/logo.png",
     "links": [
-      {
-        "url": "https://hobohotel.fi/",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Redgert Comms",
-        "role": "Agency Partner"
-      },
-      {
-        "name": "Strawberry Hotels",
-        "role": "Client Team"
-      }
+      { "icon": "globe", "url": "https://hobohotel.fi/" }
     ]
   },
   {
     "slug": "jcad",
     "name": "JCAD",
-    "fields": [
-      "identity-building",
-      "strategic-vision",
-      "advertising",
-      "message-media",
-      "legacy-transition"
-    ],
-    "summary": [
-      "A construction-specific software company with a 90s vibe needed a dust off.",
-      "We kept their no-nonsense professionalism and rebuilt the brand around",
-      "clarity and experience. I sourced the right team, worked with the client",
-      "to set direction, and helped them modernise around the valuable core."
-    ],
+    "summary": "A construction-specific software company with a 90s vibe needed a dust off. We kept their no-nonsense professionalism and rebuilt the brand around clarity and experience. I sourced the right team, worked with the client to set direction, and helped them modernise around the valuable core.",
+    "fields": ["identity-building", "strategic-vision", "advertising", "message-media", "legacy-transition"],
     "slides": [
       {
         "src": "/clients/JCAD/1.png",
-        "alt": "JCAD software interface"
+        "alt": "JCAD project image 1"
       },
       {
         "src": "/clients/JCAD/2.png",
-        "alt": "JCAD website redesign"
+        "alt": "JCAD project image 2"
       },
       {
         "src": "/clients/JCAD/3.png",
-        "alt": "JCAD project management"
+        "alt": "JCAD project image 3"
       },
       {
         "src": "/clients/JCAD/4.png",
-        "alt": "JCAD technical documentation"
+        "alt": "JCAD project image 4"
       },
       {
         "src": "/clients/JCAD/5.jpeg",
-        "alt": "JCAD construction planning"
+        "alt": "JCAD project image 5"
       },
       {
         "src": "/clients/JCAD/6.png",
-        "alt": "JCAD collaboration tools"
+        "alt": "JCAD project image 6"
       },
       {
         "src": "/clients/JCAD/7.jpeg",
-        "alt": "JCAD final implementation"
+        "alt": "JCAD project image 7"
       }
     ],
     "logo": "/clients/JCAD/logo.png",
     "links": [
-      {
-        "url": "https://www.jcad.fi/fi",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Jacob",
-        "role": "Project Lead"
-      },
-      {
-        "name": "Sarah",
-        "role": "Design Director"
-      },
-      {
-        "name": "Mika",
-        "role": "Developer"
-      }
+      { "icon": "globe", "url": "https://www.jcad.fi/fi" }
     ]
   },
   {
     "slug": "kaarlen-maailma",
     "name": "KAARLEN MAAILMA",
-    "fields": [
-      "talk-shows"
-    ],
-    "summary": [
-      "Kaarlen maailma aired on YLE TV2 for 36 episodes. I wrote and hosted the show",
-      "— one guest at a time, one question at a time. We talked about politics,",
-      "philosophy, the internet, death, and love. The format was prime time TV,",
-      "tone wasn't. This show redefined what Finnish television could be,",
-      "proving that thoughtful conversation could captivate audiences."
-    ],
+    "summary": "Kaarlen maailma aired on YLE TV2 for 36 episodes. I wrote and hosted the show—one guest at a time, one question at a time. We talked about politics, philosophy, the internet, death, and love. The format was prime time TV, tone wasn't.",
+    "fields": ["talk-shows"],
     "slides": [
       {
         "src": "/clients/KAARLEN MAAILMA/1.gif",
-        "alt": "Kaarlen Maailma animation"
+        "alt": "Kaarlen maailma project image"
       }
     ],
     "logo": "/clients/KAARLEN MAAILMA/logo.png",
     "links": [
-      {
-        "url": "https://areena.yle.fi/1-3935578",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "YLE",
-        "role": "Broadcaster"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Host & Creator"
-      }
+      { "icon": "globe", "url": "https://areena.yle.fi/1-3935578" }
     ]
   },
   {
     "slug": "kesko",
     "name": "KESKO",
-    "fields": [
-      "strategic-vision"
-    ],
-    "summary": [
-      "Worked closely with Kesko's top leadership on strategy and positioning.",
-      "This project involved deep organizational transformation, helping one of",
-      "Europe's largest retail companies navigate the digital age",
-      "while maintaining their core values. Full case available for relevant prospects."
-    ],
+    "summary": "Worked closely with Kesko's top leadership on strategy and positioning. Full case available for relevant prospects.",
+    "fields": ["strategic-vision"],
     "slides": [
       {
         "src": "/clients/KESKO/1.png",
-        "alt": "Kesko headquarters"
+        "alt": "KESKO project image 1"
       },
       {
         "src": "/clients/KESKO/2.png",
-        "alt": "Digital transformation roadmap"
+        "alt": "KESKO project image 2"
       },
       {
         "src": "/clients/KESKO/3.png",
-        "alt": "Kesko strategic implementation"
+        "alt": "KESKO project image 3"
       }
     ],
-    "logo": "/clients/KESKO/logo.svg.png",
-    "links": [
-      {
-        "url": "https://www.kesko.fi",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Kesko Leadership",
-        "role": "Client Team"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Strategy Consultant"
-      }
-    ]
+    "logo": "/clients/KESKO/logo.svg.png"
   },
   {
     "slug": "keskusteluohjelma",
     "name": "KESKUSTELUOHJELMA",
-    "fields": [
-      "identity-building",
-      "strategic-vision",
-      "message-media",
-      "talk-shows"
-    ],
-    "summary": [
-      "An ongoing YouTube series built around podcast-style conversations.",
-      "Three cameras, a sofa, and guests who don't have to follow the rules",
-      "of mainstream media. The format is simple, but it creates space for",
-      "people and ideas that rarely get room elsewhere. Over time it has become",
-      "both a cultural reference point and a training ground for many of the",
-      "approaches I carry into later projects."
-    ],
+    "summary": "In 2020, I launched Keskusteluohjelma—a conversation series built on one idea: we need to talk more like only humans can. So far almost 100 guests, from politicians to punks to scientists and beyond. Runs as a YouTube series and a podcast.",
+    "fields": ["identity-building", "strategic-vision", "message-media", "talk-shows"],
     "slides": [
       {
         "src": "/clients/KESKUSTELUOHJELMA/1.gif",
-        "alt": "Keskusteluohjelma animation"
+        "alt": "Keskusteluohjelma project image 1"
       },
       {
         "src": "/clients/KESKUSTELUOHJELMA/2.png",
-        "alt": "Talk show conversation"
+        "alt": "Keskusteluohjelma project image 2"
       },
       {
         "src": "/clients/KESKUSTELUOHJELMA/3.png",
-        "alt": "Guest interview moments"
+        "alt": "Keskusteluohjelma project image 3"
       },
       {
         "src": "/clients/KESKUSTELUOHJELMA/4.png",
-        "alt": "Show production"
+        "alt": "Keskusteluohjelma project image 4"
       }
     ],
     "logo": "/clients/KESKUSTELUOHJELMA/logo.png",
     "links": [
       {
-        "url": "https://www.youtube.com/@keskusteluohjelma",
-        "icon": "youtube"
+        "icon": "youtube",
+        "url": "https://youtube.com/@keskusteluohjelma"
       },
       {
-        "url": "https://www.instagram.com/keskusteluohjelma",
-        "icon": "instagram"
+        "icon": "instagram",
+        "url": "https://instagram.com/keskusteluohjelma"
       },
       {
-        "url": "https://open.spotify.com/show/0qPQWDLex2e3pXkm3Lgw0r?si=9eff0cea814948d5",
-        "icon": "spotify"
+        "icon": "spotify", 
+        "url": "https://open.spotify.com/show/keskusteluohjelma"
       },
       {
-        "url": "https://soundcloud.com/keskusteluohjelma",
-        "icon": "soundcloud"
-      }
-    ],
-    "team": [
-      {
-        "name": "YLE Production",
-        "role": "Production Team"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Host & Creator"
+        "icon": "soundcloud",
+        "url": "https://soundcloud.com/keskusteluohjelma"
       }
     ]
   },
   {
     "slug": "lubrican",
     "name": "LUBRICAN",
-    "fields": [
-      "identity-building"
-    ],
-    "summary": [
-      "A fossil-free motor oil needed a name and an entry point. I offered Lubrican",
-      "— as in: 'others can't.' I shaped the concept and brought in an art director",
-      "who understood the tone: bold, slightly off, and grounded in the industry.",
-      "The brand became a disruptor in the automotive sector,",
-      "proving that sustainability could be both serious and memorable."
-    ],
+    "summary": "A fossil-free motor oil needed a name and an entry point. I offered Lubrican—as in: \"others can't.\" I shaped the concept and brought in an art director who understood the tone: bold, slightly off, and grounded in the industry. Legacybuilding.",
+    "fields": ["identity-building"],
     "slides": [
       {
         "src": "/clients/LUBRICAN/1.jpg",
-        "alt": "Lubrican brand identity"
+        "alt": "LUBRICAN project image 1"
       },
       {
         "src": "/clients/LUBRICAN/2.jpg",
-        "alt": "Lubrican packaging design"
+        "alt": "LUBRICAN project image 2"
       },
       {
         "src": "/clients/LUBRICAN/3.jpg",
-        "alt": "Lubrican marketing materials"
+        "alt": "LUBRICAN project image 3"
       },
       {
         "src": "/clients/LUBRICAN/4.jpg",
-        "alt": "Lubrican product development"
+        "alt": "LUBRICAN project image 4"
       },
       {
         "src": "/clients/LUBRICAN/5.JPG",
-        "alt": "Lubrican brand application"
+        "alt": "LUBRICAN project image 5"
       },
       {
         "src": "/clients/LUBRICAN/6.jpg",
-        "alt": "Lubrican campaign execution"
+        "alt": "LUBRICAN project image 6"
       },
       {
         "src": "/clients/LUBRICAN/7.jpg",
-        "alt": "Lubrican final implementation"
+        "alt": "LUBRICAN project image 7"
       }
     ],
     "logo": "/clients/LUBRICAN/logo.png",
     "links": [
-      {
-        "url": "https://lubricanfluids.com",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Leo",
-        "role": "Creative Director"
-      },
-      {
-        "name": "Alex",
-        "role": "Art Director"
-      }
+      { "icon": "globe", "url": "https://lubricanfluids.com" }
     ]
   },
   {
     "slug": "r-collection",
     "name": "R-COLLECTION",
-    "fields": [
-      "identity-building",
-      "strategic-vision",
-      "advertising",
-      "message-media",
-      "legacy-transition"
-    ],
-    "summary": [
-      "R-Collection is a renowned Finnish clothing brand celebrated for its comfortable basics",
-      "and iconic anoraks. With a dedicated team, both in-house and external, we revitalized",
-      "this timeless classic to its deserved prominence. We modernized their visual identity",
-      "while preserving the authentic, no-nonsense spirit that made them beloved."
-    ],
+    "summary": "R-Collection is a renowned Finnish clothing brand celebrated for its comfortable basics and iconic anoraks. With a dedicated team, both in-house and external, we revitalized this timeless classic to its deserved prominence.",
+    "fields": ["identity-building", "strategic-vision", "advertising", "message-media", "legacy-transition"],
     "slides": [
       {
         "src": "/clients/R-COLLECTION/1.jpg",
-        "alt": "R-Collection campaign visuals"
+        "alt": "R-Collection project image 1"
       },
       {
         "src": "/clients/R-COLLECTION/2.jpg",
-        "alt": "R-Collection product photography"
+        "alt": "R-Collection project image 2"
       },
       {
         "src": "/clients/R-COLLECTION/3.jpg",
-        "alt": "R-Collection brand development"
+        "alt": "R-Collection project image 3"
       },
       {
         "src": "/clients/R-COLLECTION/4.jpg",
-        "alt": "R-Collection marketing materials"
+        "alt": "R-Collection project image 4"
       },
       {
         "src": "/clients/R-COLLECTION/5.jpg",
-        "alt": "R-Collection campaign execution"
+        "alt": "R-Collection project image 5"
       },
       {
         "src": "/clients/R-COLLECTION/6.jpg",
-        "alt": "R-Collection final implementation"
+        "alt": "R-Collection project image 6"
       },
       {
         "src": "/clients/R-COLLECTION/7.jpg",
-        "alt": "R-Collection brand evolution"
+        "alt": "R-Collection project image 7"
       }
     ],
     "logo": "/clients/R-COLLECTION/logo.png",
     "links": [
-      {
-        "url": "https://www.r-collection.fi/",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Leo",
-        "role": "Creative Director"
-      },
-      {
-        "name": "Laura",
-        "role": "Brand Strategist"
-      },
-      {
-        "name": "Osma",
-        "role": "Art Director"
-      }
+      { "icon": "globe", "url": "https://www.r-collection.fi/" }
     ]
   },
   {
     "slug": "radio-helsinki",
     "name": "RADIO HELSINKI",
-    "fields": [
-      "talk-shows"
-    ],
-    "summary": [
-      "Kaikkea saa kysyä (AMA) laid the groundwork for many of my later interview projects.",
-      "40 episodes of unhurried, prime-time radio on Radio Helsinki. This show established",
-      "the conversational style that would define my approach to interviewing—unscripted,",
-      "genuine, and always focused on the human story."
-    ],
+    "summary": "Kaikkea saa kysyä (AMA) laid the groundwork for many of my later interview projects. 40 episodes of unhurried, prime-time radio on Radio Helsinki.",
+    "fields": ["talk-shows"],
     "slides": [
       {
         "src": "/clients/RADIO HELSINKI/1.png",
-        "alt": "Radio Helsinki studio"
+        "alt": "Radio Helsinki project image"
       }
     ],
-    "logo": "/clients/RADIO HELSINKI/logo.png",
-    "links": [
-      {
-        "url": "https://soundcloud.com/kaarle/radio-helsinki-kaikkea-saa-kysya-742014-paavo-vayrynen",
-        "icon": "soundcloud"
-      }
-    ],
-    "team": [
-      {
-        "name": "Radio Helsinki",
-        "role": "Station"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Host & Producer"
-      }
-    ]
+    "logo": "/clients/RADIO HELSINKI/logo.png"
   },
   {
     "slug": "secto-automotive",
     "name": "SECTO AUTOMOTIVE",
-    "fields": [
-      "identity-building"
-    ],
-    "summary": [
-      "Fifteen years ago, I did the original brand visuals for Secto — back when it was",
-      "three guys in a basement. Now they're a company with hundreds of employees",
-      "and hundreds of millions in revenue. When it was time for a redesign,",
-      "they called me again. I helped clarify the task and brought in the right",
-      "art director to carry it through. This project represents the full circle",
-      "of brand evolution, from startup to industry leader."
-    ],
+    "summary": "Fifteen years ago, I did the original brand visuals for Secto—back when it was three guys in a basement. Now they're a company with hundreds of employees and hundreds of millions in revenue. When it was time for a redesign, they called me again. I helped clarify the task and brought in the right art director to carry it through.",
+    "fields": ["identity-building"],
     "slides": [
       {
         "src": "/clients/SECTO/1.png",
-        "alt": "Secto Automotive headquarters"
+        "alt": "SECTO project image 1"
       },
       {
         "src": "/clients/SECTO/2.jpg",
-        "alt": "Brand evolution timeline"
+        "alt": "SECTO project image 2"
       },
       {
         "src": "/clients/SECTO/3.jpg",
-        "alt": "New brand guidelines"
+        "alt": "SECTO project image 3"
       },
       {
         "src": "/clients/SECTO/4.png",
-        "alt": "Secto brand development"
+        "alt": "SECTO project image 4"
       }
     ],
-    "logo": "/clients/secto/logo.png",
+    "logo": "/clients/SECTO/logo.png",
     "links": [
-      {
-        "url": "https://secto.fi",
-        "icon": "homepage"
-      }
-    ],
-    "team": [
-      {
-        "name": "Leo",
-        "role": "Creative Director"
-      },
-      {
-        "name": "Secto Leadership",
-        "role": "Client Team"
-      }
+      { "icon": "globe", "url": "https://secto.fi" }
     ]
   },
   {
     "slug": "secto-labs",
     "name": "SECTO LABS",
-    "fields": [
-      "identity-building"
-    ],
-    "summary": [
-      "Secto brought their fossil-free racing to bigger stages in Finland, Japan, and beyond.",
-      "I helped shape the voice and sourced an Art Director immersed in the world of Japanese",
-      "tuning shops—the exact aesthetic the client lived and breathed. The brand became a",
-      "bridge between Finnish innovation and Japanese car culture, creating something",
-      "entirely new in the racing world."
-    ],
+    "summary": "Secto brought their fossil-free racing to bigger stages in Finland, Japan, and beyond. I helped shape the voice and sourced an Art Director immersed in the world of Japanese tuning shops—the exact aesthetic the client lived and breathed.",
+    "fields": ["identity-building"],
     "slides": [
       {
         "src": "/clients/SECTO LABS/1.jpg",
-        "alt": "Secto Labs racing team"
+        "alt": "SECTO LABS project image 1"
       },
       {
         "src": "/clients/SECTO LABS/2.png",
-        "alt": "Japanese tuning aesthetic"
+        "alt": "SECTO LABS project image 2"
       },
       {
         "src": "/clients/SECTO LABS/3.JPG",
-        "alt": "Fossil-free racing campaign"
+        "alt": "SECTO LABS project image 3"
       },
       {
         "src": "/clients/SECTO LABS/4.jpg",
-        "alt": "Secto Labs brand development"
+        "alt": "SECTO LABS project image 4"
       }
     ],
     "logo": "/clients/SECTO LABS/logo.png",
     "links": [
-      {
-        "url": "https://www.instagram.com/sectolabs/",
-        "icon": "instagram"
-      }
-    ],
-    "team": [
-      {
-        "name": "Grundsten",
-        "role": "Art Director"
-      },
-      {
-        "name": "Secto Racing",
-        "role": "Client Team"
-      }
+      { "icon": "instagram", "url": "https://www.instagram.com/sectolabs/" },
+      { "icon": "youtube", "url": "https://youtu.be/kv9TpFVKbWo?si=KiKyWpYcZY0S5kIP" }
     ]
   },
   {
     "slug": "suomen-evlut-kirkko",
     "name": "SUOMEN EVLUT KIRKKO",
-    "fields": [
-      "message-media"
-    ],
-    "summary": [
-      "I was the outsider on the team when Finland's main church took its first significant",
-      "step into social media, launching on Facebook in the early 2010s. We navigated",
-      "the delicate balance between tradition and modernity, creating content that respected",
-      "the church's values while engaging a younger audience. The project became a case study",
-      "in how established institutions can authentically connect with digital communities."
-    ],
+    "summary": "I was the outsider on the team when Finland's main church took its first significant step into social media, launching on Facebook in the early 2010s.",
+    "fields": ["message-media"],
     "slides": [
       {
         "src": "/clients/SUOMEN EVLUT KIRKKO/1.png",
-        "alt": "Church social media strategy"
+        "alt": "Suomen Evlut Kirkko project image"
       }
     ],
-    "logo": "/clients/SUOMEN EVLUT KIRKKO/logo.png",
-    "team": [
-      {
-        "name": "Church Communications",
-        "role": "Client Team"
-      },
-      {
-        "name": "Kaarle",
-        "role": "Strategy Consultant"
-      }
-    ]
+    "logo": "/clients/SUOMEN EVLUT KIRKKO/logo.png"
   }
 ]

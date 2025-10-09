@@ -1,10 +1,19 @@
-export default function LogoMark({ size = 28, stroke = "#111111" }: { size?: number; stroke?: string }) {
-  const s = size;
-  const r = s / 2;
+import React from "react";
+
+type Props = {
+  className?: string;
+  title?: string;
+};
+export default function LogoMark({ className = "", title = "Apple logo" }: Props) {
+  // U+F8FF is the Apple logo in Apple platforms. Fallback will show a blank on non-Apple OS;
+  // we keep the semantic "&" in the DOM for a11y in the Appleify component.
   return (
-    <svg width={s} height={s} viewBox={`0 0 ${s} ${s}`} aria-hidden="true">
-      <circle cx={r} cy={r} r={r - 1} fill="none" stroke={stroke} strokeWidth="2" />
-      <circle cx={r} cy={r} r={r/4} fill="none" stroke={stroke} strokeWidth="2" />
-    </svg>
+    <span
+      aria-hidden="true"
+      title={title}
+      className={`apple-mark ${className}`}
+    >
+      {"\uF8FF"}
+    </span>
   );
 }

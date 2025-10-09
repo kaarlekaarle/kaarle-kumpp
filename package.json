@@ -18,6 +18,7 @@
     "csv:convert": "node scripts/csv-to-json.js",
     "build:csv": "node scripts/csv-to-json.js",
     "excel:to-csv": "node scripts/excel-to-csv.js",
+    "audit:type": "ts-node --transpile-only scripts/type-audit.ts",
     "prebuild": "bash scripts/check-responsive.sh",
     "test:ui": "playwright test --reporter=list"
   },
