@@ -270,7 +270,7 @@ function initGallery() {
         }
         const nextClient = clients[newIndex];
         if (nextClient) {
-          window.location.href = `client.html?slug=${nextClient.slug}`;
+          window.location.href = `client-${nextClient.slug}.html`;
         }
       }
     }
