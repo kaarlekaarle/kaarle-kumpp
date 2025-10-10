@@ -215,6 +215,39 @@ function initGallery() {
     img.addEventListener('click', nextSlide);
   });
   
+  // Touch/swipe support for mobile galleries
+  let touchStartX = null;
+  let touchEndX = null;
+  
+  const mobileGalleries = document.querySelectorAll('.mobile-only .mobile-gallery');
+  mobileGalleries.forEach(gallery => {
+    gallery.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    
+    gallery.addEventListener('touchmove', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    
+    gallery.addEventListener('touchend', () => {
+      if (!touchStartX || !touchEndX) return;
+      
+      const distance = touchStartX - touchEndX;
+      const isLeftSwipe = distance > 50;
+      const isRightSwipe = distance < -50;
+      
+      if (isLeftSwipe && totalSlides > 1) {
+        nextSlide();
+      }
+      if (isRightSwipe && totalSlides > 1) {
+        prevSlide();
+      }
+      
+      touchStartX = null;
+      touchEndX = null;
+    }, { passive: true });
+  });
+  
   // Keyboard navigation
   function handleKeydown(e) {
     if (e.key === 'Escape') {
