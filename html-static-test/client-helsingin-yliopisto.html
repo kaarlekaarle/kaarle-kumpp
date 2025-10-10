@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELSINGIN YLIOPISTO - Kaarle & Kumpp.</title>
+  <meta name="description" content="Problem solving and storytelling.">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Load Google Font EB Garamond for serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body data-page="client">
+  <div class="site-frame">
+    <main class="bg-paper text-ink client-page">
+      <div id="root">
+        <main class="em">
+          
+          <!-- Desktop Layout - Left Column -->
+          <aside class="desktop-only">
+            <!-- Left Top - Client Header -->
+            <div data-id="left-top">
+              <div class="client-header">
+                <div class="flex items-center justify-between w-full">
+                  <div>
+                    <img src="images/clients/HELSINKI UNI/logo.png" alt="HELSINGIN YLIOPISTO" style="height: 3rem; width: auto; object-fit: contain;" />
+                  </div>
+                  <div>
+                    <a href="works.html" aria-label="Close" class="nav-right leading-none">×</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Left Middle - Client Gallery -->
+            <div data-id="left-middle">
+              <div class="work-card mx-auto flex flex-col items-center h-full">
+                <!-- Dots row -->
+
+                <!-- Spacer to center content -->
+                <div class="flex-1 flex items-center">
+                  <div class="max-w-full">
+                    <!-- Media region with fixed size -->
+                    <div class="relative mb-6">
+                      <!-- Navigation arrows -->
+                      
+                      <!-- Fixed size image container -->
+                      <figure class="mx-auto w-[720px] h-[450px] flex items-center justify-center relative">
+                        <img src="images/clients/HELSINKI UNI/1.gif" alt="Helsinki University project image" class="slide-image active" data-slide="0" style="display: block; object-fit: contain; width: 100%; height: 100%;" />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Left Bottom - Client Caption -->
+            <div data-id="left-bottom">
+              <div class="h-full flex flex-col items-center justify-between" style="min-height: 150px;">
+                <!-- Caption -->
+                <figcaption class="pt-4">
+                  <div class="mx-auto max-w-[73ch] text-black text-sm leading-relaxed space-y-1 text-center font-serif mobile:text-xs mobile:max-w-[60ch]">
+                    <p>As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex research to life—subjects like neuroscience, cancer, and mathematics. Given a theme, I've gone in with a film crew to figure out what's really there.</p>
+                  </div>
+                </figcaption>
+
+                <!-- Spacer to push links down -->
+                <div class="flex-1"></div>
+
+                <!-- Links row -->
+                <div class="flex justify-center pb-4" style="gap: 1rem;">
+                  <a href="https://youtu.be/dXIbEhZczkw?si=tBguiCy4aruCfCIT" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1.25rem; height: 1.25rem;" />
+                  </a>
+                  <a href="https://youtu.be/rBuKAxYBRNA?si=VISZBhxa94wvLpLv" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1.25rem; height: 1.25rem;" />
+                  </a>
+                  <a href="https://youtu.be/XsqlHHTGQrw?si=GwxCZx_2WD5ZE3HX" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1.25rem; height: 1.25rem;" />
+                  </a>
+                  <a href="https://youtu.be/4AbFCqvnYNE?si=Ncnc3bd_RAEntkNe" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1.25rem; height: 1.25rem;" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Desktop Layout - Right Column -->
+          <article class="desktop-only">
+            <!-- Right Top - Logo Link -->
+            <div data-id="right-top">
+              <a href="index.html" class="nav-right leading-none">
+                KAARLE <span class="apple-mark">&#xF8FF;</span> KUMPP.
+              </a>
+            </div>
+            
+            <!-- Right Middle - Client List -->
+            <div data-id="right-middle">
+              <div id="clients-list" class="about-prose" role="listbox" aria-label="Clients">
+                <!-- Clients will be dynamically loaded here -->
+              </div>
+            </div>
+            
+            <!-- Right Bottom - About Link -->
+            <div data-id="right-bottom">
+              <a href="about.html" class="nav-right">ABOUT</a>
+            </div>
+          </article>
+
+          <!-- Mobile Layout -->
+          <div data-id="left-middle" class="mobile-only">
+            <div class="left-cell flex items-center justify-center logo">
+              <div class="text-center leading-tight">
+                <img src="images/clients/HELSINKI UNI/logo.png" alt="HELSINGIN YLIOPISTO" style="height: 3rem; width: auto; object-fit: contain;" />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mobile Additional Content -->
+          <div class="mobile-only">
+            <div class="mobile-content">
+              <!-- Mobile Gallery -->
+              <div data-id="right-middle" style="margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                <div class="mobile-gallery">
+                  <!-- Image container with aspect ratio -->
+                  <div style="position: relative; width: 100%; aspect-ratio: 4/3; max-width: 90vw; margin: 0 auto;">
+                    <img src="images/clients/HELSINKI UNI/1.gif" alt="Helsinki University project image" class="mobile-slide-image active" data-slide="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: block;" />
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Mobile Caption -->
+              <div data-id="right-middle" style="margin-top: 0.5rem; margin-bottom: 2.5rem;">
+                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto">
+                  <p style="color: #000000;">As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex research to life—subjects like neuroscience, cancer, and mathematics. Given a theme, I've gone in with a film crew to figure out what's really there.</p>
+                </div>
+                
+                <div class="flex justify-center" style="gap: 1rem; margin-top: 2rem;">
+                  <a href="https://youtu.be/dXIbEhZczkw?si=tBguiCy4aruCfCIT" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1rem; height: 1rem;" />
+                  </a>
+                  <a href="https://youtu.be/rBuKAxYBRNA?si=VISZBhxa94wvLpLv" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1rem; height: 1rem;" />
+                  </a>
+                  <a href="https://youtu.be/XsqlHHTGQrw?si=GwxCZx_2WD5ZE3HX" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1rem; height: 1rem;" />
+                  </a>
+                  <a href="https://youtu.be/4AbFCqvnYNE?si=Ncnc3bd_RAEntkNe" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" style="width: 1rem; height: 1rem;" />
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Mobile Client List -->
+              <div id="mobile-clients" style="width: 100%; padding-right: 1.5rem; margin-bottom: 2.5rem; text-align: center;">
+                <!-- Mobile clients will be dynamically loaded here -->
+              </div>
+              
+              <!-- Kaarle logo -->
+              <div data-id="mobile-kaarle-logo" style="margin-bottom: 2.5rem; text-align: center;">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: block;">
+                  <div class="text-center leading-tight">
+                    <div class="sans fs-logo uppercase tracking-wide font-normal">KAARLE</div>
+                    <div class="my-1 flex justify-center fs-logo">
+                      <span aria-hidden="true" title="Logo" class="apple-mark">&#xF8FF;</span>
+                    </div>
+                    <div class="sans fs-logo uppercase tracking-wide font-normal">KUMPP.</div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- About link -->
+              <div data-id="mobile-nav" class="mobile-nav" style="text-align: center; width: 100%; margin-bottom: 2.5rem;">
+                <a href="about.html" class="nav-right">ABOUT</a>
+              </div>
+            </div>
+          </div>
+          
+        </main>
+      </div>
+    </main>
+  </div>
+
+  <!-- Client Page JavaScript -->
+  <script>
+    // Embed clients data to avoid CORS issues
+    window.CLIENTS_DATA = [{"slug":"basso","name":"BASSO","summary":"7th Day' was a talk and music radio show airing on Sunday mornings, featuring a special selection of music to ease into the day.","fields":["talk-shows"]},{"slug":"ed","name":"ED","summary":"We told the client we wouldn't take the job unless they agreed on one thing: we're not advertising to kids. We were a three-person wildcard team, pitching against the usual agency suspects—and we won. Porn-site banners. Fake film posters. Nuclear energy jokes. A sweating bottle with a towel. A green variation wearing a competitor's cap. The campaign sold energy drinks while making fun of how energy drinks are sold.","fields":["identity-building","strategic-vision","advertising","message-media"]},{"slug":"flow-festival","name":"FLOW FESTIVAL","summary":"For Flow Festival, I scripted and hosted FlowTV—short conversations with artists, musicians, and thinkers backstage. The idea was to keep it bare: no makeup, no setups, no planned answers.","fields":["gun-for-hire"]},{"slug":"helsingin-yliopisto","name":"HELSINGIN YLIOPISTO","summary":"As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex research to life—subjects like neuroscience, cancer, and mathematics. Given a theme, I've gone in with a film crew to figure out what's really there.","fields":["gun-for-hire"]},{"slug":"hobo","name":"HOBO","summary":"I had a hand in shaping the tone as Strawberry brought their newest central hot-spot hotel to life in Helsinki.","fields":["strategic-vision"]},{"slug":"jcad","name":"JCAD","summary":"A construction-specific software company with a 90s vibe needed a dust off. We kept their no-nonsense professionalism and rebuilt the brand around clarity and experience. I sourced the right team, worked with the client to set direction, and helped them modernise around the valuable core.","fields":["identity-building","strategic-vision","advertising","message-media","legacy-transition"]},{"slug":"kaarlen-maailma","name":"KAARLEN MAAILMA","summary":"Kaarlen maailma aired on YLE TV2 for 36 episodes. I wrote and hosted the show—one guest at a time, one question at a time. We talked about politics, philosophy, the internet, death, and love. The format was prime time TV, tone wasn't.","fields":["talk-shows"]},{"slug":"kesko","name":"KESKO","summary":"Worked closely with Kesko's top leadership on strategy and positioning. Full case available for relevant prospects.","fields":["strategic-vision"]},{"slug":"keskusteluohjelma","name":"KESKUSTELUOHJELMA","summary":"In 2020, I launched Keskusteluohjelma—a conversation series built on one idea: we need to talk more like only humans can. So far almost 100 guests, from politicians to punks to scientists and beyond. Runs as a YouTube series and a podcast.","fields":["identity-building","strategic-vision","message-media","talk-shows"]},{"slug":"lubrican","name":"LUBRICAN","summary":"A fossil-free motor oil needed a name and an entry point. I offered Lubrican—as in: \"others can't.\" I shaped the concept and brought in an art director who understood the tone: bold, slightly off, and grounded in the industry. Legacybuilding.","fields":["identity-building"]},{"slug":"r-collection","name":"R-COLLECTION","summary":"R-Collection is a renowned Finnish clothing brand celebrated for its comfortable basics and iconic anoraks. With a dedicated team, both in-house and external, we revitalized this timeless classic to its deserved prominence.","fields":["identity-building","strategic-vision","advertising","message-media","legacy-transition"]},{"slug":"radio-helsinki","name":"RADIO HELSINKI","summary":"Kaikkea saa kysyä (AMA) laid the groundwork for many of my later interview projects. 40 episodes of unhurried, prime-time radio on Radio Helsinki.","fields":["talk-shows"]},{"slug":"secto-automotive","name":"SECTO AUTOMOTIVE","summary":"Fifteen years ago, I did the original brand visuals for Secto—back when it was three guys in a basement. Now they're a company with hundreds of employees and hundreds of millions in revenue. When it was time for a redesign, they called me again. I helped clarify the task and brought in the right art director to carry it through.","fields":["identity-building"]},{"slug":"secto-labs","name":"SECTO LABS","summary":"Secto brought their fossil-free racing to bigger stages in Finland, Japan, and beyond. I helped shape the voice and sourced an Art Director immersed in the world of Japanese tuning shops—the exact aesthetic the client lived and breathed.","fields":["identity-building"]},{"slug":"suomen-evlut-kirkko","name":"SUOMEN EVLUT KIRKKO","summary":"I was the outsider on the team when Finland's main church took its first significant step into social media, launching on Facebook in the early 2010s.","fields":["message-media"]}];
+    window.CURRENT_CLIENT_SLUG = 'helsingin-yliopisto';
+    window.TOTAL_SLIDES = 1;
+  </script>
+  <script src="client.js"></script>
+  
+  <!-- Debug toggle script (press 'd' key) -->
+  <script>
+    (function(){
+      try {
+        var q = new URLSearchParams(window.location.search);
+        if (q.get('debug') === '1') document.documentElement.classList.add('debug');
+        if (q.get('debug') === '2') document.body.classList.add('debug-on');
+
+        window.addEventListener('keydown', function(e){
+          if (e.key.toLowerCase() === 'd' && !(e.metaKey || e.ctrlKey || e.altKey)) {
+            if (e.shiftKey) {
+              document.body.classList.toggle('debug-on');
+            } else {
+              document.documentElement.classList.toggle('debug');
+            }
+          }
+        }, {passive:true});
+      } catch(err) {}
+    })();
+  </script>
+</body>
+</html>
