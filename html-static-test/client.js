@@ -99,15 +99,29 @@ function renderMobileClients() {
 
 // Helper function to build navigation URLs
 function buildClientUrl(slug) {
-  // Check if we're in htmlpreview mode
+  // Check if we're in htmlpreview mode by checking multiple indicators
   const currentUrl = window.location.href;
+  const referrer = document.referrer;
+  
   console.log('[buildClientUrl] Current URL:', currentUrl);
+  console.log('[buildClientUrl] Referrer:', referrer);
   console.log('[buildClientUrl] Target slug:', slug);
   
-  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('html-preview.github.io')) {
+  // Check both current URL and referrer for htmlpreview
+  const isHtmlPreview = currentUrl.includes('htmlpreview.github.io') || 
+                        currentUrl.includes('html-preview.github.io') ||
+                        referrer.includes('htmlpreview.github.io') ||
+                        referrer.includes('html-preview.github.io');
+  
+  if (isHtmlPreview) {
     console.log('[buildClientUrl] Detected htmlpreview mode');
-    // Try to extract GitHub repo path from htmlpreview URL
-    const urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    
+    // Try to extract from current URL first, then referrer
+    let urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    if (!urlMatch && referrer) {
+      urlMatch = referrer.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    }
+    
     console.log('[buildClientUrl] URL match result:', urlMatch);
     
     if (urlMatch) {
@@ -117,6 +131,15 @@ function buildClientUrl(slug) {
       return newUrl;
     }
   }
+  
+  // Fallback: check if we're on GitHub at all (even raw)
+  if (currentUrl.includes('github') || referrer.includes('github')) {
+    // Assume we're on kaarlekaarle/kaarle-kumpp/mobile-ready-for-collab
+    const newUrl = `https://html-preview.github.io/?url=https://github.com/kaarlekaarle/kaarle-kumpp/blob/mobile-ready-for-collab/html-static-test/client-${slug}.html`;
+    console.log('[buildClientUrl] GitHub detected, using hardcoded preview URL:', newUrl);
+    return newUrl;
+  }
+  
   // Default to relative URL for local/direct access
   console.log('[buildClientUrl] Returning relative URL:', `client-${slug}.html`);
   return `client-${slug}.html`;
@@ -124,13 +147,30 @@ function buildClientUrl(slug) {
 
 function buildWorksUrl() {
   const currentUrl = window.location.href;
-  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('html-preview.github.io')) {
-    const urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+  const referrer = document.referrer;
+  
+  const isHtmlPreview = currentUrl.includes('htmlpreview.github.io') || 
+                        currentUrl.includes('html-preview.github.io') ||
+                        referrer.includes('htmlpreview.github.io') ||
+                        referrer.includes('html-preview.github.io');
+  
+  if (isHtmlPreview) {
+    let urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    if (!urlMatch && referrer) {
+      urlMatch = referrer.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    }
+    
     if (urlMatch) {
       const [, owner, repo, branch] = urlMatch;
       return `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/works.html`;
     }
   }
+  
+  // Fallback for GitHub
+  if (currentUrl.includes('github') || referrer.includes('github')) {
+    return `https://html-preview.github.io/?url=https://github.com/kaarlekaarle/kaarle-kumpp/blob/mobile-ready-for-collab/html-static-test/works.html`;
+  }
+  
   return 'works.html';
 }
 
