@@ -250,15 +250,15 @@ ${slidesHTML}
   </div>
 
   <!-- Client Page JavaScript -->
-  <script>
+  <script type="text/javascript">
     // Embed clients data to avoid CORS issues
-    window.CLIENTS_DATA = ${JSON.stringify(clientsData.map(c => ({
+    window.CLIENTS_DATA = JSON.parse(${JSON.stringify(JSON.stringify(clientsData.map(c => ({
       slug: c.slug,
       name: c.name,
       summary: c.summary,
       fields: c.fields
-    })))};
-    window.CURRENT_CLIENT_SLUG = '${client.slug}';
+    }))))});
+    window.CURRENT_CLIENT_SLUG = ${JSON.stringify(client.slug)};
     window.TOTAL_SLIDES = ${slideCount};
   </script>
   <script src="client.js"></script>
