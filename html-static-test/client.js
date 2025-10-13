@@ -101,11 +101,12 @@ function renderMobileClients() {
 function buildClientUrl(slug) {
   // Check if we're in htmlpreview mode
   const currentUrl = window.location.href;
-  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('raw.githack.com')) {
-    // Extract the base GitHub URL pattern
-    const match = currentUrl.match(/(https:\/\/html-preview\.github\.io\/\?url=)?(https:\/\/.*?\/blob\/.*?\/html-static-test\/)/);
-    if (match && match[2]) {
-      return `https://html-preview.github.io/?url=${match[2]}client-${slug}.html`;
+  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('html-preview.github.io')) {
+    // Try to extract GitHub repo path from htmlpreview URL
+    const urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    if (urlMatch) {
+      const [, owner, repo, branch] = urlMatch;
+      return `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/client-${slug}.html`;
     }
   }
   // Default to relative URL for local/direct access
@@ -114,10 +115,11 @@ function buildClientUrl(slug) {
 
 function buildWorksUrl() {
   const currentUrl = window.location.href;
-  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('raw.githack.com')) {
-    const match = currentUrl.match(/(https:\/\/html-preview\.github\.io\/\?url=)?(https:\/\/.*?\/blob\/.*?\/html-static-test\/)/);
-    if (match && match[2]) {
-      return `https://html-preview.github.io/?url=${match[2]}works.html`;
+  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('html-preview.github.io')) {
+    const urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    if (urlMatch) {
+      const [, owner, repo, branch] = urlMatch;
+      return `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/works.html`;
     }
   }
   return 'works.html';
