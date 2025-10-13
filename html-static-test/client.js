@@ -52,11 +52,11 @@ function renderClients() {
     // Event listeners - navigate to client page
     if (!isCurrent) {
       button.addEventListener('click', () => {
-        window.location.href = `client-${client.slug}.html`;
+        window.location.href = buildClientUrl(client.slug);
       });
       button.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-          window.location.href = `client-${client.slug}.html`;
+          window.location.href = buildClientUrl(client.slug);
         }
       });
     }
@@ -91,10 +91,36 @@ function renderMobileClients() {
     const slug = div.getAttribute('data-slug');
     if (slug !== currentClientSlug) {
       div.addEventListener('click', () => {
-        window.location.href = `client-${slug}.html`;
+        window.location.href = buildClientUrl(slug);
       });
     }
   });
+}
+
+// Helper function to build navigation URLs
+function buildClientUrl(slug) {
+  // Check if we're in htmlpreview mode
+  const currentUrl = window.location.href;
+  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('raw.githack.com')) {
+    // Extract the base GitHub URL pattern
+    const match = currentUrl.match(/(https:\/\/html-preview\.github\.io\/\?url=)?(https:\/\/.*?\/blob\/.*?\/html-static-test\/)/);
+    if (match && match[2]) {
+      return `https://html-preview.github.io/?url=${match[2]}client-${slug}.html`;
+    }
+  }
+  // Default to relative URL for local/direct access
+  return `client-${slug}.html`;
+}
+
+function buildWorksUrl() {
+  const currentUrl = window.location.href;
+  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('raw.githack.com')) {
+    const match = currentUrl.match(/(https:\/\/html-preview\.github\.io\/\?url=)?(https:\/\/.*?\/blob\/.*?\/html-static-test\/)/);
+    if (match && match[2]) {
+      return `https://html-preview.github.io/?url=${match[2]}works.html`;
+    }
+  }
+  return 'works.html';
 }
 
 // Gallery functionality
@@ -251,7 +277,7 @@ function initGallery() {
   // Keyboard navigation
   function handleKeydown(e) {
     if (e.key === 'Escape') {
-      window.location.href = 'works.html';
+      window.location.href = buildWorksUrl();
       return;
     }
     if (e.key === 'ArrowLeft') prevSlide();
@@ -270,7 +296,7 @@ function initGallery() {
         }
         const nextClient = clients[newIndex];
         if (nextClient) {
-          window.location.href = `client-${nextClient.slug}.html`;
+          window.location.href = buildClientUrl(nextClient.slug);
         }
       }
     }

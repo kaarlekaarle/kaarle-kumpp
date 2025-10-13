@@ -115,6 +115,21 @@ function getRelatedFields(clientSlug) {
   return related;
 }
 
+// Helper function to build navigation URLs
+function buildClientUrl(slug) {
+  // Check if we're in htmlpreview mode
+  const currentUrl = window.location.href;
+  if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('raw.githack.com')) {
+    // Extract the base GitHub URL pattern
+    const match = currentUrl.match(/(https:\/\/html-preview\.github\.io\/\?url=)?(https:\/\/.*?\/blob\/.*?\/html-static-test\/)/);
+    if (match && match[2]) {
+      return `https://html-preview.github.io/?url=${match[2]}client-${slug}.html`;
+    }
+  }
+  // Default to relative URL for local/direct access
+  return `client-${slug}.html`;
+}
+
 // Order clients in pyramid pattern (shortest at ends, longest in middle)
 function orderClientsPyramid(clientsList) {
   const sorted = [...clientsList].sort((a, b) => a.name.length - b.name.length);
@@ -203,11 +218,11 @@ function renderClients() {
     button.addEventListener('focus', () => handleClientHover(client.slug));
     button.addEventListener('blur', handleClientLeave);
     button.addEventListener('click', () => {
-      window.location.href = `client-${client.slug}.html`;
+      window.location.href = buildClientUrl(client.slug);
     });
     button.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        window.location.href = `client-${client.slug}.html`;
+        window.location.href = buildClientUrl(client.slug);
       }
     });
     
@@ -350,7 +365,7 @@ function handleClientLeave() {
 }
 
 function handleClientClick(clientSlug) {
-  window.location.href = `client-${clientSlug}.html`;
+  window.location.href = buildClientUrl(clientSlug);
 }
 
 // Update highlighting based on hover
