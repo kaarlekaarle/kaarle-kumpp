@@ -119,15 +119,24 @@ function getRelatedFields(clientSlug) {
 function buildClientUrl(slug) {
   // Check if we're in htmlpreview mode
   const currentUrl = window.location.href;
+  console.log('[works.js buildClientUrl] Current URL:', currentUrl);
+  console.log('[works.js buildClientUrl] Target slug:', slug);
+  
   if (currentUrl.includes('htmlpreview.github.io') || currentUrl.includes('html-preview.github.io')) {
+    console.log('[works.js buildClientUrl] Detected htmlpreview mode');
     // Try to extract GitHub repo path from htmlpreview URL
     const urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
+    console.log('[works.js buildClientUrl] URL match result:', urlMatch);
+    
     if (urlMatch) {
       const [, owner, repo, branch] = urlMatch;
-      return `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/client-${slug}.html`;
+      const newUrl = `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/client-${slug}.html`;
+      console.log('[works.js buildClientUrl] Returning preview URL:', newUrl);
+      return newUrl;
     }
   }
   // Default to relative URL for local/direct access
+  console.log('[works.js buildClientUrl] Returning relative URL:', `client-${slug}.html`);
   return `client-${slug}.html`;
 }
 
