@@ -158,6 +158,7 @@ body {
   /* Six-cell grid layout */
   .em {
     display: grid;
+    grid-template-columns: 1fr var(--measure) var(--space-lg) var(--measure) 1fr;
     grid-template-rows: minmax(var(--edge-fluid), 1fr) max-content minmax(var(--edge-fluid), 1fr);
     column-gap: 0;
     row-gap: 0;
