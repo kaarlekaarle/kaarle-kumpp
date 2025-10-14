@@ -424,6 +424,8 @@ body {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    width: 365px;
+    margin: auto;
   }
 
   [data-id="right-middle"] p {
