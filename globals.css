@@ -4,7 +4,15 @@
 
 :root { color-scheme: light; }
 html, body { height: 100%; }
-body { @apply bg-paper text-ink antialiased; }
-a { @apply text-accent hover:underline; }
+body { 
+  @apply bg-paper text-ink antialiased; 
+  /* Fix for mobile touch interactions */
+  touch-action: manipulation;
+}
+a { 
+  @apply text-accent hover:underline; 
+  /* Fix for mobile touch interactions */
+  touch-action: manipulation;
+}
 h1,h2,h3 { @apply uppercase tracking-wide font-semibold; }
 :focus-visible { outline: 2px solid theme(colors.accent); outline-offset: 2px; }

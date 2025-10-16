@@ -28,6 +28,8 @@ html, body {
   outline: none !important;
   box-shadow: none !important;
   background: #f5f3f0;
+  /* Fix for mobile touch interactions */
+  touch-action: manipulation;
 }
 
 body {

@@ -53,6 +53,7 @@ export default function MobileClientList({
 								top: `${index * 1.4}rem`,
 								left: 0,
 								whiteSpace: 'nowrap',
+								touchAction: 'manipulation', // Optimize for touch interactions
 							}}
 						>
 							{client.name}
