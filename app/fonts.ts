@@ -2,11 +2,12 @@ import localFont from "next/font/local";
 import { EB_Garamond } from "next/font/google";
 
 export const sans = localFont({
-  src: [{ path: "../public/fonts/kaarle-kumppanit/kk_regular.otf", weight: "400" }],
+  src: "../public/fonts/kaarle-kumppanit/kk_regular.otf",
   variable: "--font-sans",
   preload: true,
   display: "swap",
-  fallback: ["system-ui", "Arial"]
+  // Prefer serif as the fallback to ensure full glyph coverage
+  fallback: ["Times New Roman", "Georgia", "serif"]
 });
 
 export const serif = EB_Garamond({

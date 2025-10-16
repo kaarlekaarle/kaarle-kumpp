@@ -56,7 +56,7 @@ const ExcelClientSchema = z.object({
   slug: z.string(),
   name: z.string(),
   fields: z.array(z.string()),
-  summary: z.string(),
+  summary: z.union([z.string(), z.array(z.string())]),
   slides: z.array(z.object({
     src: z.string(),
     alt: z.string().optional(),
@@ -128,7 +128,7 @@ export async function loadExcelData(): Promise<ExcelSiteData> {
 
   // Process each client (skip header row)
   for (let i = 1; i < categoriesData.length; i++) {
-    const row = categoriesData[i];
+    const row = categoriesData[i] as any[];
     const clientName = row[0];
     
     if (!clientName || clientName.trim() === '') continue;
@@ -143,26 +143,26 @@ export async function loadExcelData(): Promise<ExcelSiteData> {
     
     // Get description
     const descriptionRow = descriptionData.find((row: any) => row[0] === clientName);
-    const description = descriptionRow ? descriptionRow[1] : '';
+    const description = descriptionRow ? (descriptionRow as any[])[1] : '';
     
     // Get materials
     const materialsRow = materialsData.find((row: any) => row[0] === clientName);
-    const materials = materialsRow ? materialsRow[1] : '';
+    const materials = materialsRow ? (materialsRow as any[])[1] : '';
     
     // Get links
     const linksRow = linksData.find((row: any) => row[0] === clientName);
-    const links = linksRow ? parseLinks(linksRow[1]) : [];
+    const links = linksRow ? parseLinks((linksRow as any[])[1]) : [];
     
     // Get team
     const teamRow = teamData.find((row: any) => row[0] === clientName);
-    const team = teamRow ? parseTeam(teamRow[1]) : [];
+    const team = teamRow ? parseTeam((teamRow as any[])[1]) : [];
     
     // Create client object
     const client: Client = {
       slug: slugify(clientName),
       name: clientName.toUpperCase(),
       fields: clientFields,
-      summary: description,
+      summary: Array.isArray(description) ? description.join(' ') : description,
       slides: [
         {
           src: `/images/portrait.jpg`,
