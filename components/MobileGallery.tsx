@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Image from 'next/image';
 
 interface Slide {
   src: string;
@@ -39,19 +38,28 @@ export default function MobileGallery({ slides }: MobileGalleryProps) {
     touchEndX.current = e.targetTouches[0].clientX;
   };
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStartX.current || !touchEndX.current) return;
     
     const distance = touchStartX.current - touchEndX.current;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
-    if (isLeftSwipe && slides.length > 1) {
-      goToNext();
+    // Only handle swipe if it's a significant gesture
+    if (Math.abs(distance) > 50) {
+      e.preventDefault(); // Prevent click events only for swipes
+      
+      if (isLeftSwipe && slides.length > 1) {
+        goToNext();
+      }
+      if (isRightSwipe && slides.length > 1) {
+        goToPrevious();
+      }
     }
-    if (isRightSwipe && slides.length > 1) {
-      goToPrevious();
-    }
+    
+    // Reset touch positions
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   return (
@@ -80,18 +88,24 @@ export default function MobileGallery({ slides }: MobileGalleryProps) {
 
       {/* Image */}
       <div 
-        style={{ position: 'relative', width: '100%', aspectRatio: '4/3' }}
+        style={{ 
+          position: 'relative', 
+          width: '100%', 
+          aspectRatio: '4/3',
+          touchAction: 'pan-x pinch-zoom' // Allow horizontal panning and pinch zoom, but not vertical panning
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <Image
+        <img
           src={slides[currentIndex].src}
           alt={slides[currentIndex].alt || ''}
-          fill
-          style={{ objectFit: 'contain' }}
-          sizes="100vw"
-          priority={currentIndex === 0}
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'contain' 
+          }}
         />
       </div>
     </div>

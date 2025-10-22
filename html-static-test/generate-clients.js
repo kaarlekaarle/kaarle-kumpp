@@ -2,12 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 // Read clients data
-const clientsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../kaarle-site/data/clients.json'), 'utf8'));
+const clientsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/clients.json'), 'utf8'));
 
 // Copy all client images
 clientsData.forEach(client => {
   const clientFolder = client.slug.toUpperCase().replace(/-/g, ' ');
-  const sourcePath = path.join(__dirname, '../kaarle-site/public/clients', clientFolder);
+  const sourcePath = path.join(__dirname, '../html-static-test/public/clients', clientFolder);
   const destPath = path.join(__dirname, 'images/clients', clientFolder);
   
   // Create destination folder
@@ -80,7 +80,7 @@ ${client.links.map(link => `                  <a href="${link.url}" target="_bla
   let mobileLinksHTML = '';
   if (client.links && client.links.length > 0) {
     mobileLinksHTML = `
-                <div class="flex justify-center mt-3" style="gap: 1rem;">
+                <div class="flex justify-center" style="gap: 1rem;">
 ${client.links.map(link => `                  <a href="${link.url}" target="_blank" rel="noreferrer" aria-label="${link.icon}" class="opacity-80 hover:opacity-100">
                     <img src="images/icons/${link.icon}.svg" alt="${link.icon}" style="width: 1rem; height: 1rem;" />
                   </a>`).join('\n')}
@@ -213,7 +213,7 @@ ${slidesHTML}
               
               <!-- Mobile Caption -->
               <div data-id="right-middle" style="margin-top: 0.5rem; margin-bottom: 2.5rem;">
-                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto">
+                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto" style="padding-bottom: 2rem;">
                   <p>${summary}</p>
                 </div>
                 ${mobileLinksHTML}
@@ -256,7 +256,10 @@ ${slidesHTML}
       slug: c.slug,
       name: c.name,
       summary: c.summary,
-      fields: c.fields
+      fields: c.fields,
+      slides: c.slides,
+      logo: c.logo,
+      links: c.links
     }))))});
     window.CURRENT_CLIENT_SLUG = ${JSON.stringify(client.slug)};
     window.TOTAL_SLIDES = ${slideCount};
