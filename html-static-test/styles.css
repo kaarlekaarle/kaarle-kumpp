@@ -61,7 +61,7 @@
     --safe-bottom:max(env(safe-area-inset-bottom,0px), var(--pad-y-desktop));
     --safe-left:  max(env(safe-area-inset-left,0px), var(--pad-x-desktop));
     --edge-fluid: clamp(28px, 6vh, 72px);
-    --measure: clamp(38ch, 42vw, 50ch);
+    --measure: clamp(45ch, 50vw, 115ch);
   }
 }
 
@@ -158,7 +158,7 @@ body {
   /* Six-cell grid layout */
   .em {
     display: grid;
-    grid-template-columns: minmax(360px, 800px) var(--space-lg, 32px) 1fr;
+    grid-template-columns: 1fr var(--measure) var(--space-lg) var(--measure) 1fr;
     grid-template-rows: minmax(var(--edge-fluid), 1fr) max-content minmax(var(--edge-fluid), 1fr);
     column-gap: 0;
     row-gap: 0;
@@ -168,20 +168,20 @@ body {
 
   /* Left column positioning */
   .em [data-id="left-top"] { 
-    grid-column: 1; 
+    grid-column: 2; 
     grid-row: 1; 
     align-self: center; 
     justify-self: center; 
   }
   
   .em [data-id="left-middle"] { 
-    grid-column: 1; 
+    grid-column: 2; 
     grid-row: 2; 
     place-self: center center; 
   }
   
   .em [data-id="left-bottom"] { 
-    grid-column: 1; 
+    grid-column: 2; 
     grid-row: 3; 
     align-self: center; 
     justify-self: center; 
@@ -189,7 +189,7 @@ body {
 
   /* Right column positioning */
   .em [data-id="right-top"] { 
-    grid-column: 3; 
+    grid-column: 4; 
     grid-row: 1; 
     align-self: center; 
     justify-self: start; 
@@ -198,7 +198,7 @@ body {
   }
   
   .em [data-id="right-middle"] { 
-    grid-column: 3; 
+    grid-column: 4; 
     grid-row: 2; 
     place-self: center start; 
     padding-right: var(--space-lg, 32px);
@@ -207,7 +207,7 @@ body {
   }
   
   .em [data-id="right-bottom"] { 
-    grid-column: 3; 
+    grid-column: 4; 
     grid-row: 3; 
     align-self: center; 
     justify-self: start; 
@@ -424,6 +424,8 @@ body {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    width: 365px;
+    margin: auto;
   }
 
   [data-id="right-middle"] p {
