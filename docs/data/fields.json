@@ -1,0 +1,37 @@
+[
+  {
+    "id": "identity-building",
+    "name": "identity building",
+    "blurb": "Description for Identity Building"
+  },
+  {
+    "id": "strategic-vision", 
+    "name": "strategic vision",
+    "blurb": "Description for Strategic Vision"
+  },
+  {
+    "id": "advertising",
+    "name": "advertising", 
+    "blurb": "Description for Advertising"
+  },
+  {
+    "id": "message-media",
+    "name": "message & media",
+    "blurb": "Description for Message & Media"
+  },
+  {
+    "id": "legacy-transition",
+    "name": "legacy transition",
+    "blurb": "Description for Legacy Transition"
+  },
+  {
+    "id": "talk-shows",
+    "name": "talk shows",
+    "blurb": "Description for Talk Shows"
+  },
+  {
+    "id": "gun-for-hire",
+    "name": "gun-for-hire",
+    "blurb": "Description for Gun-for-Hire"
+  }
+]
