@@ -61,7 +61,7 @@
     --safe-bottom:max(env(safe-area-inset-bottom,0px), var(--pad-y-desktop));
     --safe-left:  max(env(safe-area-inset-left,0px), var(--pad-x-desktop));
     --edge-fluid: clamp(28px, 6vh, 72px);
-    --measure: clamp(45ch, 50vw, 115ch);
+    --measure: clamp(45ch, 50vw, 140ch);
   }
 }
 
