@@ -2,6 +2,8 @@
 
 This is a **standalone HTML version** of your Next.js homepage for testing purposes.
 
+Testing 123
+
 ## What's Included
 
 - `index.html` - Complete homepage HTML structure
