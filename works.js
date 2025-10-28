@@ -219,7 +219,7 @@ function renderClients() {
     button.setAttribute('tabindex', '0');
     button.className = 'client-button';
     button.style.fontFamily = 'var(--font-sans)';
-    button.style.fontSize = 'var(--fs-right)';
+    button.style.fontSize = 'var(--fs-desktop)';
     button.style.fontWeight = '400';
     button.style.textTransform = 'uppercase';
     button.style.letterSpacing = '.04em';
@@ -325,7 +325,7 @@ function renderMobileClients() {
     const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));
     const opacity = isMatch ? 1 : 0.25;
     
-    html += `<div class="mobile-client" data-slug="${client.slug}" style="font-family: var(--font-sans); font-size: var(--fs-right); font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; opacity: ${opacity}; transition: opacity 0.3s ease; color: #0000EE; position: absolute; top: ${index * 1.4}rem; left: 0; white-space: nowrap;">${client.name}</div>`;
+    html += `<div class="mobile-client" data-slug="${client.slug}" style="font-family: var(--font-sans); font-size: var(--fs-desktop); font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; opacity: ${opacity}; transition: opacity 0.3s ease; color: #0000EE; position: absolute; top: ${index * 1.4}rem; left: 0; white-space: nowrap;">${client.name}</div>`;
   });
   
   html += '</div>';

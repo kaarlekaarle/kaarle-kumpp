@@ -33,7 +33,7 @@ function renderClients() {
     button.setAttribute('tabindex', '0');
     button.className = 'client-button';
     button.style.fontFamily = 'var(--font-sans)';
-    button.style.fontSize = 'var(--fs-right)';
+    button.style.fontSize = 'var(--fs-desktop)';
     button.style.fontWeight = '400';
     button.style.textTransform = 'uppercase';
     button.style.letterSpacing = '.04em';
@@ -80,7 +80,7 @@ function renderMobileClients() {
     const opacity = isCurrent ? 1 : 0.4;
     const cursor = isCurrent ? 'default' : 'pointer';
     
-    html += `<div class="mobile-client" data-slug="${client.slug}" style="font-family: var(--font-sans); font-size: var(--fs-right); font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .04em; cursor: ${cursor}; color: #0000EE; opacity: ${opacity}; position: absolute; top: ${index * 1.4}rem; left: 0; white-space: nowrap;">${client.name}</div>`;
+    html += `<div class="mobile-client" data-slug="${client.slug}" style="font-family: var(--font-sans); font-size: var(--fs-desktop); font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .04em; cursor: ${cursor}; color: #0000EE; opacity: ${opacity}; position: absolute; top: ${index * 1.4}rem; left: 0; white-space: nowrap;">${client.name}</div>`;
   });
   
   html += '</div>';
