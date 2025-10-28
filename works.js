@@ -275,46 +275,46 @@ function renderMobileFields() {
     fontVariant: 'small-caps',
     fontWeight: '400',
     color: '#000000',
-    lineHeight: '1.4'
+    lineHeight: '1.68'
   };
   
   let html = '<div style="' + Object.entries(style).map(([k, v]) => `${k.replace(/([A-Z])/g, '-$1').toLowerCase()}: ${v}`).join('; ') + '">';
   
   // Line 1: ALL CLIENTS, first field
   html += '<div>';
-  html += `<span class="mobile-field-selector" data-field="null" style="cursor: pointer; text-decoration: ${selectedField === null ? 'underline' : 'none'}; border-bottom: ${selectedField === null ? '1px solid black' : 'none'}">ALL CLIENTS</span>, `;
+  html += `<span class="mobile-field-selector ${selectedField === null ? 'selected' : ''}" data-field="null" style="cursor: pointer;">ALL CLIENTS</span>, `;
   if (fields[0]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[0].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[0].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[0].id ? '1px solid black' : 'none'}">${fields[0].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[0].id ? 'selected' : ''}" data-field="${fields[0].id}" style="cursor: pointer;">${fields[0].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 2: fields 1 and 2
   html += '<div>';
   if (fields[1]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[1].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[1].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[1].id ? '1px solid black' : 'none'}">${fields[1].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[1].id ? 'selected' : ''}" data-field="${fields[1].id}" style="cursor: pointer;">${fields[1].name.toUpperCase()}</span>, `;
   }
   if (fields[2]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[2].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[2].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[2].id ? '1px solid black' : 'none'}">${fields[2].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[2].id ? 'selected' : ''}" data-field="${fields[2].id}" style="cursor: pointer;">${fields[2].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 3: fields 3 and 4
   html += '<div>';
   if (fields[3]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[3].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[3].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[3].id ? '1px solid black' : 'none'}">${fields[3].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[3].id ? 'selected' : ''}" data-field="${fields[3].id}" style="cursor: pointer;">${fields[3].name.toUpperCase()}</span>, `;
   }
   if (fields[4]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[4].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[4].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[4].id ? '1px solid black' : 'none'}">${fields[4].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[4].id ? 'selected' : ''}" data-field="${fields[4].id}" style="cursor: pointer;">${fields[4].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 4: fields 5 and 6
   html += '<div>';
   if (fields[5]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[5].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[5].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[5].id ? '1px solid black' : 'none'}">${fields[5].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[5].id ? 'selected' : ''}" data-field="${fields[5].id}" style="cursor: pointer;">${fields[5].name.toUpperCase()}</span>, `;
   }
   if (fields[6]) {
-    html += `<span class="mobile-field-selector" data-field="${fields[6].id}" style="cursor: pointer; text-decoration: ${selectedField === fields[6].id ? 'underline' : 'none'}; border-bottom: ${selectedField === fields[6].id ? '1px solid black' : 'none'}">${fields[6].name.toUpperCase()}</span>`;
+    html += `<span class="mobile-field-selector ${selectedField === fields[6].id ? 'selected' : ''}" data-field="${fields[6].id}" style="cursor: pointer;">${fields[6].name.toUpperCase()}</span>`;
   }
   html += '</div>';
   
@@ -338,7 +338,7 @@ function renderMobileClients() {
   const orderedClients = orderClientsPyramid(clients);
   const height = orderedClients.length * 1.4;
   
-  let html = `<div style="display: inline-block; text-align: left; height: ${height}rem; position: relative;">`;
+  let html = `<div style="display: inline-block; vertical-align: top; text-align: left; height: ${height}rem; position: relative;">`;
   
   orderedClients.forEach((client, index) => {
     const isMatch = !selectedField || (client.fields && client.fields.includes(selectedField));

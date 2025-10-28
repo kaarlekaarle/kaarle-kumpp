@@ -72,7 +72,7 @@ function renderMobileClients() {
   
   const orderedClients = orderClientsPyramid(clients);
   const height = orderedClients.length * 1.4;
-  
+
   let html = `<div style="display: inline-block; text-align: left; height: ${height}rem; position: relative;">`;
   
   orderedClients.forEach((client, index) => {
@@ -121,7 +121,7 @@ function renderMobileGallery() {
   
   // Add dots if more than one slide
   if (slides.length > 1) {
-    html += '<div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;">';
+    html += '<div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 6px;">';
     slides.forEach((_, index) => {
       html += `<button class="mobile-dot" data-slide="${index}" style="width: 8px; height: 8px; border-radius: 50%; border: none; background-color: ${index === 0 ? '#000' : '#ccc'}; cursor: pointer; padding: 0;" aria-label="Go to slide ${index + 1}"></button>`;
     });

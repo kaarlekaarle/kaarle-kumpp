@@ -409,6 +409,16 @@ body {
     max-width: 100%;
   }
 
+  /* Client page logo - reduce top padding */
+  .client-page [data-id="left-middle"] {
+    padding: 1rem 0 0 0; /* Reduced from 2rem to 1rem */
+  }
+
+  /* Client page - reduce gap between logo and content */
+  .client-page .em {
+    gap: 0.5rem; /* Reduced from 1rem to 0.5rem */
+  }
+
   [data-id="left-middle"] .logo {
     display: flex;
     flex-direction: column;
@@ -589,6 +599,35 @@ body {
   }
 
   .mobile-content > :last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Ensure mobile-only containers have no bottom spacing */
+  .mobile-only {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Specific rules for mobile navigation and contact sections */
+  [data-id="mobile-nav"],
+  .mobile-nav {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  [data-id="mobile-contact"],
+  .mobile-contact-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Ensure last elements in mobile content have no bottom spacing */
+  .mobile-content [data-id="mobile-nav"]:last-child,
+  .mobile-content .mobile-nav:last-child,
+  .mobile-content [data-id="mobile-contact"]:last-child,
+  .mobile-content .mobile-contact-section:last-child,
+  .mobile-content .about-links:last-child {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
@@ -800,6 +839,7 @@ a:hover {
 
   .route-about [data-id="mobile-nav"] {
     margin-top: 2rem;
+    margin-bottom: 0 !important; /* Override any bottom margin */
   }
 }
 
@@ -865,21 +905,42 @@ a:hover {
 @media (max-width: 1023px) {
   .works-page #mobile-fields {
     font-size: var(--fs-mobile);
-    line-height: 1.2;
-    margin: 1rem 0;
+    line-height: 1.68;
+    margin: 1rem 0 0 0; /* Remove bottom margin */
     padding: 0 1.5rem;
   }
 
   .works-page #mobile-fields button {
     font-size: var(--fs-mobile);
-    line-height: 1.2;
+    line-height: 1.68;
+  }
+
+  .works-page .mobile-field-selector {
+    font-size: var(--fs-mobile);
+    line-height: 1.68;
+    text-decoration: none !important;
+  }
+
+  /* Selected mobile field selectors have border-bottom */
+  .works-page .mobile-field-selector.selected {
+    border-bottom: 1px solid black !important;
+    text-decoration: none !important;
+  }
+
+  /* Force remove any text-decoration from mobile field selectors */
+  .works-page #mobile-fields .mobile-field-selector,
+  .works-page #mobile-fields .mobile-field-selector:hover,
+  .works-page #mobile-fields .mobile-field-selector:focus,
+  .works-page #mobile-fields .mobile-field-selector:active {
+    text-decoration: none !important;
   }
 
   .works-page #mobile-clients {
     font-size: var(--fs-mobile);
     line-height: 1.2;
-    margin: 1rem 0;
-    padding: 0 1.5rem;
+    margin: 1rem 0 0 0; /* Remove bottom margin */
+    padding: 0 1.5rem 0 0; /* Align to left - remove left padding, keep right padding */
+    text-align: left; /* Ensure left alignment */
   }
 
   .works-page #mobile-clients button {
@@ -888,7 +949,13 @@ a:hover {
   }
 
   .works-page .mobile-nav {
-    margin: 1rem 0;
+    margin: 0.5rem 0 0 0 !important; /* Reduce top margin to match fields-clients spacing */
+  }
+
+  /* Remove extra spacing from mobile-only containers on Works page */
+  .works-page .mobile-only {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
@@ -980,12 +1047,17 @@ a:hover {
   position: relative;
 }
 
+
 .client-page button[data-action="prev"],
 .client-page button[data-action="next"] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
 }
 
 .client-page button[data-action="prev"] {
@@ -1129,6 +1201,13 @@ a:hover {
 .client-page figcaption,
 .client-page figcaption p {
   font-family: var(--font-serif) !important;
+  color: var(--ink) !important; /* Override blue accent color for captions */
+}
+
+/* Mobile caption containers - override blue accent color */
+.client-page [data-id="right-middle"] .text-black,
+.client-page [data-id="right-middle"] p {
+  color: var(--ink) !important; /* Override blue accent color for mobile captions */
 }
 
 /* Mobile Client Page Responsive Typography */
@@ -1144,13 +1223,22 @@ a:hover {
   }
 
   .client-page #mobile-clients {
-    font-size: var(--fs-mobile);
+    /* font-size comes from inline generation (0.7em) */
     line-height: 1.2;
+    margin: 1rem 0 2rem 0; /* doubled bottom spacing before navigation */
+    padding: 0 1.5rem 0 0; /* align to left, keep right breathing room */
+    text-align: left; /* ensure left alignment */
   }
 
   .client-page #mobile-clients button {
-    font-size: var(--fs-mobile);
+    /* inherit size */
     line-height: 1.2;
+  }
+
+  /* ABOUT link on client pages should match main/about pages size */
+  .client-page .mobile-nav a,
+  .client-page [data-id="mobile-nav"] a {
+    font-size: var(--fs-mobile) !important;
   }
 }
 

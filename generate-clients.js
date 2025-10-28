@@ -212,15 +212,15 @@ ${slidesHTML}
           <div class="mobile-only">
             <div class="mobile-content">
               <!-- Mobile Gallery -->
-              <div data-id="right-middle" style="margin-top: 2.5rem; margin-bottom: 0.5rem;">
+              <div data-id="right-middle" style="margin-top: 1.25rem; margin-bottom: 0;">
                 <div class="mobile-gallery">
                   <!-- Mobile gallery content will be added here -->
                 </div>
               </div>
               
               <!-- Mobile Caption -->
-              <div data-id="right-middle" style="margin-top: 0.5rem; margin-bottom: 2.5rem;">
-                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto" style="padding-bottom: 2rem;">
+              <div data-id="right-middle" style="margin-top: 0.375rem; margin-bottom: 1.25rem;">
+                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto" style="padding-bottom: 1rem;">
                   <p>${summary}</p>
                 </div>
                 ${mobileLinksHTML}
