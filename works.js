@@ -105,13 +105,11 @@ function buildAdjacencyMap() {
 // Get related items
 function getRelatedClients(fieldSlug) {
   const related = Array.from(adjacencyMap.byField.get(fieldSlug) || []);
-  console.log(`Field "${fieldSlug}" is related to clients:`, related);
   return related;
 }
 
 function getRelatedFields(clientSlug) {
   const related = Array.from(adjacencyMap.byClient.get(clientSlug) || []);
-  console.log(`Client "${clientSlug}" is related to fields:`, related);
   return related;
 }
 
@@ -121,9 +119,6 @@ function buildClientUrl(slug) {
   const currentUrl = window.location.href;
   const referrer = document.referrer;
   
-  console.log('[works.js buildClientUrl] Current URL:', currentUrl);
-  console.log('[works.js buildClientUrl] Referrer:', referrer);
-  console.log('[works.js buildClientUrl] Target slug:', slug);
   
   // Check both current URL and referrer for htmlpreview
   const isHtmlPreview = currentUrl.includes('htmlpreview.github.io') || 
@@ -132,7 +127,6 @@ function buildClientUrl(slug) {
                         referrer.includes('html-preview.github.io');
   
   if (isHtmlPreview) {
-    console.log('[works.js buildClientUrl] Detected htmlpreview mode');
     
     // Try to extract from current URL first, then referrer
     let urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
@@ -140,12 +134,10 @@ function buildClientUrl(slug) {
       urlMatch = referrer.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
     }
     
-    console.log('[works.js buildClientUrl] URL match result:', urlMatch);
     
     if (urlMatch) {
       const [, owner, repo, branch] = urlMatch;
       const newUrl = `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/client-${slug}.html`;
-      console.log('[works.js buildClientUrl] Returning preview URL:', newUrl);
       return newUrl;
     }
   }
@@ -154,12 +146,10 @@ function buildClientUrl(slug) {
   if (currentUrl.includes('github') || referrer.includes('github')) {
     // Assume we're on kaarlekaarle/kaarle-kumpp/mobile-ready-for-collab
     const newUrl = `https://html-preview.github.io/?url=https://github.com/kaarlekaarle/kaarle-kumpp/blob/mobile-ready-for-collab/html-static-test/client-${slug}.html`;
-    console.log('[works.js buildClientUrl] GitHub detected, using hardcoded preview URL:', newUrl);
     return newUrl;
   }
   
   // Default to relative URL for local/direct access
-  console.log('[works.js buildClientUrl] Returning relative URL:', `client-${slug}.html`);
   return `client-${slug}.html`;
 }
 
@@ -200,7 +190,6 @@ function renderFields() {
     button.style.border = 'none';
     button.style.background = 'none';
     button.style.padding = '0';
-    button.style.margin = '0';
     button.style.color = 'inherit';
     button.textContent = field.name;
     
@@ -269,52 +258,44 @@ function renderMobileFields() {
   const mobileFields = document.getElementById('mobile-fields');
   if (!mobileFields) return;
   
-  const style = {
-    fontFamily: 'var(--font-serif)',
-    fontSize: '0.7em',
-    fontVariant: 'small-caps',
-    fontWeight: '400',
-    color: '#000000',
-    lineHeight: '1.68'
-  };
-  
-  let html = '<div style="' + Object.entries(style).map(([k, v]) => `${k.replace(/([A-Z])/g, '-$1').toLowerCase()}: ${v}`).join('; ') + '">';
+  // Use CSS classes instead of inline styles for consistency
+  let html = '<div class="mobile-fields-container">';
   
   // Line 1: ALL CLIENTS, first field
   html += '<div>';
-  html += `<span class="mobile-field-selector ${selectedField === null ? 'selected' : ''}" data-field="null" style="cursor: pointer;">ALL CLIENTS</span>, `;
+  html += `<span class="mobile-field-selector ${selectedField === null ? 'selected' : ''}" data-field="null">ALL CLIENTS</span>, `;
   if (fields[0]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[0].id ? 'selected' : ''}" data-field="${fields[0].id}" style="cursor: pointer;">${fields[0].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[0].id ? 'selected' : ''}" data-field="${fields[0].id}">${fields[0].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 2: fields 1 and 2
   html += '<div>';
   if (fields[1]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[1].id ? 'selected' : ''}" data-field="${fields[1].id}" style="cursor: pointer;">${fields[1].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[1].id ? 'selected' : ''}" data-field="${fields[1].id}">${fields[1].name.toUpperCase()}</span>, `;
   }
   if (fields[2]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[2].id ? 'selected' : ''}" data-field="${fields[2].id}" style="cursor: pointer;">${fields[2].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[2].id ? 'selected' : ''}" data-field="${fields[2].id}">${fields[2].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 3: fields 3 and 4
   html += '<div>';
   if (fields[3]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[3].id ? 'selected' : ''}" data-field="${fields[3].id}" style="cursor: pointer;">${fields[3].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[3].id ? 'selected' : ''}" data-field="${fields[3].id}">${fields[3].name.toUpperCase()}</span>, `;
   }
   if (fields[4]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[4].id ? 'selected' : ''}" data-field="${fields[4].id}" style="cursor: pointer;">${fields[4].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[4].id ? 'selected' : ''}" data-field="${fields[4].id}">${fields[4].name.toUpperCase()}</span>, `;
   }
   html += '</div>';
   
   // Line 4: fields 5 and 6
   html += '<div>';
   if (fields[5]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[5].id ? 'selected' : ''}" data-field="${fields[5].id}" style="cursor: pointer;">${fields[5].name.toUpperCase()}</span>, `;
+    html += `<span class="mobile-field-selector ${selectedField === fields[5].id ? 'selected' : ''}" data-field="${fields[5].id}">${fields[5].name.toUpperCase()}</span>, `;
   }
   if (fields[6]) {
-    html += `<span class="mobile-field-selector ${selectedField === fields[6].id ? 'selected' : ''}" data-field="${fields[6].id}" style="cursor: pointer;">${fields[6].name.toUpperCase()}</span>`;
+    html += `<span class="mobile-field-selector ${selectedField === fields[6].id ? 'selected' : ''}" data-field="${fields[6].id}">${fields[6].name.toUpperCase()}</span>`;
   }
   html += '</div>';
   
@@ -438,7 +419,6 @@ function updateHighlighting() {
 
 // Draw SVG connections
 function drawConnections() {
-  console.log('drawConnections called, hoveredItem:', hoveredItem);
   
   if (!hoveredItem) {
     clearConnections();
@@ -448,7 +428,6 @@ function drawConnections() {
   const container = document.getElementById('main-container');
   const linesGroup = document.getElementById('lines-group');
   
-  console.log('Container:', container, 'LinesGroup:', linesGroup);
   
   if (!container || !linesGroup) {
     console.error('Missing container or linesGroup');
@@ -457,14 +436,12 @@ function drawConnections() {
   
   // For absolute positioned SVG, we need coordinates relative to the container
   const containerRect = container.getBoundingClientRect();
-  console.log('Container rect:', containerRect);
   
   linesGroup.innerHTML = '';
   
   const startPad = 8, endPad = 8;
   
   if (hoveredItem.kind === 'field') {
-    console.log('Drawing field connections for:', hoveredItem.slug);
     const fieldEl = fieldRefs.get(hoveredItem.slug);
     if (!fieldEl) {
       console.error('Field element not found for:', hoveredItem.slug);
@@ -475,13 +452,7 @@ function drawConnections() {
     const fieldStartX = fieldRect.right - containerRect.left + startPad;
     const fieldMidY = fieldRect.top + fieldRect.height / 2 - containerRect.top;
     
-    console.log('Field element:', fieldEl);
-    console.log('Field rect:', fieldRect);
-    console.log('Container rect:', containerRect);
-    console.log('Calculated start point:', fieldStartX, fieldMidY);
-    
     const relatedClients = getRelatedClients(hoveredItem.slug);
-    console.log('Related clients:', relatedClients);
     
     relatedClients.forEach(clientSlug => {
       const clientEl = clientRefs.get(clientSlug);
@@ -494,16 +465,10 @@ function drawConnections() {
       const clientEndX = clientRect.left - containerRect.left - endPad;
       const clientMidY = clientRect.top + clientRect.height / 2 - containerRect.top;
       
-      console.log('Client element for', clientSlug, ':', clientEl);
-      console.log('Client rect for', clientSlug, ':', clientRect);
-      console.log('Calculated end point:', clientEndX, clientMidY);
-      
       const S = { x: fieldStartX, y: fieldMidY };
       const E = { x: clientEndX, y: clientMidY };
       const seedKey = `${hoveredItem.slug}->${clientSlug}`;
       const { d, width } = bezierPath(S, E, seedKey);
-      
-      console.log('Creating path:', d);
       
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', d);
@@ -514,7 +479,6 @@ function drawConnections() {
       linesGroup.appendChild(path);
     });
   } else {
-    console.log('Drawing client connections for:', hoveredItem.slug);
     const clientEl = clientRefs.get(hoveredItem.slug);
     if (!clientEl) {
       console.error('Client element not found for:', hoveredItem.slug);
@@ -525,10 +489,7 @@ function drawConnections() {
     const clientStartX = clientRect.left - containerRect.left - endPad;
     const clientMidY = clientRect.top + clientRect.height / 2 - containerRect.top;
     
-    console.log('Client rect:', clientRect, 'Start point:', clientStartX, clientMidY);
-    
     const relatedFields = getRelatedFields(hoveredItem.slug);
-    console.log('Related fields:', relatedFields);
     
     relatedFields.forEach(fieldSlug => {
       const fieldEl = fieldRefs.get(fieldSlug);
@@ -541,14 +502,10 @@ function drawConnections() {
       const fieldEndX = fieldRect.right - containerRect.left + startPad;
       const fieldMidY = fieldRect.top + fieldRect.height / 2 - containerRect.top;
       
-      console.log('Field rect for', fieldSlug, ':', fieldRect, 'End point:', fieldEndX, fieldMidY);
-      
       const S = { x: clientStartX, y: clientMidY };
       const E = { x: fieldEndX, y: fieldMidY };
       const seedKey = `${fieldSlug}->${hoveredItem.slug}`;
       const { d, width } = bezierPath(S, E, seedKey);
-      
-      console.log('Creating path:', d);
       
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', d);
@@ -596,7 +553,6 @@ async function init() {
       if (hoveredItem) drawConnections();
     });
     
-    console.log('Works page initialized successfully');
   } catch (error) {
     console.error('Error initializing works page:', error);
   }

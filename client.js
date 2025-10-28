@@ -101,18 +101,14 @@ function renderMobileClients() {
 function renderMobileGallery() {
   const mobileGallery = document.querySelector('.mobile-gallery');
   if (!mobileGallery) {
-    console.log('Mobile gallery element not found');
     return;
   }
   
   // Get current client data
   const currentClient = clients.find(client => client.slug === currentClientSlug);
   if (!currentClient || !currentClient.slides) {
-    console.log('Current client or slides not found:', currentClient);
     return;
   }
-  
-  console.log('Rendering mobile gallery for:', currentClient.name, 'with', currentClient.slides.length, 'slides');
   
   const slides = currentClient.slides;
   totalSlides = slides.length;
@@ -157,9 +153,6 @@ function buildClientUrl(slug) {
   const currentUrl = window.location.href;
   const referrer = document.referrer;
   
-  console.log('[buildClientUrl] Current URL:', currentUrl);
-  console.log('[buildClientUrl] Referrer:', referrer);
-  console.log('[buildClientUrl] Target slug:', slug);
   
   // Check both current URL and referrer for htmlpreview
   const isHtmlPreview = currentUrl.includes('htmlpreview.github.io') || 
@@ -168,7 +161,6 @@ function buildClientUrl(slug) {
                         referrer.includes('html-preview.github.io');
   
   if (isHtmlPreview) {
-    console.log('[buildClientUrl] Detected htmlpreview mode');
     
     // Try to extract from current URL first, then referrer
     let urlMatch = currentUrl.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
@@ -176,12 +168,10 @@ function buildClientUrl(slug) {
       urlMatch = referrer.match(/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/html-static-test/);
     }
     
-    console.log('[buildClientUrl] URL match result:', urlMatch);
     
     if (urlMatch) {
       const [, owner, repo, branch] = urlMatch;
       const newUrl = `https://html-preview.github.io/?url=https://github.com/${owner}/${repo}/blob/${branch}/html-static-test/client-${slug}.html`;
-      console.log('[buildClientUrl] Returning preview URL:', newUrl);
       return newUrl;
     }
   }
@@ -190,12 +180,10 @@ function buildClientUrl(slug) {
   if (currentUrl.includes('github') || referrer.includes('github')) {
     // Assume we're on kaarlekaarle/kaarle-kumpp/mobile-ready-for-collab
     const newUrl = `https://html-preview.github.io/?url=https://github.com/kaarlekaarle/kaarle-kumpp/blob/mobile-ready-for-collab/html-static-test/client-${slug}.html`;
-    console.log('[buildClientUrl] GitHub detected, using hardcoded preview URL:', newUrl);
     return newUrl;
   }
   
   // Default to relative URL for local/direct access
-  console.log('[buildClientUrl] Returning relative URL:', `client-${slug}.html`);
   return `client-${slug}.html`;
 }
 
@@ -314,26 +302,20 @@ function initGallery() {
     btn.addEventListener('click', () => showSlide(index));
   });
   
-  console.log('Prev button:', prevButton);
-  console.log('Next button:', nextButton);
   
   if (prevButton) {
     prevButton.addEventListener('click', (e) => {
-      console.log('Prev button clicked!');
       e.preventDefault();
       e.stopPropagation();
       prevSlide();
     });
-    console.log('Prev button listener added');
   }
   if (nextButton) {
     nextButton.addEventListener('click', (e) => {
-      console.log('Next button clicked!');
       e.preventDefault();
       e.stopPropagation();
       nextSlide();
     });
-    console.log('Next button listener added');
   }
   
   // Desktop image click to advance
@@ -440,7 +422,6 @@ async function init() {
     // Initialize gallery
     initGallery();
     
-    console.log('Client page initialized successfully');
   } catch (error) {
     console.error('Error initializing client page:', error);
   }

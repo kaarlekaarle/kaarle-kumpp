@@ -904,6 +904,7 @@ a:hover {
 /* Mobile Works Page */
 @media (max-width: 1023px) {
   .works-page #mobile-fields {
+    font-family: var(--font-serif);
     font-size: var(--fs-mobile);
     line-height: 1.68;
     margin: 1rem 0 0 0; /* Remove bottom margin */
@@ -915,7 +916,17 @@ a:hover {
     line-height: 1.68;
   }
 
+  .works-page .mobile-fields-container {
+    font-family: var(--font-serif);
+    font-size: var(--fs-mobile);
+    font-variant: small-caps;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.68;
+  }
+
   .works-page .mobile-field-selector {
+    font-family: var(--font-serif);
     font-size: var(--fs-mobile);
     line-height: 1.68;
     text-decoration: none !important;
@@ -1003,6 +1014,13 @@ a:hover {
   max-height: 3rem;
   max-width: 200px;
   height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Logo image utility class */
+.logo-img {
+  height: 3rem;
   width: auto;
   object-fit: contain;
 }
@@ -1159,6 +1177,13 @@ a:hover {
   outline: none !important;
 }
 
+/* Mobile navigation on client pages should use mobile font size */
+@media (max-width: 1023px) {
+  .client-page .nav-right {
+    font-size: var(--fs-mobile);
+  }
+}
+
 .client-page .nav-right:hover {
   opacity: 0.8;
 }
@@ -1183,7 +1208,8 @@ a:hover {
 }
 
 .client-page [data-id="left-bottom"] .flex {
-  gap: 1rem !important;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .client-page .mobile-content a img {
@@ -1194,7 +1220,8 @@ a:hover {
 }
 
 .client-page .mobile-content .flex {
-  gap: 1rem !important;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Caption typography - should be serif, smaller font, narrower width, closer to image */
