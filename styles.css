@@ -25,6 +25,24 @@
   --space-lg:  1.5rem;
   --space-xl:  2rem;
   --space-2xl: 3rem;
+  
+  /* Additional spacing values for standardization */
+  --space-3xs: 0.125rem;  /* 0.125rem = 2px */
+  --space-4xs: 0.1rem;    /* 0.1rem = 1.6px */
+  --space-5xs: 0.05rem;   /* 0.05rem = 0.8px */
+  --space-3xl: 4rem;      /* 4rem = 64px */
+  --space-4xl: 6rem;      /* 6rem = 96px */
+  
+  /* Micro spacing for fine adjustments */
+  --space-micro: 0.35rem; /* 0.35rem = 5.6px */
+  --space-tiny: 0.375rem; /* 0.375rem = 6px */
+  
+  /* Typography-based spacing (em equivalents) */
+  --space-text-xs: 0.1em;   /* 0.1em */
+  --space-text-sm: 0.3em;   /* 0.3em */
+  --space-text-md: 0.5em;   /* 0.5em */
+  --space-text-lg: 1em;     /* 1em */
+  --space-text-xl: 1.2em;   /* 1.2em */
 
   /* Typography system: 3 sizes derived from logo */
   --fs-logo: clamp(22.5px, 2.4vw, 27px);
@@ -120,7 +138,7 @@ body {
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
 
-.my-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-1 { margin-top: var(--space-2xs); margin-bottom: var(--space-2xs); }
 
 /* Typography sizes */
 .fs-logo { font-size: var(--fs-logo); }
@@ -198,7 +216,7 @@ body {
     align-self: center; 
     justify-self: start; 
     padding-right: var(--space-lg, 32px); 
-    padding-left: 2rem; /* Add left padding to push away from center */
+    padding-left: var(--space-xl); /* Add left padding to push away from center */
   }
   
   .em [data-id="right-middle"] { 
@@ -206,7 +224,7 @@ body {
     grid-row: 2; 
     place-self: center start; 
     padding-right: var(--space-lg, 32px);
-    padding-left: 2rem; /* Add left padding to push away from center */
+    padding-left: var(--space-xl); /* Add left padding to push away from center */
     position: relative;
   }
   
@@ -216,7 +234,7 @@ body {
     align-self: center; 
     justify-self: start; 
     padding-right: var(--space-lg, 32px); 
-    padding-left: 2rem; /* Add left padding to push away from center */
+    padding-left: var(--space-xl); /* Add left padding to push away from center */
   }
 
   /* Logo styling */
@@ -236,7 +254,7 @@ body {
     font-size: var(--fs-contact);
     line-height: 1.1;
     display: flex;
-    gap: .35rem;
+    gap: var(--space-micro);
     flex-wrap: wrap;
     align-items: baseline;
     margin: 0;
@@ -311,11 +329,11 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: var(--space-text-lg);
   }
   
   .about-prose .kicker:last-child {
-    margin-top: 1em;
+    margin-top: var(--space-text-lg);
     margin-bottom: 0;
   }
   
@@ -324,7 +342,7 @@ body {
     font-size: inherit;
     line-height: 1.35;
     font-style: normal;
-    margin: 0 0 1.2em 0;
+    margin: 0 0 var(--space-text-xl) 0;
   }
   
   .about-prose p:last-child {
@@ -389,8 +407,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
-    gap: 2rem;
-    padding: 1.5rem 0.375rem;
+    gap: var(--space-xl);
+    padding: var(--space-lg) var(--space-tiny);
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -403,7 +421,7 @@ body {
     grid-column: 1;
     text-align: center;
     margin: 0;
-    padding: 2rem 0 0 0;
+    padding: var(--space-xl) 0 0 0;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
@@ -411,12 +429,12 @@ body {
 
   /* Client page logo - reduce top padding */
   .client-page [data-id="left-middle"] {
-    padding: 1rem 0 0 0; /* Reduced from 2rem to 1rem */
+    padding: var(--space-md) 0 0 0; /* Reduced from 2rem to 1rem */
   }
 
   /* Client page - reduce gap between logo and content */
   .client-page .em {
-    gap: 0.5rem; /* Reduced from 1rem to 0.5rem */
+    gap: var(--space-xs); /* Reduced from 1rem to 0.5rem */
   }
 
   [data-id="left-middle"] .logo {
@@ -456,7 +474,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     line-height: 1.2;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--space-text-md);
   }
 
   [data-id="right-middle"] .about-prose {
@@ -470,7 +488,7 @@ body {
 
   [data-id="right-middle"] p {
     font-size: clamp(0.75rem, 2.8vw, 1rem);
-    margin-bottom: 1em;
+    margin-bottom: var(--space-text-lg);
     line-height: 1.4;
   }
 
@@ -490,7 +508,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: var(--space-3xl);
     margin: 0;
     width: 100%;
     max-width: 100%;
@@ -508,7 +526,7 @@ body {
     letter-spacing: 0.04em;
     color: var(--ink);
     text-decoration: none;
-    padding: 0.5em 1em;
+    padding: var(--space-text-md) var(--space-text-lg);
     white-space: nowrap;
     background-color: transparent;
     border: none;
@@ -527,7 +545,7 @@ body {
     grid-row: 4;
     grid-column: 1;
     text-align: center;
-    padding: 0.5rem 0;
+    padding: var(--space-xs) 0;
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
@@ -539,7 +557,7 @@ body {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5em 0;
+    padding: var(--space-text-md) 0;
   }
 
   [data-id="mobile-contact"] .contact {
@@ -555,13 +573,13 @@ body {
   [data-id="mobile-contact"] a {
     display: block;
     line-height: 1.2;
-    margin: 0.1em 0;
+    margin: var(--space-text-xs) 0;
     padding: 0;
   }
 
   [data-id="mobile-contact"] span:first-child {
-    margin-top: 0.3em;
-    margin-bottom: 0.1em;
+    margin-top: var(--space-text-sm);
+    margin-bottom: var(--space-text-xs);
   }
 
   [data-id="mobile-contact"] span {
@@ -589,7 +607,7 @@ body {
 
   /* Trim bottom spacing at end of mobile flow */
   [data-id="mobile-nav"] {
-    margin-bottom: 1rem !important;
+    margin-bottom: var(--space-md) !important;
   }
 
   [data-id="mobile-contact"],
@@ -634,12 +652,12 @@ body {
 
   /* Match space under logo to space above (1rem) - About page */
   .route-about [data-id="right-middle"] {
-    margin-top: 1rem !important;
+    margin-top: var(--space-md) !important;
   }
 
   /* Match space under logo to space above (2rem) */
   [data-id="right-middle"] {
-    margin-top: 2rem !important;
+    margin-top: var(--space-xl) !important;
   }
 
 
@@ -649,8 +667,8 @@ body {
   /* Very narrow screens */
   @media (max-width: 360px) {
     .em {
-      padding: 1.5rem 0;
-      gap: 2rem;
+      padding: var(--space-lg) 0;
+      gap: var(--space-xl);
     }
 
     [data-id="left-middle"] {
@@ -702,15 +720,15 @@ a:hover {
   }
 
   .about-page [data-id="left-middle"] .mt-1 {
-    margin-top: 0.25rem;
+    margin-top: var(--space-2xs);
   }
 
   .about-page [data-id="left-middle"] .mt-4 {
-    margin-top: 1rem;
+    margin-top: var(--space-md);
   }
 
   .about-page [data-id="left-middle"] .pt-3 {
-    padding-top: 0.75rem;
+    padding-top: var(--space-sm);
   }
 
   .about-page [data-id="left-middle"] .font-medium {
@@ -756,7 +774,7 @@ a:hover {
     color: var(--accent);
     font-size: clamp(0.75rem, 2.8vw, 1rem);
     line-height: 1.4;
-    margin-bottom: 1em;
+    margin-bottom: var(--space-text-lg);
   }
 
   .route-about .about-prose em {
@@ -768,11 +786,11 @@ a:hover {
   }
 
   .route-about .about-contact-section {
-    margin-top: 2rem;
+    margin-top: var(--space-xl);
   }
 
   .route-about .about-contact {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
     font-size: var(--fs-mobile);
     line-height: 1.2;
   }
@@ -781,7 +799,7 @@ a:hover {
   .route-about .about-contact a {
     display: block;
     line-height: 1.2;
-    margin: 0.1em 0;
+    margin: var(--space-text-xs) 0;
     padding: 0;
   }
 
@@ -796,8 +814,8 @@ a:hover {
   }
 
   .route-about .about-contact span:first-child {
-    margin-top: 0.3em;
-    margin-bottom: 0.1em;
+    margin-top: var(--space-text-sm);
+    margin-bottom: var(--space-text-xs);
   }
 
   .route-about .about-contact br {
@@ -805,7 +823,7 @@ a:hover {
   }
 
   .route-about .about-photo {
-    margin: 0.5rem 0;
+    margin: var(--space-xs) 0;
     padding: 0;
   }
 
@@ -819,9 +837,9 @@ a:hover {
 
   /* Mobile About page vertical gaps - OVERRIDE desktop rules */
   @media (max-width: 1023px) {
-    .route-about .about-contact-section { margin-top: 1.5rem !important; }
+    .route-about .about-contact-section { margin-top: var(--space-lg) !important; }
     .route-about .about-contact { margin-bottom: 0 !important; }
-    .route-about .about-photo { margin: 1rem 0 !important; padding: 0 !important; }
+    .route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
     .route-about .about-links { margin-top: 0 !important; }
     .route-about .about-prose p:last-child { margin-bottom: 0 !important; }
 
@@ -838,7 +856,7 @@ a:hover {
   }
 
   .route-about [data-id="mobile-nav"] {
-    margin-top: 2rem;
+    margin-top: var(--space-xl);
     margin-bottom: 0 !important; /* Override any bottom margin */
   }
 }
@@ -873,7 +891,7 @@ a:hover {
   }
 
   .works-page .field-button.mb-6 {
-    margin-bottom: 0.75rem !important; /* Reduced from 1.5rem */
+    margin-bottom: var(--space-sm) !important; /* Reduced from 1.5rem */
   }
 
   /* Fields container positioning */
@@ -907,8 +925,8 @@ a:hover {
     font-family: var(--font-serif);
     font-size: var(--fs-mobile);
     line-height: 1.68;
-    margin: 1rem 0 0 0; /* Remove bottom margin */
-    padding: 0 1.5rem;
+    margin: var(--space-md) 0 0 0; /* Remove bottom margin */
+    padding: 0 var(--space-lg);
   }
 
   .works-page #mobile-fields button {
@@ -949,8 +967,8 @@ a:hover {
   .works-page #mobile-clients {
     font-size: var(--fs-mobile);
     line-height: 1.2;
-    margin: 1rem 0 0 0; /* Remove bottom margin */
-    padding: 0 1.5rem 0 0; /* Align to left - remove left padding, keep right padding */
+    margin: var(--space-md) 0 0 0; /* Remove bottom margin */
+    padding: 0 var(--space-lg) 0 0; /* Align to left - remove left padding, keep right padding */
     text-align: left; /* Ensure left alignment */
   }
 
@@ -960,7 +978,7 @@ a:hover {
   }
 
   .works-page .mobile-nav {
-    margin: 0.5rem 0 0 0 !important; /* Reduce top margin to match fields-clients spacing */
+    margin: var(--space-xs) 0 0 0 !important; /* Reduce top margin to match fields-clients spacing */
   }
 
   /* Remove extra spacing from mobile-only containers on Works page */
@@ -1112,8 +1130,8 @@ a:hover {
 .client-page [role="tablist"] {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  padding-bottom: 1.5rem;
+  gap: var(--space-xs);
+  padding-bottom: var(--space-lg);
 }
 
 .client-page [role="tab"] {
@@ -1208,8 +1226,8 @@ a:hover {
 }
 
 .client-page [data-id="left-bottom"] .flex {
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
 }
 
 .client-page .mobile-content a img {
@@ -1220,8 +1238,8 @@ a:hover {
 }
 
 .client-page .mobile-content .flex {
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
 }
 
 /* Caption typography - should be serif, smaller font, narrower width, closer to image */
@@ -1252,8 +1270,8 @@ a:hover {
   .client-page #mobile-clients {
     /* font-size comes from inline generation (0.7em) */
     line-height: 1.2;
-    margin: 1rem 0 2rem 0; /* doubled bottom spacing before navigation */
-    padding: 0 1.5rem 0 0; /* align to left, keep right breathing room */
+    margin: var(--space-md) 0 var(--space-xl) 0; /* doubled bottom spacing before navigation */
+    padding: 0 var(--space-lg) 0 0; /* align to left, keep right breathing room */
     text-align: left; /* ensure left alignment */
   }
 
@@ -1270,7 +1288,7 @@ a:hover {
 }
 
 .client-page figcaption {
-  padding-top: 0.5rem !important;
+  padding-top: var(--space-xs) !important;
 }
 
 .client-page figcaption .mx-auto {
