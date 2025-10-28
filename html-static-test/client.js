@@ -97,6 +97,60 @@ function renderMobileClients() {
   });
 }
 
+// Render mobile gallery
+function renderMobileGallery() {
+  const mobileGallery = document.querySelector('.mobile-gallery');
+  if (!mobileGallery) {
+    console.log('Mobile gallery element not found');
+    return;
+  }
+  
+  // Get current client data
+  const currentClient = clients.find(client => client.slug === currentClientSlug);
+  if (!currentClient || !currentClient.slides) {
+    console.log('Current client or slides not found:', currentClient);
+    return;
+  }
+  
+  console.log('Rendering mobile gallery for:', currentClient.name, 'with', currentClient.slides.length, 'slides');
+  
+  const slides = currentClient.slides;
+  totalSlides = slides.length;
+  
+  let html = '';
+  
+  // Add dots if more than one slide
+  if (slides.length > 1) {
+    html += '<div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;">';
+    slides.forEach((_, index) => {
+      html += `<button class="mobile-dot" data-slide="${index}" style="width: 8px; height: 8px; border-radius: 50%; border: none; background-color: ${index === 0 ? '#000' : '#ccc'}; cursor: pointer; padding: 0;" aria-label="Go to slide ${index + 1}"></button>`;
+    });
+    html += '</div>';
+  }
+  
+  // Add image container
+  html += `<div class="mobile-image-container" style="position: relative; width: 100%; aspect-ratio: 4/3; touch-action: pan-x pinch-zoom;">`;
+  
+  slides.forEach((slide, index) => {
+    const displayStyle = index === 0 ? 'block' : 'none';
+    // Fix image path to use images/ prefix for HTML static version
+    const imageSrc = slide.src.startsWith('/clients/') ? slide.src.replace('/clients/', 'images/clients/') : slide.src;
+    html += `<img src="${imageSrc}" alt="${slide.alt || ''}" class="mobile-slide-image" data-slide="${index}" style="width: 100%; height: 100%; object-fit: contain; display: ${displayStyle};" />`;
+  });
+  
+  html += '</div>';
+  
+  mobileGallery.innerHTML = html;
+  
+  // Add click handlers for dots
+  document.querySelectorAll('.mobile-dot').forEach(button => {
+    button.addEventListener('click', () => {
+      const slideIndex = parseInt(button.getAttribute('data-slide'));
+      showSlide(slideIndex);
+    });
+  });
+}
+
 // Helper function to build navigation URLs
 function buildClientUrl(slug) {
   // Check if we're in htmlpreview mode by checking multiple indicators
@@ -381,6 +435,7 @@ async function init() {
     // Render desktop and mobile views
     renderClients();
     renderMobileClients();
+    renderMobileGallery();
     
     // Initialize gallery
     initGallery();
