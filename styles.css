@@ -30,6 +30,9 @@
   --fs-logo: clamp(22.5px, 2.4vw, 27px);
   --fs-right: calc(var(--fs-logo) * 0.6666667);   /* ≈ 24 when logo≈36 */
   --fs-contact: calc(var(--fs-logo) * 0.5);       /* ≈ 18 when logo≈36 */
+  
+  /* Mobile typography - unified font size for links and contacts */
+  --fs-mobile: clamp(0.75rem, 2.8vw, 1rem);
 
   /* Fonts - fallback to system fonts if custom font not available */
   --font-sans: 'KaarleKumppanit', ui-sans-serif, system-ui, sans-serif;
@@ -123,6 +126,7 @@ body {
 .fs-logo { font-size: var(--fs-logo); }
 .fs-right { font-size: var(--fs-right); }
 .fs-contact { font-size: var(--fs-contact); }
+.fs-mobile { font-size: var(--fs-mobile); }
 
 .sans { font-family: var(--font-sans); }
 .serif { font-family: var(--font-serif); }
@@ -244,9 +248,35 @@ body {
     font-weight: 400; 
   }
   
+  .contact-line .contact__phone {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    pointer-events: none;
+    text-decoration: none !important;
+    color: inherit !important;
+    font-variant-ligatures: none;
+    -webkit-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
+  }
+
+  .contact-line .contact__phone::before {
+    content: "\200B";
+    display: inline;
+  }
+
+  .contact-line .contact__phone::after {
+    content: "\200B";
+    display: inline;
+  }
+
   .contact__phone { 
     font-family: var(--font-serif); 
-    font-weight: 500; 
+    font-weight: 500;
   }
   
   .contact__email { 
@@ -411,12 +441,12 @@ body {
   [data-id="right-middle"] h1,
   [data-id="right-middle"] .kicker {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-size: clamp(0.875rem, 3.2vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     line-height: 1.2;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
   }
 
   [data-id="right-middle"] .about-prose {
@@ -430,7 +460,7 @@ body {
 
   [data-id="right-middle"] p {
     font-size: clamp(0.75rem, 2.8vw, 1rem);
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     line-height: 1.4;
   }
 
@@ -463,7 +493,7 @@ body {
   .mobile-nav a {
     display: inline-block;
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: var(--fs-mobile);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--ink);
@@ -503,7 +533,7 @@ body {
   }
 
   [data-id="mobile-contact"] .contact {
-    font-size: var(--fs-right);
+    font-size: var(--fs-mobile);
     line-height: 1.4;
     display: block;
     text-align: center;
@@ -511,47 +541,71 @@ body {
     box-sizing: border-box;
   }
 
-  [data-id="mobile-contact"] .contact__name {
+  [data-id="mobile-contact"] span,
+  [data-id="mobile-contact"] a {
     display: block;
-    text-align: center;
-    margin: 0.3em 0 0.5em 0;
-    padding: 0.1em 0;
-    white-space: nowrap;
     line-height: 1.2;
-    font-family: var(--font-sans);
-    font-weight: 400;
-  }
-
-  [data-id="mobile-contact"] .contact__phone {
-    display: block;
-    text-align: center;
     margin: 0.1em 0;
     padding: 0;
-    white-space: nowrap;
-    line-height: 1.2;
-    font-family: var(--font-serif);
-    font-weight: 400;
   }
 
-  [data-id="mobile-contact"] .contact__email {
-    display: block;
-    text-align: center;
-    margin: 0.1em 0;
-    padding: 0;
-    white-space: nowrap;
-    line-height: 1.2;
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-style: italic;
+  [data-id="mobile-contact"] span:first-child {
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+  }
+
+  [data-id="mobile-contact"] span {
+    color: var(--ink) !important;
+    text-decoration: none !important;
+  }
+
+  [data-id="mobile-contact"] span:nth-child(2) {
+    color: var(--ink) !important;
+    text-decoration: none !important;
+  }
+
+  [data-id="mobile-contact"] a {
+    text-decoration: none;
+  }
+
+  [data-id="mobile-contact"] a:hover {
     text-decoration: none;
     color: inherit;
   }
 
-
-  /* Responsive contact font sizing */
-  [data-id="mobile-contact"] .contact {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+  [data-id="mobile-contact"] br {
+    display: none;
   }
+
+  /* Trim bottom spacing at end of mobile flow */
+  [data-id="mobile-nav"] {
+    margin-bottom: 1rem !important;
+  }
+
+  [data-id="mobile-contact"],
+  .mobile-contact-section {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .mobile-content > :last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Match space under logo to space above (1rem) - About page */
+  .route-about [data-id="right-middle"] {
+    margin-top: 1rem !important;
+  }
+
+  /* Match space under logo to space above (2rem) */
+  [data-id="right-middle"] {
+    margin-top: 2rem !important;
+  }
+
+
+
+  /* Responsive contact font sizing - REMOVED: conflicts with unified --fs-mobile */
 
   /* Very narrow screens */
   @media (max-width: 360px) {
@@ -577,9 +631,7 @@ body {
       margin: 0 auto;
     }
 
-    [data-id="mobile-contact"] .contact {
-      font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
-    }
+    /* Very narrow screens - contact font size REMOVED: conflicts with unified --fs-mobile */
   }
 }
 
@@ -665,6 +717,7 @@ a:hover {
     color: var(--accent);
     font-size: clamp(0.75rem, 2.8vw, 1rem);
     line-height: 1.4;
+    margin-bottom: 1em;
   }
 
   .route-about .about-prose em {
@@ -681,9 +734,7 @@ a:hover {
 
   .route-about .about-contact {
     margin-bottom: 1rem;
-  }
-
-  .route-about .about-contact {
+    font-size: var(--fs-mobile);
     line-height: 1.2;
   }
 
@@ -691,13 +742,27 @@ a:hover {
   .route-about .about-contact a {
     display: block;
     line-height: 1.2;
-    margin: 0;
+    margin: 0.1em 0;
     padding: 0;
   }
 
-  .route-about .about-contact span:not(:last-child)::after,
-  .route-about .about-contact a:not(:last-child)::after {
-    content: "";
+  .route-about .about-contact a {
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .route-about .about-contact a:hover {
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .route-about .about-contact span:first-child {
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+  }
+
+  .route-about .about-contact br {
+    display: none;
   }
 
   .route-about .about-photo {
@@ -711,6 +776,19 @@ a:hover {
     max-width: 100px;
     height: auto;
     border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* Mobile About page vertical gaps - OVERRIDE desktop rules */
+  @media (max-width: 1023px) {
+    .route-about .about-contact-section { margin-top: 1.5rem !important; }
+    .route-about .about-contact { margin-bottom: 0 !important; }
+    .route-about .about-photo { margin: 1rem 0 !important; padding: 0 !important; }
+    .route-about .about-links { margin-top: 0 !important; }
+    .route-about .about-prose p:last-child { margin-bottom: 0 !important; }
+
+    /* Match link sizes to contact name (sans) */
+    .route-about .about-links a { font-size: var(--fs-mobile) !important; line-height: 1.2; }
+    .route-about .mobile-nav a { font-size: var(--fs-mobile) !important; line-height: 1.2; }
   }
 
   .route-about .about-links a {
@@ -786,23 +864,31 @@ a:hover {
 /* Mobile Works Page */
 @media (max-width: 1023px) {
   .works-page #mobile-fields {
-    font-size: clamp(0.875rem, 3.5vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
+    margin: 1rem 0;
+    padding: 0 1.5rem;
   }
 
   .works-page #mobile-fields button {
-    font-size: clamp(0.875rem, 3.5vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
   }
 
   .works-page #mobile-clients {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
+    margin: 1rem 0;
+    padding: 0 1.5rem;
   }
 
   .works-page #mobile-clients button {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
+  }
+
+  .works-page .mobile-nav {
+    margin: 1rem 0;
   }
 }
 
@@ -1048,22 +1134,22 @@ a:hover {
 /* Mobile Client Page Responsive Typography */
 @media (max-width: 1023px) {
   .client-page .mobile-content {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
   }
 
   .client-page .mobile-content p {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.4;
   }
 
   .client-page #mobile-clients {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
   }
 
   .client-page #mobile-clients button {
-    font-size: clamp(0.75rem, 2.8vw, var(--fs-right));
+    font-size: var(--fs-mobile);
     line-height: 1.2;
   }
 }
