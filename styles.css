@@ -1491,3 +1491,6 @@ a:hover {
 .client-page .mobile-gallery .mobile-dot[aria-selected="true"] {
   background: #000 !important;
 }
+/* Tailwind classes for desktop dots */
+.bg-current { background-color: currentColor; }
+.bg-gray-400 { background-color: #9ca3af; }
