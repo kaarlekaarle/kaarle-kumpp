@@ -459,3 +459,20 @@ If verification fails:
 ### File Size Validation
 The script also validates that the CSS file is at least 10KB, preventing deployment of incomplete builds.
 
+---
+
+## Fix Log
+
+### 2025-10-29 — Transparent PNG visual consistency fix
+- **Issue:** Gray background visible through transparent PNG areas on client pages
+- **Root cause:** `.client-page figure` had `background-color: transparent`, allowing parent `.bg-paper` gray to show through
+- **Solution:** Scoped `.client-page .slide-image` and `.client-page .slide-image figure` background color to match `--paper` variable
+- **CSS added:**
+  ```css
+  .client-page .slide-image,
+  .client-page .slide-image figure {
+    background-color: var(--paper, #f5f3f0);
+  }
+  ```
+- **Result:** PNG transparency areas now blend seamlessly with site's warm paper background
+

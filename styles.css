@@ -1463,3 +1463,9 @@ a:hover {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* === Transparent PNG visual consistency (2025-10-29) === */
+.client-page .slide-image,
+.client-page .slide-image figure {
+  background-color: var(--paper, #f5f3f0);
+}
