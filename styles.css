@@ -1,7 +1,3 @@
-/* === Legacy override partials (2025-10-29) === */
-@import "_ios_and_ua_overrides.css";
-@import "_mobile_spacing_overrides.css";
-
 /* ============================================
    STATIC HTML VERSION - Combined Styles
    Kaarle & Kumpp. Homepage
@@ -629,16 +625,7 @@ body {
     padding-bottom: 0;
   }
 
-  /* Specific rules for mobile navigation and contact sections */
-  .client-page [data-id="mobile-nav"] {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .client-page [data-id="mobile-contact"] {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+  /* Specific rules for mobile navigation and contact sections - moved to partials */
 
   /* Ensure last elements in mobile content have no bottom spacing */
   .mobile-content [data-id="mobile-nav"]:last-child,
@@ -837,9 +824,6 @@ a:hover {
 
   /* Mobile About page vertical gaps - OVERRIDE desktop rules */
   @media (max-width: 1023px) {
-    .route-about .about-contact-section { margin-top: var(--space-lg) !important; }
-    .route-about .about-contact { margin-bottom: 0 !important; }
-    .route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
     .route-about .about-links { margin-top: 0 !important; }
     .route-about .about-prose p:last-child { margin-bottom: 0 !important; }
 
@@ -882,7 +866,6 @@ a:hover {
 @media (min-width: 1024px) {
   /* Field buttons styling */
   .works-page .em [data-id="left-middle"] .field-button {
-    background: none;
     border: none;
     box-shadow: none;
     outline: none;
@@ -1272,7 +1255,7 @@ a:hover {
 }
 
 .client-page [role="tab"][aria-selected="true"] {
-  background: currentColor;
+  
 }
 
 /* Mobile gallery styles - completely separate from desktop */
@@ -1331,7 +1314,6 @@ a:hover {
 .client-page .em [data-id="right-top"] .nav-right,
 .client-page .em [data-id="right-bottom"] .nav-right {
   color: #000;
-  background: none;
   border: none;
   box-shadow: none;
   outline: none;
@@ -1439,5 +1421,73 @@ a:hover {
   font-size: var(--fs-small);
 }
 
- 
+/* Ensure gallery dots are always visible (desktop and mobile) */
+.client-page [role="tab"] {
+  width: 0.5rem;
+  height: 0.5rem;
+  min-width: 0.5rem;
+  min-height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #9ca3af;
+}
+.client-page [role="tab"][aria-selected="true"] {
+  background: #000;
+}
+.client-page .mobile-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #9ca3af;
+}
+.client-page .mobile-dot[aria-selected="true"] {
+  background: #000;
+}
 
+/* === Legacy override partials (2025-10-29) === */
+@import "_ios_and_ua_overrides.css";
+@import "_mobile_spacing_overrides.css";
+/* === Dot navigation fix (2025-10-29) === */
+.client-page [role="tab"] {
+  background-color: #9ca3af; /* gray inactive */
+  display: inline-block;
+}
+
+.client-page [role="tab"][aria-selected="true"] {
+  background-color: #000; /* black active */
+}
+
+/* === Dot navigation fix (final integration) === */
+.client-page [role="tab"] {
+  background-color: #9ca3af; /* gray inactive */
+  display: inline-block;
+}
+
+.client-page [role="tab"][aria-selected="true"] {
+  background-color: #000; /* black active */
+}
+
+/* === Dot navigation final override (permanent fix) === */
+.client-page [role="tab"] {
+  background-color: #9ca3af; /* gray inactive */
+  display: inline-block;
+}
+
+.client-page [role="tab"][aria-selected="true"] {
+  background-color: #000; /* black active */
+}
+/* Mobile dot navigation - higher specificity to override inline styles */
+.client-page .mobile-gallery .mobile-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: #9ca3af !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+
+.client-page .mobile-gallery .mobile-dot[aria-selected="true"] {
+  background: #000 !important;
+}
