@@ -1,0 +1,31 @@
+/* --- Mobile Spacing and Decoration Overrides --- */
+
+/* About page mobile spacing */
+/* migrated from lines 836-840 in styles.css */
+.route-about .about-contact-section { margin-top: var(--space-lg) !important; }
+.route-about .about-contact { margin-bottom: 0 !important; }
+.route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
+
+/* Works page spacing overrides */
+/* related to lines 976-983 in styles.css */
+.works-page [data-id="mobile-contact"] { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.works-page .field-button--mobile { margin: var(--space-xs) 0 0 0 !important; }
+
+/* General mobile no-bottom-space fixes */
+/* migrated from lines 618-619, 645-646, 605-609 and nearby in styles.css */
+.client-page [data-id="mobile-contact"],
+.client-page [data-id="mobile-nav"],
+.client-page .mobile-only:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Text decoration cleanup still under review */
+/* migrated from lines 946, 951-953 in styles.css */
+.mobile-field a,
+.mobile-field .field-button {
+  text-decoration: none !important;
+  border-bottom: 1px solid black !important;
+}
+
+

@@ -1,7 +1,3 @@
-/* === Legacy override partials (2025-10-29) === */
-@import "_ios_and_ua_overrides.css";
-@import "_mobile_spacing_overrides.css";
-
 /* ============================================
    STATIC HTML VERSION - Combined Styles
    Kaarle & Kumpp. Homepage
@@ -623,21 +619,23 @@ body {
     padding-bottom: 0 !important;
   }
 
-  /* Ensure mobile-only containers have no bottom spacing (client page only) */
-  .client-page .mobile-only:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  /* Ensure mobile-only containers have no bottom spacing */
+  .mobile-only {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   /* Specific rules for mobile navigation and contact sections */
-  .client-page [data-id="mobile-nav"] {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  [data-id="mobile-nav"],
+  .mobile-nav {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  .client-page [data-id="mobile-contact"] {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  [data-id="mobile-contact"],
+  .mobile-contact-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   /* Ensure last elements in mobile content have no bottom spacing */
@@ -881,13 +879,13 @@ a:hover {
 /* Desktop Works Page */
 @media (min-width: 1024px) {
   /* Field buttons styling */
-  .works-page .em [data-id="left-middle"] .field-button {
-    background: none;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
+  .works-page .field-button {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .works-page .field-button.mb-6 {

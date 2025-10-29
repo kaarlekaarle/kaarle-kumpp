@@ -1,0 +1,27 @@
+/* --- iOS + Browser Default Protections --- */
+/* migrated from lines 276-277 and 584-590 in styles.css */
+/* Prevent iOS from auto-linking phone numbers and emails */
+a[href^="tel"],
+a[href^="mailto"],
+.contact-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Button/Form Resets */
+/* migrated from lines 1212-1215 and 1227-1231 in styles.css */
+/* Ensures consistent, chrome-free buttons across browsers */
+button,
+input[type="button"],
+input[type="submit"],
+.client-page button,
+.client-page .client-button {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
