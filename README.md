@@ -69,7 +69,7 @@ python3 -m http.server 8000
 
 ## 🧭 CSS Architecture
 
-See `CSS-ARCHITECTURE.md` for the styling system, tokens, layout model, and naming conventions.
+See `CSS_GUIDE.md` for the styling system, tokens, layout model, build process, and naming conventions.
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Accessible**: Follows web accessibility guidelines
 

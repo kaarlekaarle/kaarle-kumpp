@@ -18,11 +18,6 @@ module.exports = {
     'bg-current',
     'bg-gray-400',
     
-    // Dot size and shape classes (CRITICAL - 49 instances each)
-    '.h-2',
-    '.w-2',
-    '.rounded-full',
-    
     // === LAYOUT ELEMENTS ===
     // Figure elements (used in 52 instances)
     'figure',
@@ -35,11 +30,6 @@ module.exports = {
     
     // Grid layout elements
     '[data-id="left-middle"]',
-    
-    // === VISIBILITY CLASSES ===
-    // Mobile/desktop visibility (38 instances each)
-    '.mobile-only',
-    '.desktop-only',
     
     // === MOBILE UTILITIES ===
     // Flexbox utilities (heavily used: .flex: 165, .flex-col: 32, .items-center: 99, .justify-center: 84)
@@ -56,10 +46,6 @@ module.exports = {
     '.flex-1',
     '.max-w-full',
     '.relative.mb-6', // Combined class, more specific than separate entries
-    
-    // Mobile navigation data attributes
-    '[data-id="mobile-nav"]',
-    '[data-id="mobile-contact"]',
     
     // === GALLERY ELEMENTS ===
     // Image dimensions (w-[720px]: 16, h-[450px]: 16 instances)

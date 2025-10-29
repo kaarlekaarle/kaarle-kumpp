@@ -866,7 +866,6 @@ a:hover {
 @media (min-width: 1024px) {
   /* Field buttons styling */
   .works-page .em [data-id="left-middle"] .field-button {
-    background: none;
     border: none;
     box-shadow: none;
     outline: none;
@@ -1079,6 +1078,13 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* Fix spacing between text block and links on mobile main page */
+@media (max-width: 1023px) {
+  .mobile-content [data-id="right-middle"] {
+    margin-bottom: var(--space-xl);
+  }
+}
+
 .mobile-caption-top {
   margin-top: 0.375rem;
   margin-bottom: 1.25rem;
@@ -1241,23 +1247,7 @@ a:hover {
   padding-bottom: var(--space-lg);
 }
 
-.client-page [role="tab"] {
-  height: 0.5rem;
-  width: 0.5rem;
-  min-width: 0.5rem;
-  min-height: 0.5rem;
-  border-radius: 50%;
-  border: none;
-  background: #9ca3af;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  padding: 0;
-  aspect-ratio: 1 / 1;
-}
-
-.client-page [role="tab"][aria-selected="true"] {
-  background: currentColor;
-}
+/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
 
 /* Mobile gallery styles - completely separate from desktop */
 @media (max-width: 1023px) {
@@ -1315,7 +1305,6 @@ a:hover {
 .client-page .em [data-id="right-top"] .nav-right,
 .client-page .em [data-id="right-bottom"] .nav-right {
   color: #000;
-  background: none;
   border: none;
   box-shadow: none;
   outline: none;
@@ -1423,6 +1412,119 @@ a:hover {
   font-size: var(--fs-small);
 }
 
+/* Ensure gallery dots are always visible (desktop and mobile) */
+/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
+.client-page .mobile-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #9ca3af;
+}
+.client-page .mobile-dot[aria-selected="true"] {
+  background: #000;
+}
+
 /* === Legacy override partials (2025-10-29) === */
-@import "_ios_and_ua_overrides.css";
-@import "_mobile_spacing_overrides.css";
+/* === Dot navigation fix (2025-10-29) - consolidated === */
+/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
+/* Mobile dot navigation - higher specificity to override inline styles */
+.client-page .mobile-gallery .mobile-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: #9ca3af !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+
+.client-page .mobile-gallery .mobile-dot[aria-selected="true"] {
+  background: #000 !important;
+}
+/* Tailwind classes for desktop dots */
+.bg-current { background-color: currentColor; }
+.bg-gray-400 { background-color: #9ca3af; }
+.h-2 { height: 0.5rem; }
+.w-2 { width: 0.5rem; }
+.rounded-full { border-radius: 50%; }
+
+/* Fix transparent PNG background issue */
+.client-page figure { background-color: transparent; }
+
+/* Fix squashed dots - ensure proper dimensions for [role=tab] buttons */
+.client-page [role=tablist] {
+  align-items: center;
+}
+
+
+.client-page .work-card button[role=tab],
+.client-page button[role=tab] {
+  display: inline-block !important;
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* --- iOS + Browser Default Protections --- */
+/* migrated from lines 276-277 and 584-590 in styles.css */
+/* Prevent iOS from auto-linking phone numbers and emails */
+a[href^="tel"],
+a[href^="mailto"],
+.contact-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Button/Form Resets */
+/* migrated from lines 1212-1215 and 1227-1231 in styles.css */
+/* Ensures consistent, chrome-free buttons across browsers */
+button:not([role=tab]),
+input[type="button"],
+input[type="submit"],
+.client-page .client-button {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+/* --- Mobile Spacing and Decoration Overrides --- */
+
+/* About page mobile spacing */
+/* migrated from lines 836-840 in styles.css */
+.route-about .about-contact-section { margin-top: var(--space-lg) !important; }
+.route-about .about-contact { margin-bottom: 0 !important; }
+.route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
+
+/* Works page spacing overrides */
+/* related to lines 976-983 in styles.css */
+.works-page [data-id="mobile-contact"] { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.works-page .field-button--mobile { margin: var(--space-xs) 0 0 0 !important; }
+
+/* General mobile no-bottom-space fixes */
+/* migrated from lines 618-619, 645-646, 605-609 and nearby in styles.css */
+.client-page [data-id="mobile-contact"],
+.client-page [data-id="mobile-nav"],
+.client-page .mobile-only:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Text decoration cleanup still under review */
+/* migrated from lines 946, 951-953 in styles.css */
+.mobile-field a,
+.mobile-field .field-button {
+  text-decoration: none !important;
+  border-bottom: 1px solid black !important;
+}
+
+
