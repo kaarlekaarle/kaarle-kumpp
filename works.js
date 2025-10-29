@@ -1,3 +1,17 @@
+// Dev/Prod console control: disable noisy logs in production
+(function () {
+  try {
+    var host = typeof location !== 'undefined' ? location.hostname : '';
+    var IS_DEV = host === 'localhost' || host === '127.0.0.1';
+    if (!IS_DEV) {
+      console.log = function () {};
+      console.debug = function () {};
+      console.warn = function () {};
+    }
+  } catch (_) {
+    // ignore
+  }
+})();
 // Works Page Interactive Logic
 // ===========================
 

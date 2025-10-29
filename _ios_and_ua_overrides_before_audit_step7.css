@@ -11,13 +11,13 @@ a[href^="mailto"],
 /* Button/Form Resets */
 /* migrated from lines 1212-1215 and 1227-1231 in styles.css */
 /* Ensures consistent, chrome-free buttons across browsers */
-button:not([role=tab]),
+button,
 input[type="button"],
 input[type="submit"],
+.client-page button,
 .client-page .client-button {
   background: transparent !important;
   border: none !important;
-  border-radius: 0 !important;
   padding: 0 !important;
   cursor: pointer !important;
   box-shadow: none !important;

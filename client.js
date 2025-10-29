@@ -1,3 +1,17 @@
+// Dev/Prod console control: disable noisy logs in production
+(function () {
+  try {
+    var host = typeof location !== 'undefined' ? location.hostname : '';
+    var IS_DEV = host === 'localhost' || host === '127.0.0.1';
+    if (!IS_DEV) {
+      console.log = function () {};
+      console.debug = function () {};
+      console.warn = function () {};
+    }
+  } catch (_) {
+    // ignore
+  }
+})();
 // Client Page Interactive Logic
 // ===========================
 
@@ -261,7 +275,7 @@ function initGallery() {
       mobileSlides[index].classList.add('active');
     }
     
-    // Update desktop dots
+    // Update desktop dots (restore original class-based logic)
     desktopDots.forEach((btn, i) => {
       if (i === index) {
         btn.classList.remove('bg-gray-400');

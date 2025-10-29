@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KESKUSTELUOHJELMA - Kaarle & Kumpp.</title>
+  <meta name="description" content="Problem solving and storytelling.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Load Google Font EB Garamond for serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body data-page="client">
+  <div class="site-frame">
+    <main class="bg-paper text-ink client-page">
+      <div id="root">
+        <main class="em">
+          
+          <!-- Desktop Layout - Left Column -->
+          <aside class="desktop-only">
+            <!-- Left Top - Client Header -->
+            <div data-id="left-top">
+              <div class="client-header">
+                <div class="flex items-center justify-between w-full">
+                  <div>
+                    <img src="images/clients/KESKUSTELUOHJELMA/logo.png" alt="KESKUSTELUOHJELMA" class="logo-img" />
+                  </div>
+                  <div>
+                    <a href="works.html" aria-label="Close" class="nav-right leading-none">×</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Left Middle - Client Gallery -->
+            <div data-id="left-middle">
+              <div class="work-card mx-auto flex flex-col items-center h-full">
+                <!-- Dots row -->
+                <div class="flex justify-center pb-4">
+                  <div role="tablist" aria-label="Slides" class="flex justify-center gap-2">
+                    <button role="tab" aria-selected="true" aria-label="Slide 1 of 4" class="h-2 w-2 rounded-full bg-current" data-slide="0"></button>
+                    <button role="tab" aria-selected="false" aria-label="Slide 2 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="1"></button>
+                    <button role="tab" aria-selected="false" aria-label="Slide 3 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="2"></button>
+                    <button role="tab" aria-selected="false" aria-label="Slide 4 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="3"></button>
+                  </div>
+                </div>
+
+                <!-- Spacer to center content -->
+                <div class="flex-1 flex items-center">
+                  <div class="max-w-full">
+                    <!-- Media region with fixed size -->
+                    <div class="relative mb-6">
+                      <!-- Navigation arrows -->
+                      <button aria-label="Previous slide" class="nav-right" data-action="prev">←</button>
+                      <button aria-label="Next slide" class="nav-right" data-action="next">→</button>
+                      
+                      <!-- Fixed size image container -->
+                      <figure class="mx-auto w-[720px] h-[450px] flex items-center justify-center relative">
+                        <img src="images/clients/KESKUSTELUOHJELMA/1.gif" alt="Keskusteluohjelma project image 1" class="slide-image active" data-slide="0" />
+                        <img src="images/clients/KESKUSTELUOHJELMA/2.png" alt="Keskusteluohjelma project image 2" class="slide-image" data-slide="1" />
+                        <img src="images/clients/KESKUSTELUOHJELMA/3.png" alt="Keskusteluohjelma project image 3" class="slide-image" data-slide="2" />
+                        <img src="images/clients/KESKUSTELUOHJELMA/4.png" alt="Keskusteluohjelma project image 4" class="slide-image" data-slide="3" />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Left Bottom - Client Caption -->
+            <div data-id="left-bottom">
+              <div class="h-full flex flex-col items-center justify-between min-h-150">
+                <!-- Caption -->
+                <figcaption class="pt-4">
+                  <div class="mx-auto max-w-[73ch] text-black text-sm leading-relaxed space-y-1 text-center font-serif mobile:text-xs mobile:max-w-[60ch]">
+                    <p>In 2020, I launched Keskusteluohjelma—a conversation series built on one idea: we need to talk more like only humans can. So far almost 100 guests, from politicians to punks to scientists and beyond. Runs as a YouTube series and a podcast.</p>
+                  </div>
+                </figcaption>
+
+                <!-- Spacer to push links down -->
+                <div class="flex-1"></div>
+
+                <!-- Links row -->
+                <div class="flex justify-center pb-4 gap-1rem">
+                  <a href="https://youtube.com/@keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" class="social-icon-md" />
+                  </a>
+                  <a href="https://instagram.com/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="instagram" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/instagram.svg" alt="instagram" class="social-icon-md" />
+                  </a>
+                  <a href="https://open.spotify.com/show/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="spotify" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/spotify.svg" alt="spotify" class="social-icon-md" />
+                  </a>
+                  <a href="https://soundcloud.com/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="soundcloud" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/soundcloud.svg" alt="soundcloud" class="social-icon-md" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Desktop Layout - Right Column -->
+          <article class="desktop-only">
+            <!-- Right Top - Logo Link -->
+            <div data-id="right-top">
+              <a href="/" class="nav-right leading-none">
+                KAARLE <span class="apple-mark">&#xF8FF;</span> KUMPP.
+              </a>
+            </div>
+            
+            <!-- Right Middle - Client List -->
+            <div data-id="right-middle">
+              <div id="clients-list" class="about-prose" role="listbox" aria-label="Clients">
+                <!-- Clients will be dynamically loaded here -->
+              </div>
+            </div>
+            
+            <!-- Right Bottom - About Link -->
+            <div data-id="right-bottom">
+              <a href="about.html" class="nav-right">ABOUT</a>
+            </div>
+          </article>
+
+          <!-- Mobile Layout -->
+          <div data-id="left-middle" class="mobile-only">
+            <div class="left-cell flex items-center justify-center logo">
+              <div class="text-center leading-tight">
+                <img src="images/clients/KESKUSTELUOHJELMA/logo.png" alt="KESKUSTELUOHJELMA" class="logo-img" />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mobile Additional Content -->
+          <div class="mobile-only">
+            <div class="mobile-content">
+              <!-- Mobile Gallery -->
+              <div data-id="right-middle" class="mobile-gallery-top">
+                <div class="mobile-gallery">
+                  <!-- Mobile gallery content will be added here -->
+                </div>
+              </div>
+              
+              <!-- Mobile Caption -->
+              <div data-id="right-middle" class="mobile-caption-top">
+                <div class="text-black text-xs leading-relaxed space-y-1 text-center font-serif max-w-[60ch] mx-auto mobile-caption-padding">
+                  <p>In 2020, I launched Keskusteluohjelma—a conversation series built on one idea: we need to talk more like only humans can. So far almost 100 guests, from politicians to punks to scientists and beyond. Runs as a YouTube series and a podcast.</p>
+                </div>
+                
+                <div class="flex justify-center gap-1rem">
+                  <a href="https://youtube.com/@keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="youtube" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/youtube.svg" alt="youtube" class="social-icon-sm" />
+                  </a>
+                  <a href="https://instagram.com/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="instagram" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/instagram.svg" alt="instagram" class="social-icon-sm" />
+                  </a>
+                  <a href="https://open.spotify.com/show/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="spotify" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/spotify.svg" alt="spotify" class="social-icon-sm" />
+                  </a>
+                  <a href="https://soundcloud.com/keskusteluohjelma" target="_blank" rel="noreferrer" aria-label="soundcloud" class="opacity-80 hover:opacity-100">
+                    <img src="images/icons/soundcloud.svg" alt="soundcloud" class="social-icon-sm" />
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Mobile Client List -->
+              <div id="mobile-clients">
+                <!-- Mobile clients will be dynamically loaded here -->
+              </div>
+              
+              <!-- Mobile Navigation with Logo and About link -->
+              <div data-id="mobile-nav" class="mobile-nav">
+                <a href="/" class="nav-right">KAARLE <span class="apple-mark">&#xF8FF;</span> KUMPP.</a>
+                <a href="about.html" class="nav-right">ABOUT</a>
+              </div>
+            </div>
+          </div>
+          
+        </main>
+      </div>
+    </main>
+  </div>
+
+  <!-- Client Page JavaScript -->
+  <script type="text/javascript">
+    // Embed clients data to avoid CORS issues
+    window.CLIENTS_DATA = JSON.parse("[{\"slug\":\"basso\",\"name\":\"BASSO\",\"summary\":\"7th Day' was a talk and music radio show airing on Sunday mornings, featuring a special selection of music to ease into the day.\",\"fields\":[\"talk-shows\"],\"slides\":[{\"src\":\"/clients/BASSO/1.png\",\"alt\":\"BASSO project image\"}],\"logo\":\"/clients/BASSO/logo.png\",\"links\":[{\"icon\":\"soundcloud\",\"url\":\"https://soundcloud.com/kaarle/hyvat-biisit-1-seitsemas-paiva-12-bassoradio\"},{\"icon\":\"soundcloud\",\"url\":\"https://soundcloud.com/kaarle/bassoradio-seitsemas-paiva-124-steve-reich\"},{\"icon\":\"soundcloud\",\"url\":\"https://soundcloud.com/kaarle/steve-reich-for-bassoradio\"},{\"icon\":\"youtube\",\"url\":\"https://youtu.be/wLF-ka6VYgg?si=KGFsoh0d1NlmiKSd\"}]},{\"slug\":\"ed\",\"name\":\"ED\",\"summary\":\"We told the client we wouldn't take the job unless they agreed on one thing: we're not advertising to kids. We were a three-person wildcard team, pitching against the usual agency suspects—and we won. Porn-site banners. Fake film posters. Nuclear energy jokes. A sweating bottle with a towel. A green variation wearing a competitor's cap. The campaign sold energy drinks while making fun of how energy drinks are sold.\",\"fields\":[\"identity-building\",\"strategic-vision\",\"advertising\",\"message-media\"],\"slides\":[{\"src\":\"/clients/ED/1.png\",\"alt\":\"ED project image 1\"},{\"src\":\"/clients/ED/2.png\",\"alt\":\"ED project image 2\"},{\"src\":\"/clients/ED/3.jpg\",\"alt\":\"ED project image 3\"},{\"src\":\"/clients/ED/4.png\",\"alt\":\"ED project image 4\"},{\"src\":\"/clients/ED/5.png\",\"alt\":\"ED project image 5\"},{\"src\":\"/clients/ED/6.png\",\"alt\":\"ED project image 6\"},{\"src\":\"/clients/ED/7.png\",\"alt\":\"ED project image 7\"}],\"logo\":\"/clients/ED/logo.png\"},{\"slug\":\"flow-festival\",\"name\":\"FLOW FESTIVAL\",\"summary\":\"For Flow Festival, I scripted and hosted FlowTV—short conversations with artists, musicians, and thinkers backstage. The idea was to keep it bare: no makeup, no setups, no planned answers.\",\"fields\":[\"gun-for-hire\"],\"slides\":[{\"src\":\"/clients/FLOW TV/1.gif\",\"alt\":\"Flow Festival project image\"}],\"logo\":\"/clients/FLOW TV/logo.png\",\"links\":[{\"icon\":\"youtube\",\"url\":\"https://www.youtube.com/user/flowfestival\"}]},{\"slug\":\"helsingin-yliopisto\",\"name\":\"HELSINGIN YLIOPISTO\",\"summary\":\"As a gun-for-hire journalist, I've worked with Helsinki Uni's comms team to bring complex research to life—subjects like neuroscience, cancer, and mathematics. Given a theme, I've gone in with a film crew to figure out what's really there.\",\"fields\":[\"gun-for-hire\"],\"slides\":[{\"src\":\"/clients/HELSINKI UNI/1.gif\",\"alt\":\"Helsinki University project image\"}],\"logo\":\"/clients/HELSINKI UNI/logo.png\",\"links\":[{\"icon\":\"youtube\",\"url\":\"https://youtu.be/dXIbEhZczkw?si=tBguiCy4aruCfCIT\"},{\"icon\":\"youtube\",\"url\":\"https://youtu.be/rBuKAxYBRNA?si=VISZBhxa94wvLpLv\"},{\"icon\":\"youtube\",\"url\":\"https://youtu.be/XsqlHHTGQrw?si=GwxCZx_2WD5ZE3HX\"},{\"icon\":\"youtube\",\"url\":\"https://youtu.be/4AbFCqvnYNE?si=Ncnc3bd_RAEntkNe\"}]},{\"slug\":\"hobo\",\"name\":\"HOBO\",\"summary\":\"I had a hand in shaping the tone as Strawberry brought their newest central hot-spot hotel to life in Helsinki.\",\"fields\":[\"strategic-vision\"],\"slides\":[{\"src\":\"/clients/HOBO/1.jpg\",\"alt\":\"HOBO project image 1\"},{\"src\":\"/clients/HOBO/2.jpg\",\"alt\":\"HOBO project image 2\"}],\"logo\":\"/clients/HOBO/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://hobohotel.fi/\"}]},{\"slug\":\"jcad\",\"name\":\"JCAD\",\"summary\":\"A construction-specific software company with a 90s vibe needed a dust off. We kept their no-nonsense professionalism and rebuilt the brand around clarity and experience. I sourced the right team, worked with the client to set direction, and helped them modernise around the valuable core.\",\"fields\":[\"identity-building\",\"strategic-vision\",\"advertising\",\"message-media\",\"legacy-transition\"],\"slides\":[{\"src\":\"/clients/JCAD/1.png\",\"alt\":\"JCAD project image 1\"},{\"src\":\"/clients/JCAD/2.png\",\"alt\":\"JCAD project image 2\"},{\"src\":\"/clients/JCAD/3.png\",\"alt\":\"JCAD project image 3\"},{\"src\":\"/clients/JCAD/4.png\",\"alt\":\"JCAD project image 4\"},{\"src\":\"/clients/JCAD/5.jpeg\",\"alt\":\"JCAD project image 5\"},{\"src\":\"/clients/JCAD/6.png\",\"alt\":\"JCAD project image 6\"},{\"src\":\"/clients/JCAD/7.jpeg\",\"alt\":\"JCAD project image 7\"}],\"logo\":\"/clients/JCAD/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://www.jcad.fi/fi\"}]},{\"slug\":\"kaarlen-maailma\",\"name\":\"KAARLEN MAAILMA\",\"summary\":\"Kaarlen maailma aired on YLE TV2 for 36 episodes. I wrote and hosted the show—one guest at a time, one question at a time. We talked about politics, philosophy, the internet, death, and love. The format was prime time TV, tone wasn't.\",\"fields\":[\"talk-shows\"],\"slides\":[{\"src\":\"/clients/KAARLEN MAAILMA/1.gif\",\"alt\":\"Kaarlen maailma project image\"}],\"logo\":\"/clients/KAARLEN MAAILMA/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://areena.yle.fi/1-3935578\"}]},{\"slug\":\"kesko\",\"name\":\"KESKO\",\"summary\":\"Worked closely with Kesko's top leadership on strategy and positioning. Full case available for relevant prospects.\",\"fields\":[\"strategic-vision\"],\"slides\":[{\"src\":\"/clients/KESKO/1.png\",\"alt\":\"KESKO project image 1\"},{\"src\":\"/clients/KESKO/2.png\",\"alt\":\"KESKO project image 2\"},{\"src\":\"/clients/KESKO/3.png\",\"alt\":\"KESKO project image 3\"}],\"logo\":\"/clients/KESKO/logo.svg.png\"},{\"slug\":\"keskusteluohjelma\",\"name\":\"KESKUSTELUOHJELMA\",\"summary\":\"In 2020, I launched Keskusteluohjelma—a conversation series built on one idea: we need to talk more like only humans can. So far almost 100 guests, from politicians to punks to scientists and beyond. Runs as a YouTube series and a podcast.\",\"fields\":[\"identity-building\",\"strategic-vision\",\"message-media\",\"talk-shows\"],\"slides\":[{\"src\":\"/clients/KESKUSTELUOHJELMA/1.gif\",\"alt\":\"Keskusteluohjelma project image 1\"},{\"src\":\"/clients/KESKUSTELUOHJELMA/2.png\",\"alt\":\"Keskusteluohjelma project image 2\"},{\"src\":\"/clients/KESKUSTELUOHJELMA/3.png\",\"alt\":\"Keskusteluohjelma project image 3\"},{\"src\":\"/clients/KESKUSTELUOHJELMA/4.png\",\"alt\":\"Keskusteluohjelma project image 4\"}],\"logo\":\"/clients/KESKUSTELUOHJELMA/logo.png\",\"links\":[{\"icon\":\"youtube\",\"url\":\"https://youtube.com/@keskusteluohjelma\"},{\"icon\":\"instagram\",\"url\":\"https://instagram.com/keskusteluohjelma\"},{\"icon\":\"spotify\",\"url\":\"https://open.spotify.com/show/keskusteluohjelma\"},{\"icon\":\"soundcloud\",\"url\":\"https://soundcloud.com/keskusteluohjelma\"}]},{\"slug\":\"lubrican\",\"name\":\"LUBRICAN\",\"summary\":\"A fossil-free motor oil needed a name and an entry point. I offered Lubrican—as in: \\\"others can't.\\\" I shaped the concept and brought in an art director who understood the tone: bold, slightly off, and grounded in the industry. Legacybuilding.\",\"fields\":[\"identity-building\"],\"slides\":[{\"src\":\"/clients/LUBRICAN/1.jpg\",\"alt\":\"LUBRICAN project image 1\"},{\"src\":\"/clients/LUBRICAN/2.jpg\",\"alt\":\"LUBRICAN project image 2\"},{\"src\":\"/clients/LUBRICAN/3.jpg\",\"alt\":\"LUBRICAN project image 3\"},{\"src\":\"/clients/LUBRICAN/4.jpg\",\"alt\":\"LUBRICAN project image 4\"},{\"src\":\"/clients/LUBRICAN/5.JPG\",\"alt\":\"LUBRICAN project image 5\"},{\"src\":\"/clients/LUBRICAN/6.jpg\",\"alt\":\"LUBRICAN project image 6\"},{\"src\":\"/clients/LUBRICAN/7.jpg\",\"alt\":\"LUBRICAN project image 7\"}],\"logo\":\"/clients/LUBRICAN/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://lubricanfluids.com\"}]},{\"slug\":\"r-collection\",\"name\":\"R-COLLECTION\",\"summary\":\"R-Collection is a renowned Finnish clothing brand celebrated for its comfortable basics and iconic anoraks. With a dedicated team, both in-house and external, we revitalized this timeless classic to its deserved prominence.\",\"fields\":[\"identity-building\",\"strategic-vision\",\"advertising\",\"message-media\",\"legacy-transition\"],\"slides\":[{\"src\":\"/clients/R-COLLECTION/1.jpg\",\"alt\":\"R-Collection project image 1\"},{\"src\":\"/clients/R-COLLECTION/2.jpg\",\"alt\":\"R-Collection project image 2\"},{\"src\":\"/clients/R-COLLECTION/3.jpg\",\"alt\":\"R-Collection project image 3\"},{\"src\":\"/clients/R-COLLECTION/4.jpg\",\"alt\":\"R-Collection project image 4\"},{\"src\":\"/clients/R-COLLECTION/5.jpg\",\"alt\":\"R-Collection project image 5\"},{\"src\":\"/clients/R-COLLECTION/6.jpg\",\"alt\":\"R-Collection project image 6\"},{\"src\":\"/clients/R-COLLECTION/7.jpg\",\"alt\":\"R-Collection project image 7\"}],\"logo\":\"/clients/R-COLLECTION/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://www.r-collection.fi/\"}]},{\"slug\":\"radio-helsinki\",\"name\":\"RADIO HELSINKI\",\"summary\":\"Kaikkea saa kysyä (AMA) laid the groundwork for many of my later interview projects. 40 episodes of unhurried, prime-time radio on Radio Helsinki.\",\"fields\":[\"talk-shows\"],\"slides\":[{\"src\":\"/clients/RADIO HELSINKI/1.png\",\"alt\":\"Radio Helsinki project image\"}],\"logo\":\"/clients/RADIO HELSINKI/logo.png\"},{\"slug\":\"secto-automotive\",\"name\":\"SECTO AUTOMOTIVE\",\"summary\":\"Fifteen years ago, I did the original brand visuals for Secto—back when it was three guys in a basement. Now they're a company with hundreds of employees and hundreds of millions in revenue. When it was time for a redesign, they called me again. I helped clarify the task and brought in the right art director to carry it through.\",\"fields\":[\"identity-building\"],\"slides\":[{\"src\":\"/clients/SECTO/1.png\",\"alt\":\"SECTO project image 1\"},{\"src\":\"/clients/SECTO/2.jpg\",\"alt\":\"SECTO project image 2\"},{\"src\":\"/clients/SECTO/3.jpg\",\"alt\":\"SECTO project image 3\"},{\"src\":\"/clients/SECTO/4.png\",\"alt\":\"SECTO project image 4\"}],\"logo\":\"/clients/SECTO/logo.png\",\"links\":[{\"icon\":\"globe\",\"url\":\"https://secto.fi\"}]},{\"slug\":\"secto-labs\",\"name\":\"SECTO LABS\",\"summary\":\"Secto brought their fossil-free racing to bigger stages in Finland, Japan, and beyond. I helped shape the voice and sourced an Art Director immersed in the world of Japanese tuning shops—the exact aesthetic the client lived and breathed.\",\"fields\":[\"identity-building\"],\"slides\":[{\"src\":\"/clients/SECTO LABS/1.jpg\",\"alt\":\"SECTO LABS project image 1\"},{\"src\":\"/clients/SECTO LABS/2.png\",\"alt\":\"SECTO LABS project image 2\"},{\"src\":\"/clients/SECTO LABS/3.JPG\",\"alt\":\"SECTO LABS project image 3\"},{\"src\":\"/clients/SECTO LABS/4.jpg\",\"alt\":\"SECTO LABS project image 4\"}],\"logo\":\"/clients/SECTO LABS/logo.png\",\"links\":[{\"icon\":\"instagram\",\"url\":\"https://www.instagram.com/sectolabs/\"},{\"icon\":\"youtube\",\"url\":\"https://youtu.be/kv9TpFVKbWo?si=KiKyWpYcZY0S5kIP\"}]},{\"slug\":\"suomen-evlut-kirkko\",\"name\":\"SUOMEN EVLUT KIRKKO\",\"summary\":\"I was the outsider on the team when Finland's main church took its first significant step into social media, launching on Facebook in the early 2010s.\",\"fields\":[\"message-media\"],\"slides\":[{\"src\":\"/clients/SUOMEN EVLUT KIRKKO/1.png\",\"alt\":\"Suomen Evlut Kirkko project image\"}],\"logo\":\"/clients/SUOMEN EVLUT KIRKKO/logo.png\"}]");
+    window.CURRENT_CLIENT_SLUG = "keskusteluohjelma";
+    window.TOTAL_SLIDES = 4;
+  </script>
+  <script src="client.js"></script>
+  
+  <!-- Debug toggle script (press 'd' key) -->
+  <script>
+    (function(){
+      try {
+        var q = new URLSearchParams(window.location.search);
+        if (q.get('debug') === '1') document.documentElement.classList.add('debug');
+        if (q.get('debug') === '2') document.body.classList.add('debug-on');
+
+        window.addEventListener('keydown', function(e){
+          if (e.key.toLowerCase() === 'd' && !(e.metaKey || e.ctrlKey || e.altKey)) {
+            if (e.shiftKey) {
+              document.body.classList.toggle('debug-on');
+            } else {
+              document.documentElement.classList.toggle('debug');
+            }
+          }
+        }, {passive:true});
+      } catch(err) {}
+    })();
+  </script>
+</body>
+</html>

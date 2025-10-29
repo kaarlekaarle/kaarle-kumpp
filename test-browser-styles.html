@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font & Dots Test</title>
+    <link rel="stylesheet" href="build/styles.min.css">
+</head>
+<body>
+    <div class="client-page">
+        <div role="tablist">
+            <button role="tab" aria-selected="false">1</button>
+            <button role="tab" aria-selected="true">2</button>
+            <button role="tab" aria-selected="false">3</button>
+        </div>
+    </div>
+    
+    <script>
+        console.log('=== FONT TEST ===');
+        console.log('Body font-family:', getComputedStyle(document.body).fontFamily);
+        
+        console.log('=== DOTS TEST ===');
+        const dots = document.querySelectorAll('[role="tab"]');
+        dots.forEach((dot, i) => {
+            const bg = getComputedStyle(dot).backgroundColor;
+            const selected = dot.getAttribute('aria-selected');
+            console.log(`Dot ${i+1} (aria-selected="${selected}"):`, bg);
+        });
+    </script>
+</body>
+</html>

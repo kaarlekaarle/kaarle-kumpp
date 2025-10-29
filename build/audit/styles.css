@@ -140,9 +140,6 @@ body {
 
 /* Typography sizes */
 .fs-logo { font-size: var(--fs-logo); }
-.fs-desktop { font-size: var(--fs-desktop); }
-.fs-mobile { font-size: var(--fs-mobile); }
-.fs-small { font-size: var(--fs-small); }
 
 .sans { font-family: var(--font-sans); }
 .serif { font-family: var(--font-serif); }
@@ -347,15 +344,12 @@ body {
     margin-bottom: 0;
   }
   
-  .about-prose em,
-  .about-prose i { 
+  .about-prose em { 
     font-style: italic; 
   }
 
   /* Navigation links */
-  .nav-right,
-  a[href="works.html"], 
-  a[href="about.html"] {
+  .nav-right {
     font-family: var(--font-sans);
     font-size: var(--fs-desktop);
     font-weight: 400;
@@ -491,10 +485,6 @@ body {
   }
 
   [data-id="right-middle"] p:last-child {
-    margin-bottom: 0;
-  }
-
-  [data-id="right-middle"] .last-kicker {
     margin-bottom: 0;
   }
 
@@ -683,11 +673,6 @@ body {
    FOCUS STYLES
    ============================================ */
 
-:focus-visible { 
-  outline: 2px solid var(--accent); 
-  outline-offset: 2px; 
-}
-
 a:hover {
   opacity: 0.8;
 }
@@ -725,10 +710,6 @@ a:hover {
   .about-page [data-id="left-middle"] a {
     color: inherit;
     text-decoration: none;
-  }
-
-  .about-page [data-id="left-middle"] a.hover\:underline:hover {
-    text-decoration: underline;
   }
 
   .about-page [data-id="left-middle"] img {
@@ -865,17 +846,6 @@ a:hover {
 /* Desktop Works Page */
 @media (min-width: 1024px) {
   /* Field buttons styling */
-  .works-page .em [data-id="left-middle"] .field-button {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .works-page .field-button.mb-6 {
-    margin-bottom: var(--space-sm) !important; /* Reduced from 1.5rem */
-  }
 
   /* Fields container positioning */
   .works-page [data-id="left-middle"] {
@@ -888,13 +858,6 @@ a:hover {
   }
 
   /* Client buttons styling */
-  .works-page .client-button {
-    transition: opacity 0.2s ease;
-  }
-
-  .works-page .client-button:hover {
-    opacity: 0.7;
-  }
 
   /* Ensure SVG overlay doesn't interfere */
   .works-page svg {
@@ -917,35 +880,9 @@ a:hover {
     line-height: 1.68;
   }
 
-  .works-page .mobile-fields-container {
-    font-family: var(--font-serif);
-    font-size: var(--fs-mobile);
-    font-variant: small-caps;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.68;
-  }
-
-  .works-page .mobile-field-selector {
-    font-family: var(--font-serif);
-    font-size: var(--fs-mobile);
-    line-height: 1.68;
-    text-decoration: none !important;
-  }
-
   /* Selected mobile field selectors have border-bottom */
-  .works-page .mobile-field-selector.selected {
-    border-bottom: 1px solid black !important;
-    text-decoration: none !important;
-  }
 
   /* Force remove any text-decoration from mobile field selectors */
-  .works-page #mobile-fields .mobile-field-selector,
-  .works-page #mobile-fields .mobile-field-selector:hover,
-  .works-page #mobile-fields .mobile-field-selector:focus,
-  .works-page #mobile-fields .mobile-field-selector:active {
-    text-decoration: none !important;
-  }
 
   .works-page #mobile-clients {
     font-size: var(--fs-mobile);
@@ -972,16 +909,6 @@ a:hover {
 }
 
 /* Absolute positioning utilities */
-.absolute {
-  position: absolute;
-}
-
-.inset-0 {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 
 .relative {
   position: relative;
@@ -993,10 +920,6 @@ a:hover {
 
 .h-full {
   height: 100%;
-}
-
-.pointer-events-none {
-  pointer-events: none;
 }
 
 /* ============================================
@@ -1210,28 +1133,6 @@ a:hover {
   right: -48px;
 }
 
-.client-page .client-button {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  transition: opacity 0.2s ease;
-}
-
-.client-page .client-button:hover {
-  opacity: 0.7;
-}
-
-.client-page .mobile-client {
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.client-page .mobile-client:hover {
-  opacity: 0.8 !important;
-}
-
 /* Gallery dots - make them properly round with more spacing */
 .client-page [role="tablist"] {
   display: flex;
@@ -1240,7 +1141,23 @@ a:hover {
   padding-bottom: var(--space-lg);
 }
 
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
+.client-page [role="tab"] {
+  height: 0.5rem;
+  width: 0.5rem;
+  min-width: 0.5rem;
+  min-height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #9ca3af;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.client-page [role="tab"][aria-selected="true"] {
+  background: currentColor;
+}
 
 /* Mobile gallery styles - completely separate from desktop */
 @media (max-width: 1023px) {
@@ -1250,25 +1167,10 @@ a:hover {
     margin: 0 auto;
   }
 
-  .client-page .mobile-image-container {
-    width: 100%;
-    max-width: 90vw;
-    margin: 0 auto;
-    text-align: center;
-  }
-
   /* Mobile gallery images - use absolute positioning with aspect ratio container */
-  .client-page .mobile-gallery .mobile-slide-image {
-    /* Inline styles handle everything */
-  }
-  
-  .client-page .mobile-gallery .mobile-dot {
-    /* Inline styles handle everything */
-  }
 
   /* Fix mobile double-click issues */
-  .mobile-client,
-  .mobile-dot,
+  
   .mobile-nav a,
   [data-id="mobile-nav"] a {
     -webkit-tap-highlight-color: transparent;
@@ -1298,6 +1200,7 @@ a:hover {
 .client-page .em [data-id="right-top"] .nav-right,
 .client-page .em [data-id="right-bottom"] .nav-right {
   color: #000;
+  background: none;
   border: none;
   box-shadow: none;
   outline: none;
@@ -1406,62 +1309,38 @@ a:hover {
 }
 
 /* Ensure gallery dots are always visible (desktop and mobile) */
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
-.client-page .mobile-dot {
-  width: 8px;
-  height: 8px;
+.client-page [role="tab"] {
+  width: 0.5rem;
+  height: 0.5rem;
+  min-width: 0.5rem;
+  min-height: 0.5rem;
   border-radius: 50%;
   border: none;
   background: #9ca3af;
 }
-.client-page .mobile-dot[aria-selected="true"] {
+.client-page [role="tab"][aria-selected="true"] {
   background: #000;
 }
 
 /* === Legacy override partials (2025-10-29) === */
 @import "_ios_and_ua_overrides.css";
 @import "_mobile_spacing_overrides.css";
-/* === Dot navigation fix (2025-10-29) - consolidated === */
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
-/* Mobile dot navigation - higher specificity to override inline styles */
-.client-page .mobile-gallery .mobile-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  border: none !important;
-  background: #9ca3af !important;
-  cursor: pointer !important;
-  padding: 0 !important;
+/* === Dot navigation fix (2025-10-29) === */
+.client-page [role="tab"] {
+  background-color: #9ca3af; /* gray inactive */
+  display: inline-block;
 }
 
-.client-page .mobile-gallery .mobile-dot[aria-selected="true"] {
-  background: #000 !important;
-}
-/* Tailwind classes for desktop dots */
-.bg-current { background-color: currentColor; }
-.bg-gray-400 { background-color: #9ca3af; }
-.h-2 { height: 0.5rem; }
-.w-2 { width: 0.5rem; }
-.rounded-full { border-radius: 50%; }
-
-/* Fix transparent PNG background issue */
-.client-page figure { background-color: transparent; }
-
-/* Fix squashed dots - ensure proper dimensions for [role=tab] buttons */
-.client-page [role=tablist] {
-  align-items: center;
+.client-page [role="tab"][aria-selected="true"] {
+  background-color: #000; /* black active */
 }
 
+/* === Dot navigation fix (final integration) === */
+.client-page [role="tab"] {
+  background-color: #9ca3af; /* gray inactive */
+  display: inline-block;
+}
 
-.client-page .work-card button[role=tab],
-.client-page button[role=tab] {
-  display: inline-block !important;
-  width: 0.5rem !important;
-  height: 0.5rem !important;
-  border-radius: 50% !important;
-  flex-shrink: 0 !important;
-  flex-grow: 0 !important;
-  line-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+.client-page [role="tab"][aria-selected="true"] {
+  background-color: #000; /* black active */
 }

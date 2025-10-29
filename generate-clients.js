@@ -1,3 +1,10 @@
+// Dev/Prod console control for Node: silence console.log in production
+const __IS_DEV__ = process.env.NODE_ENV !== 'production';
+if (!__IS_DEV__) {
+  // Keep errors visible, silence logs/debug/warn
+  console.log = () => {};
+  console.debug = () => {};
+}
 const fs = require('fs');
 const path = require('path');
 

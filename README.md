@@ -66,6 +66,10 @@ python3 -m http.server 8000
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Touch-Friendly**: Mobile-optimized with swipe gestures for galleries
 - **Fast Loading**: Static HTML with optimized assets
+
+## 🧭 CSS Architecture
+
+See `CSS-ARCHITECTURE.md` for the styling system, tokens, layout model, and naming conventions.
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Accessible**: Follows web accessibility guidelines
 

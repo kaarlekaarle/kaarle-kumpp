@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Dots</title>
+    <link rel="stylesheet" href="build/styles.min.css">
+    <style>
+        body { padding: 50px; background: #f0f0f0; }
+        .test-container { background: white; padding: 20px; margin: 20px 0; }
+        .debug-info { font-family: monospace; font-size: 12px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Dot Debug Test</h1>
+    
+    <div class="test-container">
+        <h3>Raw HTML (no classes):</h3>
+        <button role="tab" aria-selected="true">1</button>
+        <button role="tab" aria-selected="false">2</button>
+        <button role="tab" aria-selected="false">3</button>
+    </div>
+    
+    <div class="test-container">
+        <h3>With Tailwind classes:</h3>
+        <button role="tab" aria-selected="true" class="h-2 w-2 rounded-full bg-current">1</button>
+        <button role="tab" aria-selected="false" class="h-2 w-2 rounded-full bg-gray-400">2</button>
+        <button role="tab" aria-selected="false" class="h-2 w-2 rounded-full bg-gray-400">3</button>
+    </div>
+    
+    <div class="test-container">
+        <h3>With client-page wrapper:</h3>
+        <div class="client-page">
+            <div role="tablist" class="flex justify-center gap-2">
+                <button role="tab" aria-selected="true" class="h-2 w-2 rounded-full bg-current">1</button>
+                <button role="tab" aria-selected="false" class="h-2 w-2 rounded-full bg-gray-400">2</button>
+                <button role="tab" aria-selected="false" class="h-2 w-2 rounded-full bg-gray-400">3</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-container">
+        <h3>With work-card wrapper (exact HTML structure):</h3>
+        <div class="client-page">
+            <div class="work-card mx-auto flex flex-col items-center h-full">
+                <div class="flex justify-center pb-4">
+                    <div role="tablist" aria-label="Slides" class="flex justify-center gap-2">
+                        <button role="tab" aria-selected="true" aria-label="Slide 1 of 4" class="h-2 w-2 rounded-full bg-current" data-slide="0"></button>
+                        <button role="tab" aria-selected="false" aria-label="Slide 2 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="1"></button>
+                        <button role="tab" aria-selected="false" aria-label="Slide 3 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="2"></button>
+                        <button role="tab" aria-selected="false" aria-label="Slide 4 of 4" class="h-2 w-2 rounded-full bg-gray-400" data-slide="3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="debug-info">
+        <h3>Debug Info:</h3>
+        <p>Check browser dev tools to see which CSS rules are being applied to each button.</p>
+        <p>Look for computed styles: width, height, border-radius</p>
+    </div>
+</body>
+</html>

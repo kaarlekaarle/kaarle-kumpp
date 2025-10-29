@@ -1419,8 +1419,6 @@ a:hover {
 }
 
 /* === Legacy override partials (2025-10-29) === */
-@import "_ios_and_ua_overrides.css";
-@import "_mobile_spacing_overrides.css";
 /* === Dot navigation fix (2025-10-29) - consolidated === */
 /* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
 /* Mobile dot navigation - higher specificity to override inline styles */
@@ -1465,3 +1463,61 @@ a:hover {
   padding: 0 !important;
   margin: 0 !important;
 }
+/* --- iOS + Browser Default Protections --- */
+/* migrated from lines 276-277 and 584-590 in styles.css */
+/* Prevent iOS from auto-linking phone numbers and emails */
+a[href^="tel"],
+a[href^="mailto"],
+.contact-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Button/Form Resets */
+/* migrated from lines 1212-1215 and 1227-1231 in styles.css */
+/* Ensures consistent, chrome-free buttons across browsers */
+button:not([role=tab]),
+input[type="button"],
+input[type="submit"],
+.client-page .client-button {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+/* --- Mobile Spacing and Decoration Overrides --- */
+
+/* About page mobile spacing */
+/* migrated from lines 836-840 in styles.css */
+.route-about .about-contact-section { margin-top: var(--space-lg) !important; }
+.route-about .about-contact { margin-bottom: 0 !important; }
+.route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
+
+/* Works page spacing overrides */
+/* related to lines 976-983 in styles.css */
+.works-page [data-id="mobile-contact"] { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.works-page .field-button--mobile { margin: var(--space-xs) 0 0 0 !important; }
+
+/* General mobile no-bottom-space fixes */
+/* migrated from lines 618-619, 645-646, 605-609 and nearby in styles.css */
+.client-page [data-id="mobile-contact"],
+.client-page [data-id="mobile-nav"],
+.client-page .mobile-only:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Text decoration cleanup still under review */
+/* migrated from lines 946, 951-953 in styles.css */
+.mobile-field a,
+.mobile-field .field-button {
+  text-decoration: none !important;
+  border-bottom: 1px solid black !important;
+}
+
+

@@ -1,0 +1,5 @@
+client.html:              <div id="mobile-clients" class="text-center" style="width: 100%; padding-right: 1.5rem; margin-bottom: 2.5rem;">
+client.html:              <div data-id="mobile-kaarle-logo" class="text-center" style="margin-bottom: 2.5rem;">
+client.html:              <div data-id="mobile-nav" class="mobile-nav text-center" style="width: 100%; margin-bottom: 2.5rem;">
+index.html:              <div data-id="right-middle" class="mobile-gallery-top" style="margin-bottom: 2.5rem;">
+index_before_replace.html:              <div data-id="right-middle" class="mobile-gallery-top" style="margin-bottom: 2.5rem;">

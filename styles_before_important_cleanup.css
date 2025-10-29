@@ -619,13 +619,24 @@ body {
     padding-bottom: 0 !important;
   }
 
-  /* Ensure mobile-only containers have no bottom spacing (client page only) */
-  .client-page .mobile-only:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  /* Ensure mobile-only containers have no bottom spacing */
+  .mobile-only {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Specific rules for mobile navigation and contact sections - moved to partials */
+  /* Specific rules for mobile navigation and contact sections */
+  [data-id="mobile-nav"],
+  .mobile-nav {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  [data-id="mobile-contact"],
+  .mobile-contact-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
   /* Ensure last elements in mobile content have no bottom spacing */
   .mobile-content [data-id="mobile-nav"]:last-child,
@@ -824,6 +835,9 @@ a:hover {
 
   /* Mobile About page vertical gaps - OVERRIDE desktop rules */
   @media (max-width: 1023px) {
+    .route-about .about-contact-section { margin-top: var(--space-lg) !important; }
+    .route-about .about-contact { margin-bottom: 0 !important; }
+    .route-about .about-photo { margin: var(--space-md) 0 !important; padding: 0 !important; }
     .route-about .about-links { margin-top: 0 !important; }
     .route-about .about-prose p:last-child { margin-bottom: 0 !important; }
 
@@ -865,12 +879,13 @@ a:hover {
 /* Desktop Works Page */
 @media (min-width: 1024px) {
   /* Field buttons styling */
-  .works-page .em [data-id="left-middle"] .field-button {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
+  .works-page .field-button {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .works-page .field-button.mb-6 {
@@ -1240,7 +1255,23 @@ a:hover {
   padding-bottom: var(--space-lg);
 }
 
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
+.client-page [role="tab"] {
+  height: 0.5rem;
+  width: 0.5rem;
+  min-width: 0.5rem;
+  min-height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #9ca3af;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.client-page [role="tab"][aria-selected="true"] {
+  background: currentColor;
+}
 
 /* Mobile gallery styles - completely separate from desktop */
 @media (max-width: 1023px) {
@@ -1295,14 +1326,20 @@ a:hover {
 }
 
 /* Navigation links - should be black, not blue */
-.client-page .em [data-id="right-top"] .nav-right,
-.client-page .em [data-id="right-bottom"] .nav-right {
-  color: #000;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  padding: 0;
+.client-page .nav-right {
+  font-family: var(--font-sans);
+  font-size: var(--fs-desktop);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #000000 !important;
+  text-decoration: none;
   transition: opacity 0.2s ease;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* Mobile navigation on client pages should use mobile font size */
@@ -1317,19 +1354,20 @@ a:hover {
 }
 
 /* Remove gray box from arrow buttons */
-.client-page .em [data-id="left-middle"] button.nav-right {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
+.client-page button.nav-right {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* Social media icon sizes and spacing */
-.client-page .em [data-id="left-bottom"] a img {
-  width: 1.25rem;
-  height: 1.25rem;
+.client-page figcaption a img,
+.client-page [data-id="left-bottom"] a img {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
   max-width: 1.25rem;
   max-height: 1.25rem;
 }
@@ -1352,10 +1390,10 @@ a:hover {
 }
 
 /* Caption typography - should be serif, smaller font, narrower width, closer to image */
-.client-page .em [data-id="left-bottom"] figcaption,
-.client-page .em [data-id="left-bottom"] figcaption p {
-  font-family: var(--font-serif);
-  color: var(--ink);
+.client-page figcaption,
+.client-page figcaption p {
+  font-family: var(--font-serif) !important;
+  color: var(--ink) !important; /* Override blue accent color for captions */
 }
 
 /* Mobile caption containers - override blue accent color */
@@ -1396,8 +1434,8 @@ a:hover {
   }
 }
 
-.client-page .em [data-id="left-bottom"] figcaption {
-  padding-top: var(--space-xs);
+.client-page figcaption {
+  padding-top: var(--space-xs) !important;
 }
 
 .client-page figcaption .mx-auto {
@@ -1405,63 +1443,5 @@ a:hover {
   font-size: var(--fs-small);
 }
 
-/* Ensure gallery dots are always visible (desktop and mobile) */
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
-.client-page .mobile-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: #9ca3af;
-}
-.client-page .mobile-dot[aria-selected="true"] {
-  background: #000;
-}
+ 
 
-/* === Legacy override partials (2025-10-29) === */
-@import "_ios_and_ua_overrides.css";
-@import "_mobile_spacing_overrides.css";
-/* === Dot navigation fix (2025-10-29) - consolidated === */
-/* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
-/* Mobile dot navigation - higher specificity to override inline styles */
-.client-page .mobile-gallery .mobile-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  border: none !important;
-  background: #9ca3af !important;
-  cursor: pointer !important;
-  padding: 0 !important;
-}
-
-.client-page .mobile-gallery .mobile-dot[aria-selected="true"] {
-  background: #000 !important;
-}
-/* Tailwind classes for desktop dots */
-.bg-current { background-color: currentColor; }
-.bg-gray-400 { background-color: #9ca3af; }
-.h-2 { height: 0.5rem; }
-.w-2 { width: 0.5rem; }
-.rounded-full { border-radius: 50%; }
-
-/* Fix transparent PNG background issue */
-.client-page figure { background-color: transparent; }
-
-/* Fix squashed dots - ensure proper dimensions for [role=tab] buttons */
-.client-page [role=tablist] {
-  align-items: center;
-}
-
-
-.client-page .work-card button[role=tab],
-.client-page button[role=tab] {
-  display: inline-block !important;
-  width: 0.5rem !important;
-  height: 0.5rem !important;
-  border-radius: 50% !important;
-  flex-shrink: 0 !important;
-  flex-grow: 0 !important;
-  line-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
