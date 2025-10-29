@@ -108,8 +108,8 @@ body {
   line-height: 1.5;
 }
 
-/* Smooth transitions */
-* {
+/* Smooth transitions - exclude interactive elements to prevent mobile double-click issues */
+*:not(button):not(a):not([role="button"]):not([role="tab"]):not(.mobile-client):not(.mobile-dot) {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -1295,6 +1295,32 @@ a:hover {
   
   .client-page .mobile-gallery .mobile-dot {
     /* Inline styles handle everything */
+  }
+
+  /* Fix mobile double-click issues */
+  .mobile-client,
+  .mobile-dot,
+  .mobile-nav a,
+  [data-id="mobile-nav"] a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  /* Ensure mobile navigation links are properly clickable */
+  .mobile-nav a,
+  [data-id="mobile-nav"] a {
+    display: inline-block;
+    min-height: 44px; /* iOS recommended touch target size */
+    min-width: 44px;
+    line-height: 44px;
+    text-align: center;
   }
 
 }

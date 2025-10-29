@@ -86,13 +86,19 @@ function renderMobileClients() {
   html += '</div>';
   mobileClients.innerHTML = html;
   
-  // Add click handlers
+  // Add click handlers with mobile-optimized event handling
   document.querySelectorAll('.mobile-client').forEach(div => {
     const slug = div.getAttribute('data-slug');
     if (slug !== currentClientSlug) {
-      div.addEventListener('click', () => {
+      // Use both click and touchend for better mobile compatibility
+      const handleClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         window.location.href = buildClientUrl(slug);
-      });
+      };
+      
+      div.addEventListener('click', handleClick);
+      div.addEventListener('touchend', handleClick);
     }
   });
 }
@@ -125,7 +131,7 @@ function renderMobileGallery() {
   }
   
   // Add image container
-  html += `<div class="mobile-image-container" style="position: relative; width: 100%; aspect-ratio: 4/3; touch-action: pan-x pinch-zoom;">`;
+  html += `<div class="mobile-image-container" style="position: relative; width: 100%; aspect-ratio: 4/3; touch-action: manipulation;">`;
   
   slides.forEach((slide, index) => {
     const displayStyle = index === 0 ? 'block' : 'none';
@@ -138,12 +144,17 @@ function renderMobileGallery() {
   
   mobileGallery.innerHTML = html;
   
-  // Add click handlers for dots
+  // Add click handlers for dots with mobile-optimized event handling
   document.querySelectorAll('.mobile-dot').forEach(button => {
-    button.addEventListener('click', () => {
+    const handleDotClick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const slideIndex = parseInt(button.getAttribute('data-slide'));
       showSlide(slideIndex);
-    });
+    };
+    
+    button.addEventListener('click', handleDotClick);
+    button.addEventListener('touchend', handleDotClick);
   });
 }
 

@@ -302,12 +302,17 @@ function renderMobileFields() {
   html += '</div>';
   mobileFields.innerHTML = html;
   
-  // Add click handlers
+  // Add click handlers with mobile-optimized event handling
   document.querySelectorAll('.mobile-field-selector').forEach(span => {
-    span.addEventListener('click', () => {
+    const handleClick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const fieldId = span.getAttribute('data-field');
       handleMobileFieldClick(fieldId === 'null' ? null : fieldId);
-    });
+    };
+    
+    span.addEventListener('click', handleClick);
+    span.addEventListener('touchend', handleClick);
   });
 }
 
@@ -331,12 +336,17 @@ function renderMobileClients() {
   html += '</div>';
   mobileClients.innerHTML = html;
   
-  // Add click handlers
+  // Add click handlers with mobile-optimized event handling
   document.querySelectorAll('.mobile-client').forEach(div => {
-    div.addEventListener('click', () => {
+    const handleClick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const slug = div.getAttribute('data-slug');
       handleClientClick(slug);
-    });
+    };
+    
+    div.addEventListener('click', handleClick);
+    div.addEventListener('touchend', handleClick);
   });
 }
 
@@ -392,6 +402,8 @@ function updateHighlighting() {
     });
     clientRefs.forEach(el => {
       el.style.opacity = '1';
+      // Ensure underline is cleared when not hovering
+      el.style.textDecoration = 'none';
     });
     return;
   }
@@ -414,6 +426,12 @@ function updateHighlighting() {
   clientRefs.forEach((el, slug) => {
     const isHighlighted = highlightedSlugs.includes(slug);
     el.style.opacity = isHighlighted ? '1' : '0.3';
+    // Underline only the actually hovered client (not all related)
+    if (hoveredItem.kind === 'client' && slug === hoveredItem.slug) {
+      el.style.textDecoration = 'underline';
+    } else {
+      el.style.textDecoration = 'none';
+    }
   });
 }
 
