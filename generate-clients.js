@@ -170,7 +170,7 @@ ${slidesHTML}
             <div data-id="left-bottom">
               <div class="h-full flex flex-col items-center justify-between" style="min-height: 150px;">
                 <!-- Caption -->
-                <figcaption class="pt-4">
+                <figcaption>
                   <div class="mx-auto max-w-[73ch] text-black text-sm leading-relaxed space-y-1 text-center font-serif mobile:text-xs mobile:max-w-[60ch]">
                     <p>${summary}</p>
                   </div>

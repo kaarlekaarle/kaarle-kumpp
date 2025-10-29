@@ -200,12 +200,12 @@ body {
     place-self: center center; 
   }
   
-  .em [data-id="left-bottom"] { 
-    grid-column: 2; 
-    grid-row: 3; 
-    align-self: start; /* Changed from center to start - align caption to top of row, not center with right column */
-    justify-self: center; 
-  }
+.em [data-id="left-bottom"] { 
+  grid-column: 2; 
+  grid-row: 3; 
+  align-self: center; /* default: center for homepage and others */
+  justify-self: center; 
+}
 
   /* Right column positioning */
   .em [data-id="right-top"] { 
@@ -232,7 +232,7 @@ body {
     align-self: center; 
     justify-self: start; 
     padding-right: var(--space-lg, 32px); 
-    padding-left: var(--space-xl); /* Add left padding to push away from center */
+    padding-left: var(--space-xl); 
   }
 
   /* Logo styling */
@@ -889,6 +889,40 @@ a:hover {
     text-align: right;
   }
 
+  /* Works about text positioning - align with right-bottom About link */
+  .works-page [data-id="left-bottom"] {
+    align-self: center;
+    justify-self: center;
+    margin-top: var(--space-2xl);
+  }
+
+  /* Works about text container */
+  .works-page .works-about-text {
+    max-width: var(--measure);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Works about sans text */
+  .works-page .works-about-sans {
+    font-family: var(--font-sans);
+    font-size: calc(var(--fs-desktop) * 0.66);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #0000EE;
+    margin-bottom: 0;
+  }
+
+  /* Works about serif text */
+  .works-page .works-about-serif {
+    font-family: var(--font-serif);
+    font-size: calc(var(--fs-desktop) * 0.66);
+    line-height: 1.35;
+    margin-top: 0; /* no gap from the first line */
+    margin-bottom: 0;
+  }
+
   /* Client buttons styling */
   .works-page .client-button {
     transition: opacity 0.2s ease;
@@ -971,6 +1005,35 @@ a:hover {
     margin: 0 !important;
     padding: 0 !important;
   }
+
+  /* Mobile works about text styling */
+  .works-page .mobile-works-about {
+    margin: var(--space-md) 0 0 0;
+    padding: 0 var(--space-lg);
+  }
+
+  .works-page .mobile-works-about .works-about-text {
+    max-width: 100%;
+  }
+
+  /* Mobile overrides for the unified works-about classes */
+  .works-page .mobile-works-about .works-about-sans {
+    font-family: var(--font-sans);
+    font-size: calc(var(--fs-mobile) * 0.66);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: inherit;
+    margin-bottom: 0;
+  }
+
+  .works-page .mobile-works-about .works-about-serif {
+    font-family: var(--font-serif);
+    font-size: calc(var(--fs-mobile) * 0.66);
+    line-height: 1.35;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /* Absolute positioning utilities */
@@ -995,6 +1058,10 @@ a:hover {
 /* ============================================
    CLIENT PAGE SPECIFIC STYLES
    ============================================ */
+
+.client-page .em [data-id="left-bottom"] {
+  align-self: start; /* client caption/text starts at top */
+}
 
 .client-page .client-header {
   width: 720px;

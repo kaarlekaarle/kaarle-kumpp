@@ -204,7 +204,7 @@ body {
   .em [data-id="left-bottom"] { 
     grid-column: 2; 
     grid-row: 3; 
-    align-self: center; 
+    align-self: start; /* Changed from center to start - align caption to top of row, not center with right column */
     justify-self: center; 
   }
 
@@ -477,12 +477,14 @@ body {
   }
 
   [data-id="right-middle"] .about-prose {
+    width: min(365px, 100%);
     max-width: 100%;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    width: 365px;
-    margin: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
   }
 
   [data-id="right-middle"] p {
@@ -1184,9 +1186,12 @@ a:hover {
 }
 
 /* Arrow positioning - ensure they're outside the image */
+/* Override mb-6 margin for client page image containers only */
 .client-page .relative.mb-6 {
   position: relative;
+  margin-bottom: var(--space-xs); /* Override mb-6 for client page image containers only */
 }
+
 
 
 .client-page button[data-action="prev"],
@@ -1333,9 +1338,13 @@ a:hover {
   max-height: 1.25rem;
 }
 
-.client-page [data-id="left-bottom"] .flex {
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
+/* === Constrained Flexible Spacing (2025-10-29) === */
+.client-page [data-id="left-bottom"] > .flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-sm); /* Reduced from var(--space-md) to var(--space-sm) */
+  margin-top: clamp(var(--space-sm), 2vh, var(--space-lg));
 }
 
 .client-page .mobile-content a img {
@@ -1395,9 +1404,6 @@ a:hover {
   }
 }
 
-.client-page .em [data-id="left-bottom"] figcaption {
-  padding-top: var(--space-xs);
-}
 
 .client-page figcaption .mx-auto {
   max-width: 60ch !important;
@@ -1418,6 +1424,7 @@ a:hover {
 }
 
 /* === Legacy override partials (2025-10-29) === */
+/* Import statements removed - files are manually concatenated during build */
 /* === Dot navigation fix (2025-10-29) - consolidated === */
 /* Desktop dots now use Tailwind classes: bg-current and bg-gray-400 */
 /* Mobile dot navigation - higher specificity to override inline styles */
@@ -1467,6 +1474,18 @@ a:hover {
 .client-page .slide-image,
 .client-page .slide-image figure {
   background-color: var(--paper, #f5f3f0);
+}
+
+/* === Image-to-caption spacing (2025-10-29) === */
+/* Controlled spacing between image and caption - now that alignment is fixed */
+.client-page .relative.mb-6 {
+  position: relative;
+  margin-bottom: var(--space-xs); /* 0.5rem = 8px - natural spacing */
+}
+
+/* Ensure caption has no padding-top */
+.client-page .em [data-id="left-bottom"] figcaption {
+  padding-top: 0;
 }
 /* === _ios_and_ua_overrides.css === */
 /* --- iOS + Browser Default Protections --- */
