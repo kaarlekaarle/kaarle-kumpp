@@ -290,6 +290,39 @@ Common utility classes to replace inline styles:
 - **Works page:** Desktop hover logic handled in JS; CSS controls type and spacing; mobile fields/client list use serif
 - **Client pages:** Keep gallery, caption, and social spacing consistent; captions in serif; bottom links consistent with other pages
 
+### Responsive Adjustments – About Page
+
+#### Chrome iOS Text Truncation Fix (2025-10-29)
+**Problem:** Fixed width on mobile main page text caused truncation on small screens (≤377px).
+
+**Root Cause:** 
+```css
+[data-id="right-middle"] .about-prose {
+  width: 365px; /* Fixed width caused overflow */
+}
+```
+
+**Solution Applied:**
+```css
+[data-id="right-middle"] .about-prose {
+  width: min(365px, 100%); /* Responsive width with 365px max */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* Handle long words */
+  word-break: break-word; /* Break words if needed */
+  min-width: 0; /* Allow shrinking in flex/grid */
+}
+```
+
+**Testing Verified:**
+- iPhone SE (375px): No truncation, text wraps naturally
+- iPhone 13 mini (390px): No truncation, text wraps naturally  
+- iPhone 14/15 (393px): No truncation, text wraps naturally
+
+**Chrome iOS Behavior:** More aggressive text truncation than Safari; fixed widths break responsive layouts more readily.
+
 ---
 
 ## Testing and Verification
