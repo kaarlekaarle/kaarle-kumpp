@@ -181,7 +181,7 @@ ${slidesHTML}
           <article class="desktop-only">
             <!-- Right Top - Logo Link -->
             <div data-id="right-top">
-              <a href="index.html" class="nav-right leading-none">
+              <a href="/" class="nav-right leading-none">
                 KAARLE <span class="apple-mark">&#xF8FF;</span> KUMPP.
               </a>
             </div>
@@ -233,7 +233,7 @@ ${slidesHTML}
               
               <!-- Kaarle logo -->
               <div data-id="mobile-kaarle-logo" style="margin-bottom: 2.5rem; text-align: center;">
-                <a href="index.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="/" style="text-decoration: none; color: inherit; display: block;">
                   <div class="text-center leading-tight">
                     <div class="sans fs-logo uppercase tracking-wide font-normal">KAARLE</div>
                     <div class="my-1 flex justify-center fs-logo">
